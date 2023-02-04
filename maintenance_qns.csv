@@ -1,0 +1,96 @@
+﻿qn_no,qn,qn_type,op1,img1,op2,img2,op3,img3,op4,img4,prev_qn_no,sel_op,resource,glossary,add_annex,add_input,final_qn
+1,I am currently...,scq,married,https://www.linkpicture.com/q/Married.png,undergoing divorce,https://www.linkpicture.com/q/Undergoing_Divorce.png,not married,https://www.linkpicture.com/q/Not_Married.png,divorced,https://www.linkpicture.com/q/Divorced.png,0,op0,0,None,None,None,0
+2,I...,scq,have a maintenance order,https://www.linkpicture.com/q/Have_a_maintenance_order.png,do not have a maintenance order,https://www.linkpicture.com/q/Do_not_have_a_maintenance_order.png,None,None,None,None,1,op1,0,None,None,None,0
+3,I...,scq,have a maintenance order,https://www.linkpicture.com/q/Have_a_maintenance_order.png,do not have a maintenance order,https://www.linkpicture.com/q/Do_not_have_a_maintenance_order.png,None,None,None,None,1,op2,0,None,None,None,0
+4,I...,scq,have a maintenance order,https://www.linkpicture.com/q/Have_a_maintenance_order.png,do not have a maintenance order,https://www.linkpicture.com/q/Do_not_have_a_maintenance_order.png,None,None,None,None,1,op3,0,None,None,None,0
+5,I am seeking to...,scq,enforce,https://www.linkpicture.com/q/Enforce.png,vary,https://www.linkpicture.com/q/Vary.png,unsure,https://www.linkpicture.com/q/Unsure.png,None,None,1,op4,0,q3_glossary,None,None,0
+6,I am seeking to...,scq,enforce,https://www.linkpicture.com/q/Enforce.png,vary,https://www.linkpicture.com/q/Vary.png,unsure,https://www.linkpicture.com/q/Unsure.png,None,None,2,op1,0,q3_glossary,None,None,0
+7,I am seeking to...,scq,enforce,https://www.linkpicture.com/q/Enforce.png,vary,https://www.linkpicture.com/q/Vary.png,unsure,https://www.linkpicture.com/q/Unsure.png,None,None,3,op1,0,q3_glossary,None,None,0
+8,I am seeking to...,scq,enforce,https://www.linkpicture.com/q/Enforce.png,vary,https://www.linkpicture.com/q/Vary.png,unsure,https://www.linkpicture.com/q/Unsure.png,None,None,4,op1,0,q3_glossary,None,None,0
+9,I am seeking to apply for maintenance for...,scq,myself,https://www.linkpicture.com/q/Myself.png,my child(ren),https://www.linkpicture.com/q/My_Child-ren.png,both myself and my child(ren),https://www.linkpicture.com/q/Both_myself_and_my_child-ren.png,None,None,2,op2,0,q3_glossary,None,None,0
+10,I am seeking to apply for maintenance for...,scq,myself,https://www.linkpicture.com/q/Myself.png,my child(ren),https://www.linkpicture.com/q/My_Child-ren.png,both myself and my child(ren),https://www.linkpicture.com/q/Both_myself_and_my_child-ren.png,None,None,3,op2,0,q3_glossary,None,None,0
+11,I am seeking to apply for maintenance for...,scq,myself,https://www.linkpicture.com/q/Myself.png,my child(ren),https://www.linkpicture.com/q/My_Child-ren.png,both myself and my child(ren),https://www.linkpicture.com/q/Both_myself_and_my_child-ren.png,None,None,4,op2,0,q3_glossary,None,None,0
+12,I need...,mcq,financial support,https://www.linkpicture.com/q/Financial_support.png,social and emotional support,https://www.linkpicture.com/q/Social_and_emotional_support.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,5,op1,0,None,None,None,0
+13,I need...,mcq,financial support,https://www.linkpicture.com/q/Financial_support.png,social and emotional support,https://www.linkpicture.com/q/Social_and_emotional_support.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,6,op1,0,None,None,None,0
+14,I need...,mcq,financial support,https://www.linkpicture.com/q/Financial_support.png,social and emotional support,https://www.linkpicture.com/q/Social_and_emotional_support.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,7,op1,0,None,None,None,0
+15,I need...,mcq,financial support,https://www.linkpicture.com/q/Financial_support.png,social and emotional support,https://www.linkpicture.com/q/Social_and_emotional_support.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,8,op1,0,None,None,None,0
+16,I am...,scq,willing to consider mediation,https://www.linkpicture.com/q/Willing_to_consider_mediation.png,not willing to consider mediation,https://www.linkpicture.com/q/Not_willing_to_consider_mediation.png,None,None,None,None,5,op2,0,q5_glossary,None,None,0
+17,I am...,scq,willing to consider mediation,https://www.linkpicture.com/q/Willing_to_consider_mediation.png,not willing to consider mediation,https://www.linkpicture.com/q/Not_willing_to_consider_mediation.png,None,None,None,None,6,op2,0,q5_glossary,None,None,0
+18,I am...,scq,willing to consider mediation,https://www.linkpicture.com/q/Willing_to_consider_mediation.png,not willing to consider mediation,https://www.linkpicture.com/q/Not_willing_to_consider_mediation.png,None,None,None,None,7,op2,0,q5_glossary,None,None,0
+19,I am...,scq,willing to consider mediation,https://www.linkpicture.com/q/Willing_to_consider_mediation.png,not willing to consider mediation,https://www.linkpicture.com/q/Not_willing_to_consider_mediation.png,None,None,None,None,8,op2,0,q5_glossary,None,None,0
+20,Annex B,None,None,None,None,None,None,None,None,None,5,op3,1,None,None,None,1
+21,Annex B,None,None,None,None,None,None,None,None,None,6,op3,1,None,None,None,1
+22,Annex B,None,None,None,None,None,None,None,None,None,7,op3,1,None,None,None,1
+23,Annex B,None,None,None,None,None,None,None,None,None,8,op3,1,None,None,None,1
+24,Annex B,None,None,None,None,None,None,None,None,None,9,op1,1,None,None,None,1
+25,Annex B,None,None,None,None,None,None,None,None,None,10,op1,1,None,None,None,1
+26,Annex B,None,None,None,None,None,None,None,None,None,11,op1,1,None,None,None,1
+27,My child(ren) is/are,scq,below 21 years old,https://www.linkpicture.com/q/Below_21_years_old.png,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,9,op2,0,None,None,None,0
+28,My child(ren) is/are,scq,below 21 years old,https://www.linkpicture.com/q/Below_21_years_old.png,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,10,op2,0,None,None,None,0
+29,My child(ren) is/are,scq,below 21 years old,https://www.linkpicture.com/q/Below_21_years_old.png,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,11,op2,0,None,None,None,0
+30,Annex B,None,None,None,None,None,None,None,None,None,9,op3,1,None,None,None,0
+31,Annex B,None,None,None,None,None,None,None,None,None,10,op3,1,None,None,None,0
+32,Annex B,None,None,None,None,None,None,None,None,None,11,op3,1,None,None,None,0
+33,My child(ren) is/are,below 21 years old,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,None,None,30,op0,0,None,None,None,0
+34,My child(ren) is/are,below 21 years old,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,None,None,31,op0,0,None,None,None,0
+35,My child(ren) is/are,below 21 years old,above 21 years old,https://www.linkpicture.com/q/Above_21_years_old.png,None,None,None,None,None,None,32,op0,0,None,None,None,0
+36,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,12,financial support,0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+37,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,13,financial support,0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+38,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,14,financial support,0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+39,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,15,financial support,0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+40,Annex A,None,None,None,None,None,None,None,None,None,36,op0,1,None,None,None,1
+41,Annex A,None,None,None,None,None,None,None,None,None,37,op0,1,None,None,None,1
+42,Annex A,None,None,None,None,None,None,None,None,None,38,op0,1,None,None,None,1
+43,Annex A,None,None,None,None,None,None,None,None,None,39,op0,1,None,None,None,1
+44,Annex A,None,None,None,None,None,None,None,None,None,12,social and emotional support,1,None,None,None,1
+45,Annex A,None,None,None,None,None,None,None,None,None,13,social and emotional support,1,None,None,None,1
+46,"If you require social and emotional support to navigate the court system, you may provide your contact details as follows and our officer will contact you within 5 working days",None,None,None,None,None,None,None,None,None,14,social and emotional support,0,None,qn3b_add_annex,"Court Case Reference Number, Name, Contact Number, Email Address",1
+47,Annex A,None,None,None,None,None,None,None,None,None,15,social and emotional support,0,None,None,None,1
+48,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,12,"financial support, social and emotional support",0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+49,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,13,"financial support, social and emotional support",0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+50,"If you require social and emotional support to navigate the court system, you may provide your contact details as follows and our officer will contact you within 5 working days",None,None,None,None,None,None,None,None,None,14,"financial support, social and emotional support",0,None,qn3b_add_annex,"Court Case Reference Number, Name, Contact Number, Email Address",1
+51,"If you would like us to explore how we could support you through this challenging moment, you may provide your contact details as follows and our officers will contact you within 5 working days",None,None,None,None,None,None,None,None,None,15,"financial support, social and emotional support",0,None,qn3b_add_annex,"Name, Contact Number, Email Address",0
+52,Annex A,None,None,None,None,None,None,None,None,None,12,none of the above,1,None,None,None,1
+53,Annex A,None,None,None,None,None,None,None,None,None,13,none of the above,1,None,None,None,1
+54,Annex A,None,None,None,None,None,None,None,None,None,14,none of the above,1,None,None,None,1
+55,Annex A,None,None,None,None,None,None,None,None,None,15,none of the above,1,None,None,None,1
+56,No Path End Found,None,None,None,None,None,None,None,None,None,27,op1,0,None,None,None,1
+57,I am...,scq,willing to consider mediation,https://www.linkpicture.com/q/Willing_to_consider_mediation.png,not willing to consider mediation,https://www.linkpicture.com/q/Not_willing_to_consider_mediation.png,None,None,None,None,28,op1,0,q5_glossary,None,None,0
+58,Annex C,None,None,None,None,None,None,None,None,None,29,op1,1,None,None,None,1
+59,No Path End Found,None,None,None,None,None,None,None,None,None,33,op1,0,None,None,None,1
+60,No Path End Found,None,None,None,None,None,None,None,None,None,34,op1,0,None,None,None,1
+61,Annex C,None,None,None,None,None,None,None,None,None,35,op1,1,None,None,None,1
+62,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,27,op2,0,None,None,None,0
+63,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,28,op2,0,None,None,None,0
+64,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,29,op2,0,None,None,None,0
+65,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,33,op2,0,None,None,None,0
+66,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,34,op2,0,None,None,None,0
+67,My child(ren),scq,is/are full time NSman or student,https://www.linkpicture.com/q/Full-time_NSman_or_student.png,has/have a mental or physical disability,https://www.linkpicture.com/q/Has_have_a_mental_or_physical_disability.png,none of the above,https://www.linkpicture.com/q/None_apply.png,None,None,35,op2,0,None,None,None,0
+68,No Path End Found,None,None,None,None,None,None,None,None,None,62,op1,0,None,None,None,1
+69,Annex D,None,None,None,None,None,None,None,None,None,63,op1,1,None,None,None,1
+70,Annex D,None,None,None,None,None,None,None,None,None,64,op1,1,None,None,None,1
+71,No Path End Found,None,None,None,None,None,None,None,None,None,65,op1,0,None,None,None,1
+72,Annex D,None,None,None,None,None,None,None,None,None,66,op1,1,None,None,None,1
+73,Annex D,None,None,None,None,None,None,None,None,None,67,op1,1,None,None,None,1
+74,No Path End Found,None,None,None,None,None,None,None,None,None,62,op2,0,None,None,None,1
+75,Annex D,None,None,None,None,None,None,None,None,None,63,op2,1,None,None,None,1
+76,Annex D,None,None,None,None,None,None,None,None,None,64,op2,1,None,None,None,1
+77,No Path End Found,None,None,None,None,None,None,None,None,None,65,op2,0,None,None,None,1
+78,Annex D,None,None,None,None,None,None,None,None,None,66,op2,1,None,None,None,1
+79,Annex D,None,None,None,None,None,None,None,None,None,67,op2,1,None,None,None,1
+80,Annex E,None,None,None,None,None,None,None,None,None,62,op3,1,None,None,None,1
+81,Annex E,None,None,None,None,None,None,None,None,None,63,op3,1,None,None,None,1
+82,Annex E,None,None,None,None,None,None,None,None,None,64,op3,1,None,None,None,1
+83,Annex E,None,None,None,None,None,None,None,None,None,65,op3,1,None,None,None,1
+84,Annex E,None,None,None,None,None,None,None,None,None,66,op3,1,None,None,None,1
+85,Annex E,None,None,None,None,None,None,None,None,None,67,op3,1,None,None,None,1
+86,Annex F,None,None,None,None,None,None,None,None,None,16,op1,1,None,None,None,1
+87,Annex F,None,None,None,None,None,None,None,None,None,17,op1,1,None,None,None,1
+88,Annex F,None,None,None,None,None,None,None,None,None,18,op1,1,None,None,None,1
+89,Annex F,None,None,None,None,None,None,None,None,None,19,op1,1,None,None,None,1
+90,Annex G,None,None,None,None,None,None,None,None,None,16,op2,1,None,None,None,1
+91,Annex G,None,None,None,None,None,None,None,None,None,17,op2,1,None,None,None,1
+92,Annex G,None,None,None,None,None,None,None,None,None,18,op2,1,None,None,None,1
+93,Annex G,None,None,None,None,None,None,None,None,None,19,op2,1,None,None,None,1
+94,Annex F,None,None,None,None,None,None,None,None,None,57,op1,1,None,None,None,1
+95,Annex G,None,None,None,None,None,None,None,None,None,57,op2,1,None,None,None,1
