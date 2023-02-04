@@ -1,19 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session, make_response
 from pymongo import MongoClient
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-from datetime import timedelta
 from resources.add_annexes import add_annexes_dict
 from resources.add_inputs import add_inputs_dict
 from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
 from xhtml2pdf import pisa
-from io import BytesIO
 import pdfkit
 import wkhtmltopdf
-import time
 import random
 
 app = Flask(__name__)
@@ -497,3 +491,6 @@ def report(no):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
     return response
+
+if __name__ == '__main__':
+    app.run()
