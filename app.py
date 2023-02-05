@@ -492,5 +492,18 @@ def report(no):
     response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
     return response
 
+@app.route("/criteria")
+def OSLAS_criteria():
+    return render_template('OSLAS_criteria.html')
+
+def civil():
+    return render_template('civil.html')
+
+def criminal():
+    return render_template('criminal.html')
+
+def family():
+    return render_template('family.html')
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
