@@ -1,7 +1,7 @@
 annexes_dict = {
     'annex_a': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>Integrated Family Management System (iFAMS)</h6>
@@ -27,7 +27,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The Community Justice Centre (CJC)'s On-Site Legal Advice Scheme</h6>
@@ -75,7 +75,7 @@ annexes_dict = {
     """,
     'annex_b': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The On-Site Legal Advice Scheme</h6>
@@ -110,7 +110,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
@@ -124,7 +124,7 @@ annexes_dict = {
     """,
     'annex_c': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>Integrated Family Management System (iFAMS)</h6>
@@ -150,7 +150,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
             <div class="annex">
                 <div class="annex-heading">
                     <h6>The On-Site Legal Advice Scheme</h6>
@@ -188,7 +188,7 @@ annexes_dict = {
     """,
     'annex_d': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>Integrated Family Management System (iFAMS)</h6>
@@ -214,7 +214,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
             <div class="annex">
                 <div class="annex-heading">
                     <h6>The On-Site Legal Advice Scheme</h6>
@@ -261,7 +261,7 @@ annexes_dict = {
     """,
     'annex_e': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The On-Site Legal Advice Scheme</h6>
@@ -296,7 +296,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
@@ -319,7 +319,7 @@ annexes_dict = {
     """,
     'annex_f': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The Collaborative Justice Project (CJP)</h6>
@@ -363,7 +363,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>Integrated Family Management System (iFAMS)</h6>
@@ -402,7 +402,7 @@ annexes_dict = {
     """,
     'annex_g': """
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>Integrated Family Management System (iFAMS)</h6>
@@ -428,7 +428,7 @@ annexes_dict = {
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 col-xl-6">
                 <div class="annex">
                     <div class="annex-heading">
                         <h6>The On-Site Legal Advice Scheme</h6>

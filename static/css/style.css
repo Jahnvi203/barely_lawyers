@@ -272,3 +272,14 @@ label {
     font-style: italic;
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 500px) {
+    .contact {
+        display: none;
+    }
+}
+
+.contact {
+    color: white;
+    position:absolute; right: 30px; top: 20px
+}
