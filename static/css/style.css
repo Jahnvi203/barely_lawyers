@@ -283,3 +283,13 @@ label {
     color: white;
     position:absolute; right: 30px; top: 20px
 }
+
+#help {
+    color:orange;
+}
+
+.form-container {
+    border-radius: 30px; 
+    background-color: #F1EEDB;
+    margin: auto;
+}
