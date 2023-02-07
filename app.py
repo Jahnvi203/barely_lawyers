@@ -17,7 +17,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 # Database Connection
 uri = "mongodb+srv://Jahnvi203:Jahnvi203@cluster0.cn63w2k.mongodb.net/app?retryWrites=true&w=majority"
-connection = MongoClient(host = uri)        
+connection = MongoClient(host = uri, connect = False)        
 db = connection['app']
 col = db.maintenance_qns
 col_pdfs = db.report_pdfs
@@ -491,6 +491,10 @@ def report(no):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
     return response
+
+@app.route('/send/<email>')
+def send(email):
+    
 
 if __name__ == '__main__':
     app.run()
