@@ -12,13 +12,23 @@
 <body>
     <h2><u>Questions relating to Civil Matters</u></h2>
     <br>
-    <p>Which of the following category best describes the matter you are seeking advice on?</p>
-    <br>
-    <p>a. My claim is:</p>
+    <p><b>Which of the following category best describes the matter you are seeking advice on?</b></p>
+    <p><b>a. My claim is:</b></p>
     <div class="checkboxes">
-        <label><input type="checkbox"> <span>Less than $20 000 (i)</span></label>
-        <label><input type="checkbox"> <span>Filed within 2 years of the event which creates your cause of action (i)</span></label>
+        <label><input type="checkbox"> <span>Less than $20 000</span>
+        <a href="#" data-bs-toggle="tooltip" title="Less than $20 000: The limit can be raised to $30,000 if there is a Memorandum of Consent from both parties.">(i)</a>
+        </label>
+        <label><input type="checkbox"> <span>Filed within 2 years of the event which creates your cause of action</span>
+        <a href="#" data-bs-toggle="tooltip" title="Filed within 2 years: A cause of action is the set of facts which entitles you to start a court action against another party.">(i)</a>
+        </label>
         <label><input type="checkbox"> <span>None of the above</span></label>
     </div>
+    
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 </html>
