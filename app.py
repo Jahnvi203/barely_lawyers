@@ -17,7 +17,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 # Database Connection
 uri = "mongodb+srv://Jahnvi203:Jahnvi203@cluster0.cn63w2k.mongodb.net/app?retryWrites=true&w=majority"
-connection = MongoClient(host = uri)        
+connection = MongoClient(host = uri, connect = False)        
 db = connection['app']
 col = db.maintenance_qns
 col_pdfs = db.report_pdfs
@@ -505,5 +505,9 @@ def criminal():
 def family():
     return render_template('family.html')
 
+@app.route('/send/<email>')
+def send(email):
+    pass
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
