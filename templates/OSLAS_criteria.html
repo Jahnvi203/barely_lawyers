@@ -91,7 +91,7 @@
                     </form>
                 </div>
 
-                <a role="button" type="button" class="btn btn-primary" href="">Let's Go</a>
+                <a style="display: none;" role="button" type="button" class="btn btn-primary" href="">Let's Go</a>
             </div>
         </div>
         <script>
@@ -99,7 +99,6 @@
                 ans1 = o.Question1.value
                 ans2 = o.Question2.value
                 ans3 = o.Question3.value
-                console.log(ans1)
                 if (ans1 == "yes") {
                     var companypage = document.getElementById("companypage");
                     companypage.style.display = "block";

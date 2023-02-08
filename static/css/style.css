@@ -294,7 +294,7 @@ label {
     margin: auto;
 }
 
-#companymessage {
+#companymessage, #representedmessage, #soughtmessage, #sg_chargedmessage, #chargedmessage, #nonemessage, #iFAMSmessage, #simplifiedmessage {
     border-radius: 30px; 
     background-color: #FADFB4;
     margin: auto;
@@ -304,16 +304,6 @@ label {
     color: red;
 }
 
-#representedmessage {
-    border-radius: 30px; 
-    background-color: #FADFB4;
-    margin: auto;
-}
-
-#soughtmessage {
-    border-radius: 30px; 
-    background-color: #FADFB4;
-    margin: auto;
 .modal {
     text-align: left;
 }

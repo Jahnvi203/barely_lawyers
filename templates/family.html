@@ -10,39 +10,91 @@
     <h2><u>Questions relating to Family Matters</u></h2>
     <br>
     <p><b>Which of the following category best describes the matter you are seeking advice on?</b></p>
-    <br>
+    <p><b>i. Integrated Family Application Management System (iFAMS)</b></p>
     <div class="checkboxes">
-        <p>i. Integrated Family Application Management System (iFAMS)</p>
-        <input type="checkbox" id="" name="question5" value=""> Maintenance Order (i.e. Enforcement / variation/ application)
-        <br>
+        <label><input type="checkbox" id="q5a" onclick="checkiFAMS()"> <span>Maintenance Order (i.e. Enforcement / variation/ application)</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q5b" onclick="checkiFAMS()"> <span>Personal Protection Order (i)</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q5c" onclick="checkiFAMS()"> <span>Mental Capacity Act Application (including appointment of a deputy)</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q5d" onclick="checkiFAMS()"> <span>Vulnerable Adults Act Application (i)</span></label>
+    </div>
 
-        <input type="checkbox" id="" name="question5" value=""> Personal Protection Order (i)
-        <br>
+    <br>
 
-        <input type="checkbox" id="" name="question5" value=""> Mental Capacity Act Application (including appointment of a deputy)
-        <br>
+    <div id="iFAMS" style="display: none;">
+        {% include "iFAMS.html" %}
+    </div>
 
-        <input type="checkbox" id="" name="question5" value=""> Vulnerable Adults Act Application (i)
-        <br>
+    <br>
+
+    <p><b>ii. Divorce application (simplified track)</b></p>
+    <p><b>You and your spouse agree on the following:</b></p>
+    <div class="checkboxes">
+        
+        <label><input type="checkbox" id="q6a" onclick="checksimplified()"> <span>The marriage has irretrievably broken down</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q6b" onclick="checksimplified()"> <span>Ancillary matters (i.e. child custody & control / maintenance and/or division of matrimonial assets)</span></label>
+    </div>
+
+    <br>
+
+    <div id="simplified" style="display: none;">
+        {% include "simplified.html" %}
     </div>
 
     <br>
 
     <div class="checkboxes">
-        <p>ii. Divorce application (simplified track)</p>
-        <p>You and your spouse agree on the following:</p>
-        <input type="checkbox" id="" name="question6" value=""> The marriage has irretrievably broken down
-        <br>
-
-        <input type="checkbox" id="" name="question6" value=""> Ancillary matters (i.e. child custody & control / maintenance and/or division of matrimonial assets)
-        <br>
+        <label><input type="checkbox" id="nones" onclick="checknone()"> <span>None of the above</span></label>
     </div>
-
-    <br>
     
-    <div class="checkboxes">
-        <input type="checkbox" id="" name="question7" value=""> None of the above
+    <br><br>
+
+    <div id="nonepage" style="display: none;">
+        {% include "none.html" %}
     </div>
-    
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        function checkiFAMS() {
+            var q5a = document.getElementById("q5a");
+            var q5b = document.getElementById("q5b");
+            var q5c = document.getElementById("q5c");
+            var q5d = document.getElementById("q5d");
+            var iFAMS = document.getElementById("iFAMS");
+            if (q5a.checked || q5b.checked || q5c.checked || q5d.checked == true) {
+                iFAMS.style.display = "block";
+            } else {
+                iFAMS.style.display = "none";
+            }
+        }
+
+        function checksimplified() {
+            var q6a = document.getElementById("q6a");
+            var q6b = document.getElementById("q6b");
+            var simplified = document.getElementById("simplified");
+            if (q6a.checked && q6b.checked == true) {
+                simplified.style.display = "block";
+            } else {
+                simplified.style.display = "none";
+            }
+        }
+
+        function checknone() {
+            var checkBox = document.getElementById("nones");
+            var nonepage = document.getElementById("nonepage");
+            if (checkBox.checked == true) {
+                nonepage.style.display = "block";
+            } else {
+                nonepage.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
