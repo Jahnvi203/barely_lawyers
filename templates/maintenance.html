@@ -89,7 +89,50 @@
                         <h2 id="intro_heading">
                             <span>Based on what you have shared, here are some resources you may wish to consider.</span>
                             <br>
-                            <span>You may wish to <a href="{{ url_for('report', no = pdf_no) }}" target = "_blank" id="download-link">download a PDF</a> or <a href="#">email a PDF to yourself</a> for your own reference.</span>
+                            <span>You may wish to <a href="{{ url_for('report', no = pdf_no) }}" target = "_blank" id="download-link">download a PDF</a> or <a href="" role="button" id="email-link" data-bs-toggle="modal" data-bs-target="#email_modal">email a PDF to yourself</a> for your own reference.</span>
+                            <script>
+                                function email_submit_click() {
+                                    email_submit = document.getElementById("email-submit");
+                                    email_error = document.getElementById("email-error");
+                                    email_input = document.getElementById("email-link-input").value;
+                                    email_modal_close = document.getElementById("email_modal_close");
+                                    email_success = document.getElementById("email-success");
+                                    if (email_input.includes(".") === false || email_input.includes("@") === false) {
+                                        email_error.style.display = "block";
+                                    } else {
+                                        email_error.style.display = "none";
+                                        console.log(email_input);
+                                        let request = new XMLHttpRequest();
+                                        request.open('POST', `/send/{{pdf_no}}/${JSON.stringify(email_input)}`);
+                                        request.send();
+                                        email_success.style.display = "block";
+                                        setTimeout(function () {
+                                            email_modal_close.click();
+                                        }, 3000);
+                                    };
+                                }
+                            </script>
+                            <div class="modal fade" id="email_modal" tabindex="-1" role="dialog" aria-labelledby="email_modal_title" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="email_modal_title">Send Your Report to Your Email</h5>
+                                            <button id="email_modal_close" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                        </div>
+                                        <form action="" method="POST"></form>
+                                            <div class="modal-body">
+                                                <label for="email" id="email-link-label">Email Address</label>
+                                                <input type="email" id="email-link-input" name="email" id="email" required>
+                                                <p style="display:none;" id="email-error" class="error">ERROR: Please enter a valid email address to proceed.</p>
+                                                <p style="display:none;" id="email-success" class="error">SUCCESS: An email with your report has been successfully sent to you.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="email-submit" class="btn btn-primary" onclick="email_submit_click()">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </h2>
                         <br>
                     {% endif %}
