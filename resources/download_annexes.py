@@ -13,7 +13,7 @@ download_annexes_dict = {
                         <li>Protection for vulnerable adults</li>
                         <li>Simplified deputyship applications</li>
                     </ol>
-                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">here</a> for more information on iFAMS.</p>
+                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">https://ifams.gov.sg/sop/</a> for more information on iFAMS.</p>
                 </div>
             </div>
             <br>
@@ -56,7 +56,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                 </div>
             </div>
             <br>
@@ -65,7 +65,7 @@ download_annexes_dict = {
                     <h6>Family Assist</h6>
                 </div>
                 <div class="annex-body">
-                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to their <a href="https://familyassist.msf.gov.sg/">website</a> for more information.</p>
+                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to <a href="https://familyassist.msf.gov.sg/">https://familyassist.msf.gov.sg/</a> for more information.</p>
                 </div>
             </div>
             <br>
@@ -112,7 +112,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">website</a> here.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a> here.</p>
                 </div>
             </div>
             <br>
@@ -132,7 +132,7 @@ download_annexes_dict = {
                             <li>Protection for vulnerable adults</li>
                             <li>Simplified deputyship applications</li>
                         </ol>
-                        <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">here</a> for more information on iFAMS.</p>
+                        <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">https://ifams.gov.sg/sop/</a> for more information on iFAMS.</p>
                     </div>
                 </div>
                 <br>
@@ -175,7 +175,7 @@ download_annexes_dict = {
                         <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                     </div>
                     <div class="annex-body">
-                        <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                        <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                     </div>
                 </div>
                 <br>
@@ -196,7 +196,7 @@ download_annexes_dict = {
                         <li>Protection for vulnerable adults</li>
                         <li>Simplified deputyship applications</li>
                     </ol>
-                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">here</a> for more information on iFAMS.</p>
+                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">https://ifams.gov.sg/sop/</a> for more information on iFAMS.</p>
                 </div>
             </div>
             <br>
@@ -239,7 +239,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                 </div>
             </div>
             <br>
@@ -248,7 +248,7 @@ download_annexes_dict = {
                     <h6>Family Assist</h6>
                 </div>
                 <div class="annex-body">
-                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to their <a href="https://familyassist.msf.gov.sg/">website</a> for more information.</p>
+                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to <a href="https://familyassist.msf.gov.sg/">https://familyassist.msf.gov.sg/</a> for more information.</p>
                 </div>
             </div>
             <br>
@@ -295,7 +295,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                 </div>
             </div>
             <br>
@@ -304,7 +304,7 @@ download_annexes_dict = {
                     <h6>Family Assist</h6>
                 </div>
                 <div class="annex-body">
-                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to their <a href="https://familyassist.msf.gov.sg/">website</a> for more information.</p>
+                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to <a href="https://familyassist.msf.gov.sg/">https://familyassist.msf.gov.sg/</a> for more information.</p>
                 </div>
             </div>
             <br>
@@ -317,7 +317,7 @@ download_annexes_dict = {
                     <h6>The Collaborative Justice Project (CJP)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>The CJC's CJP seeks to help families of modest means [e.g. residing in an Housing & Development Board (HDB) flat] utilise the process of Collaborative Practice (CP) to resolve their legal disputes out of court in a civil and respectful manner. CJP is suitable if you wish to resolve in good faith any dispute with your spouse through Alternative Dispute Resolution (ADR) and both you and your spouse seek to or have come to an agreement to vary the terms of an Order(s) of Court. If you are interested in applying for the CJP, you may click <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a> for more information.</p>
+                    <p>The CJC's CJP seeks to help families of modest means [e.g. residing in an Housing & Development Board (HDB) flat] utilise the process of Collaborative Practice (CP) to resolve their legal disputes out of court in a civil and respectful manner. CJP is suitable if you wish to resolve in good faith any dispute with your spouse through Alternative Dispute Resolution (ADR) and both you and your spouse seek to or have come to an agreement to vary the terms of an Order(s) of Court. If you are interested in applying for the CJP, you may click <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a> for more information.</p>
                 </div>
             </div>
             <br>
@@ -333,7 +333,7 @@ download_annexes_dict = {
                         <li>Protection for vulnerable adults</li>
                         <li>Simplified deputyship applications</li>
                     </ol>
-                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">here</a> for more information on iFAMS.</p>
+                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">https://ifams.gov.sg/sop/</a> for more information on iFAMS.</p>
                 </div>
             </div>
             <br>
@@ -376,7 +376,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                 </div>
             </div>
             <br>
@@ -385,7 +385,7 @@ download_annexes_dict = {
                     <h6>Family Assist</h6>
                 </div>
                 <div class="annex-body">
-                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to their <a href="https://familyassist.msf.gov.sg/">website</a> for more information.</p>
+                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to <a href="https://familyassist.msf.gov.sg/">https://familyassist.msf.gov.sg/</a> for more information.</p>
                 </div>
             </div>
             <br>
@@ -405,7 +405,7 @@ download_annexes_dict = {
                         <li>Protection for vulnerable adults</li>
                         <li>Simplified deputyship applications</li>
                     </ol>
-                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">here</a> for more information on iFAMS.</p>
+                    <p>Please click <a href="https://ifams.gov.sg/sop/" target="_blank" rel="noopener noreferrer">https://ifams.gov.sg/sop/</a> for more information on iFAMS.</p>
                 </div>
             </div>
             <br>
@@ -448,7 +448,7 @@ download_annexes_dict = {
                     <h6>The Pro Bono SG (PBSG) Community Legal Clinic (CLC)</h6>
                 </div>
                 <div class="annex-body">
-                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to their website <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>If you are a Singaporean or a Permanent Resident living in Singapore facing a legal issue on a personal matter (investment, business and professional matters are not covered) and have never sought legal advice before, and / or are unable to afford a lawyer, you may call the PBSG at 65360650 or to make an appointment for free basic legal advice at their CLC or via video-conferencing. For more information, you can refer to <a href="https://www.lawsocprobono.org/pages/community-legal-clinic.aspx" target="_blank" rel="noopener noreferrer">https://www.lawsocprobono.org/pages/community-legal-clinic.aspx</a>.</p>
                 </div>
             </div>
             <br>
@@ -457,7 +457,7 @@ download_annexes_dict = {
                     <h6>Family Assist</h6>
                 </div>
                 <div class="annex-body">
-                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to their <a href="https://familyassist.msf.gov.sg/">website</a> for more information.</p>
+                    <p>Family Assist is a portal by the Ministry of Social and Family Development (MSF) to provide support for couples should they face challenges in their marriage, need help resolving their differences or seeking to mitigation the impact of divorce, particularly those with young children. You can refer to <a href="https://familyassist.msf.gov.sg/">https://familyassist.msf.gov.sg/</a> for more information.</p>
                 </div>
             </div>
             <br>

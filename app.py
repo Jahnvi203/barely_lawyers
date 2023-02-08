@@ -9,6 +9,10 @@ from xhtml2pdf import pisa
 import pdfkit
 import wkhtmltopdf
 import random
+import ssl
+import smtplib
+from email.mime.text import MIMEText
+import json
 
 app = Flask(__name__)
 app.secret_key = '1E44M1ixSeNGzO3T0dqIoXra7De5B46n'
@@ -496,18 +500,34 @@ def report(no):
 def OSLAS_criteria():
     return render_template('OSLAS_criteria.html')
 
-def civil():
-    return render_template('civil.html')
-
-def criminal():
-    return render_template('criminal.html')
-
-def family():
-    return render_template('family.html')
-
 @app.route('/send/<email>')
 def send(email):
     pass
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+@app.route('/send/<no>/<string:email_input>', methods = ['POST'])
+def send(no, email_input):
+    email = json.loads(email_input)
+    msg = MIMEText(f"""
+        Hello,
+
+        Thank you for completing the Preliminary Intake Assessment with CJC.
+
+        You can access you report at http://127.0.0.1:5000/report/{no}.
+
+        Best regards,
+        Community Justice Centre (CJC)
+    """)
+    msg['Subject'] = 'Your Report'
+    msg['From'] = "jahnvi@ygroo.com"
+    msg['To'] = email
+    smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    smtp_server.ehlo()
+    smtp_server.login("jahnvi@ygroo.com", "JRSingh@203")
+    smtp_server.sendmail("jahnvi@ygroo.com", email, msg.as_string())
+    return smtp_server.close()
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run()

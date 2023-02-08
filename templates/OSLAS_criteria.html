@@ -37,26 +37,39 @@
                 <br>
 
                 <div class="form-container">
+                    <br>
                     <form name="o">
-                        <div class="">                     
+                        <div id="Q1">                     
                             <p><b>1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?</b></p>
-                            <input type="radio" id="yes" name="Question1" value="yes">Yes 
-                            <input type="radio" id="no" name="Question1" value="no">No
+                            <input type="radio" id="yes" name="Question1" value="yes" onclick="checkyes()">Yes 
+                            <input type="radio" id="no" name="Question1" value="no" onclick="checkno()">No
                         </div>
                         <br>
-                        <div class="">                     
+                        <div id="companypage" style="display: none;">
+                            {% include "company.html" %}
+                        </div>
+
+                        <div id="Q2" style="display: none;">                     
                             <p><b>2. Are you currently represented by a lawyer?</b></p>
-                            <input type="radio" id="yes" name="Question2" value="yes">Yes
-                            <input type="radio" id="no" name="Question2" value="no">No
+                            <input type="radio" id="yes" name="Question2" value="yes" onclick="checkyes()">Yes
+                            <input type="radio" id="no" name="Question2" value="no" onclick="checkno()">No
                         </div>
                         <br>
-                        <div class="mx-auto">                     
+                        <div id="representedpage" style="display: none;">
+                            {% include "represented.html" %}
+                        </div>
+                        
+                        <div id="Q3" style="display: none;">                     
                             <p><b>3. Have you sought legal advice on this matter before?</b></p>
-                            <input type="radio" id="yes" name="Question3" value="yes">Yes
-                            <input type="radio" id="no" name="Question3" value="no">No
+                            <input type="radio" id="yes" name="Question3" value="yes" onclick="checkyes()">Yes
+                            <input type="radio" id="no" name="Question3" value="no" onclick="checkno()">No
                         </div>
                         <br>
-                        <div class="mx-auto">                     
+                        <div id="soughtpage" style="display: none;">
+                            {% include "sought.html" %}
+                        </div>
+                        
+                        <div id="Q4" style="display: none;">                     
                             <p><b>4. What is the nature of your matter</b></p>
                             <input type="radio" id="civil" name="Question4" value="civil" onclick="check()">Civil
                             <input type="radio" id="criminal" name="Question4" value="criminal" onclick="check()">Criminal
@@ -78,11 +91,102 @@
                     </form>
                 </div>
 
-                <a role="button" type="button" class="btn btn-primary" href="">Let's Go</a>
+                <a style="display: none;" role="button" type="button" class="btn btn-primary" href="">Let's Go</a>
             </div>
         </div>
         <script>
-            function check(){
+            function checkyes() {
+                ans1 = o.Question1.value
+                ans2 = o.Question2.value
+                ans3 = o.Question3.value
+                if (ans1 == "yes") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "block";
+
+                    var Q2 = document.getElementById("Q2");
+                    Q2.style.display = "none";
+
+                    var Q3 = document.getElementById("Q3");
+                    Q3.style.display = "none";
+
+                    var Q4 = document.getElementById("Q4");
+                    Q4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+                }
+                if (ans2 == "yes") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "block";
+
+                    var Q3 = document.getElementById("Q3");
+                    Q3.style.display = "none";
+
+                    var Q4 = document.getElementById("Q4");
+                    Q4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+                }
+                if (ans3 == "yes") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "block";
+
+                    var Q4 = document.getElementById("Q4");
+                    Q4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+                }
+            }
+
+            function checkno() {
+                ans1 = o.Question1.value
+                ans2 = o.Question2.value
+                ans3 = o.Question3.value
+                console.log(ans1)
+                if (ans1 == "no") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "none";
+
+                    var Q2 = document.getElementById("Q2");
+                    Q2.style.display = "block";
+                }
+                if (ans2 == "no") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "none";
+
+                    var Q3 = document.getElementById("Q3");
+                    Q3.style.display = "block";
+                }
+                if (ans3 == "no") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var Q4 = document.getElementById("Q4");
+                    Q4.style.display = "block";
+                }
+            }
+
+            function check() {
                 ans = o.Question4.value
                 if (ans == "civil") {
                     var civilpage = document.getElementById("civilpage");
