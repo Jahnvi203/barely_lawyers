@@ -293,3 +293,25 @@ label {
     background-color: #F1EEDB;
     margin: auto;
 }
+
+#companymessage {
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+}
+
+#unrepresented, #one_off {
+    color: red;
+}
+
+#representedmessage {
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+}
+
+#soughtmessage {
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+}
