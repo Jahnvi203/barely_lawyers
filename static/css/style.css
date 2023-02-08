@@ -314,4 +314,34 @@ label {
     border-radius: 30px; 
     background-color: #FADFB4;
     margin: auto;
+.modal {
+    text-align: left;
+}
+
+.close {
+    background-color: white !important;
+    border: none !important;
+    color: black;
+}
+
+#email-link-label {
+    font-size: 1rem !important;
+    margin-top: -40px !important;
+}
+
+#email-link-input {
+    font-size: 1rem;
+    background-color: #F1EEDB !important;
+    border: 2px solid #F7A01B !important;
+    width: auto !important;
+}
+
+.modal-body {
+    padding: 0px 20px 20px 20px !important;
+}
+
+.error {
+    font-size: 1rem;
+    color: red;
+    font-weight: bold;
 }
