@@ -28,7 +28,7 @@
             </a>
         </nav>
         <div class="row">
-            <div class="col-12 col-lg-2 col-xl-2" id="sidebar">
+            <div class="col col-sm-2 col-sm-push-10" id="sidebar">
                 <h5 id="our-services">Our Services</h5>
                 <div class="accordion" id="sidebar_accordion">
                     <div class="accordion-item">
@@ -39,9 +39,8 @@
                         </p>
                         <div id="c1" class="accordion-collapse collapse" aria-labelledby="h1" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
-                                <p>&emsp;Option 1</p>
-                                <p>&emsp;Option 2</p>
-                                <p>&emsp;Option 3</p>
+                                <p>&emsp;<a href="{{ url_for('maintenance', prev_qn_no = '0') }}">Maintenance</a></p>
+                                <p>&emsp;Divorce</p>
                             </div>
                         </div>
                     </div>
@@ -53,9 +52,6 @@
                         </p>
                         <div id="c2" class="accordion-collapse collapse" aria-labelledby="h2" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
-                                <p>&emsp;Option 1</p>
-                                <p>&emsp;Option 2</p>
-                                <p>&emsp;Option 3</p>
                             </div>
                         </div>
                     </div>
@@ -67,9 +63,6 @@
                         </p>
                         <div id="c3" class="accordion-collapse collapse" aria-labelledby="h3" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
-                                <p>&emsp;Option 1</p>
-                                <p>&emsp;Option 2</p>
-                                <p>&emsp;Option 3</p>
                             </div>
                         </div>
                     </div>
@@ -81,15 +74,12 @@
                         </p>
                         <div id="c4" class="accordion-collapse collapse" aria-labelledby="h4" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
-                                <p>&emsp;Option 1</p>
-                                <p>&emsp;Option 2</p>
-                                <p>&emsp;Option 3</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-10 col-xl-10" class="intro-container">
+            <div class="col col-sm-10 col-sm-pull-2" class="intro-container">
                 <div class="intro">
                     {% if final_qn == 0 %}
                         <h2 id="intro_heading">Tell Us What Happened</h2>
@@ -187,14 +177,13 @@
                                     </div>
                                 {% endif %}
                                 <br>
-                                <div class="navigation-buttons">
+                                <div class="navigation-buttons" id="navigation-row">
                                     <script>
                                         if (window.history.replaceState) {
                                             window.history.replaceState(null, null, window.location.href);
                                         }
                                     </script>
                                     <button type="button" class="btn btn-primary" id="back-button" onclick="history.back()">< Back</button>
-                                    <a type="button" class="btn btn-primary" id="home-button" href="{{ url_for('index') }}">Home</a>
                                     <input type="submit" class="btn btn-primary" id="next-button" value="Next >">
                                 </div>
                             {% else %}
@@ -205,6 +194,8 @@
                                     <div class="resource">
                                         {{ resource_html|safe }}
                                     </div>
+                                    <br>
+                                    <a type="button" class="btn btn-primary" id="home-button" href="{{ url_for('index') }}">Home</a>
                                 {% endif %}
                             {% endif %}
                         </form>

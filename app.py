@@ -5,9 +5,7 @@ from resources.add_inputs import add_inputs_dict
 from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
-from xhtml2pdf import pisa
-import pdfkit
-import wkhtmltopdf
+from flask_weasyprint import HTML, render_pdf, CSS
 import random
 import ssl
 import smtplib
@@ -147,7 +145,7 @@ def maintenance(prev_qn_no):
                     if op3 != "None" and op4 != "None":
                         options_html = f"""
                         <div class="row" id="options-row">
-                            <div class="col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
                                 <label>
                                     <input type="radio" class="form-check-input" id="radio1" name="optoption" value="option1" required/>
                                         <div class="panel panel-default card-input">
@@ -158,7 +156,7 @@ def maintenance(prev_qn_no):
                                         </div>
                                 </label>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
                                 <label>
                                     <input type="radio" class="form-check-input" id="radio2" name="optoption" value="option2" required/>
                                         <div class="panel panel-default card-input">
@@ -169,7 +167,7 @@ def maintenance(prev_qn_no):
                                         </div>
                                 </label>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
                                 <label>
                                     <input type="radio" class="form-check-input" id="radio3" name="optoption" value="option3" required/>
                                         <div class="panel panel-default card-input">
@@ -180,7 +178,7 @@ def maintenance(prev_qn_no):
                                         </div>
                                 </label>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
                                 <label>
                                     <input type="radio" class="form-check-input" id="radio4" name="optoption" value="option4" required/>
                                         <div class="panel panel-default card-input">
@@ -196,7 +194,7 @@ def maintenance(prev_qn_no):
                     elif op3 != "None" and op4 == "None":
                         options_html = f"""
                             <div class="row" id="options-row">
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="radio" class="form-check-input" id="radio1" name="optoption" value="option1" required/>
                                             <div class="panel panel-default card-input">
@@ -207,7 +205,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="radio" class="form-check-input" id="radio2" name="optoption" value="option2" required/>
                                             <div class="panel panel-default card-input">
@@ -218,7 +216,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="radio" class="form-check-input" id="radio3" name="optoption" value="option3" required/>
                                             <div class="panel panel-default card-input">
@@ -234,7 +232,7 @@ def maintenance(prev_qn_no):
                     else:
                         options_html = f"""
                             <div class="row" id="options-row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label>
                                         <input type="radio" class="form-check-input" id="radio1" name="optoption" value="option1" required/>
                                             <div class="panel panel-default card-input">
@@ -245,7 +243,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label>
                                         <input type="radio" class="form-check-input" id="radio2" name="optoption" value="option2" required/>
                                             <div class="panel panel-default card-input">
@@ -298,7 +296,7 @@ def maintenance(prev_qn_no):
                         """
                         options_html += f"""
                             <div class="row" id="options-row">
-                                <div class="col-lg-3">
+                                <div class="col-sm-12 col-md-6 col-lg-3">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check1" name="check1" value="{op1}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -309,7 +307,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-sm-12 col-md-6 col-lg-3">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check2" name="check2" value="{op2}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -320,7 +318,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-sm-12 col-md-6 col-lg-3">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check3" name="check3" value="{op3}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -331,7 +329,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-sm-12 col-md-6 col-lg-3">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check4" name="check4" value="{op4}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -373,7 +371,7 @@ def maintenance(prev_qn_no):
                         """
                         options_html += f"""
                             <div class="row" id="options-row">
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check1" name="check1" value="{op1}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -384,7 +382,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check2" name="check2" value="{op2}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -395,7 +393,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check3" name="check3" value="{op3}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -429,7 +427,7 @@ def maintenance(prev_qn_no):
                         """
                         options_html += f"""
                             <div class="row" id="options-row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check1" name="check1" value="{op1}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -440,7 +438,7 @@ def maintenance(prev_qn_no):
                                             </div>
                                     </label>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label>
                                         <input type="checkbox" class="form-check-input" id="check2" name="check2" value="{op2}" required onclick="check()"/>
                                             <div class="panel panel-default card-input">
@@ -485,17 +483,12 @@ def maintenance(prev_qn_no):
         session['user-answers'] = []
     return render_template('maintenance.html', current = current_qn_no, question = qn, option_1 = op1, option_2 = op2, option_3 = op3, option_4 = op4, html = options_html, is_add_annex = is_add_annex, add_annex_html = add_annex_html, is_add_input = is_add_input, add_input_html = add_input_html, is_resource = is_resource, resource_html = resource_html, is_glossary = is_glossary, glossary_html = glossary_html, final_qn = int(final_qn), user_responses = user_answers_html, pdf_no = pdf_html_no)
 
-@app.route('/report/<no>')
+@app.route('/report/<no>.pdf')
 def report(no):
-    path_wkhtmltopdf = f'C:\Program Files\{"wkhtmltopdf"}\{"bin"}\{"wkhtmltopdf"}.exe'
-    config_wkhtmltopdf = pdfkit.configuration(wkhtmltopdf = path_wkhtmltopdf)
     pdf_html = list(col_html.find({"no": int(no)}))[0]['pdf_html']
-    rendered = render_template('download_pdf.html', html = pdf_html)
-    pdf = pdfkit.from_string(rendered, False, configuration = config_wkhtmltopdf, css = "static\css\style.css", options = {"enable-local-file-access": ""})
-    response = make_response(pdf)
-    response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
-    return response
+    page_html = render_template('download_pdf.html', html = pdf_html)
+    css = CSS(filename = 'static/css/style.css')
+    return render_pdf(HTML(string = page_html))
 
 @app.route("/criteria")
 def OSLAS_criteria():
