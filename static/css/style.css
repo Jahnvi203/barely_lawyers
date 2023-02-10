@@ -30,11 +30,49 @@ h1 {
 
 #sidebar {
     background-color: #F1EEDB;
-    padding: 20px 40px;
+    padding: 20px 30px;
+    height: 84.1vh;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    #sidebar {
+        height: auto;
+        width: 100vw;
+        margin: 0px !important;
+    }
+    
+    .row {
+        width: 100vw !important;
+        margin: 0px !important;
+    }
+    
+    #options-row {
+        width: 100vw !important;
+    }
+
+    .col {
+        width: 100vw !important;
+    }
+
+}
+
+.col-sm-6, .col-md-6, .col-lg-6 {
+    margin-bottom: 25px;
 }
 
 .row {
     height: auto;
+    width: 100vw !important;
+    margin: 0px !important;
+}
+
+#options-row, #navigation-row {
+    width: 100% !important;
+    margin: 0px !important;
 }
 
 #our-services {
@@ -153,6 +191,7 @@ h1 {
     padding: 10px 10px 5px 10px;
     border-radius: 25px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .annex-body {
@@ -303,4 +342,13 @@ label {
     font-size: 1rem;
     color: red;
     font-weight: bold;
+}
+
+.accordion-body a {
+    color: black;
+    text-decoration: none;
+}
+
+.accordion-body a:hover {
+    color: #0d6efd;
 }
