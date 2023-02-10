@@ -26,6 +26,7 @@ db = connection['app']
 col = db.maintenance_qns
 col_pdfs = db.report_pdfs
 col_html = db.pdfs_html
+col_oslas_criteria = db.OSLAS_Criteria
 
 @app.route('/')
 def index():
@@ -498,7 +499,9 @@ def report(no):
 
 @app.route("/criteria")
 def OSLAS_criteria():
-    return render_template('OSLAS_criteria.html')
+    Question = list(col_oslas_criteria.find({"Q1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
+    Q1 = Question["Q1"]
+    return render_template('OSLAS_criteria.html', Q1 = Q1)
 
 @app.route('/send/<email>')
 def send(email):
