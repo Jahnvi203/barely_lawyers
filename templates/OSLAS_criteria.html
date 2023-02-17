@@ -39,11 +39,11 @@
                 <div class="form-container">
                     <br>
                     <form name="oslas">
-                        <div id="Q1">                     
-                            <p><b>{{Q1}}</b></p>
-                            <input type="radio" id="yes" name="Question1" value="yes" onclick="checkyes()"> Yes
+                        <div id="OCQ1">                     
+                            <p><b>{{OCQ1}}</b></p>
+                            <input type="radio" id="yes" name="Question1" value="yes" onclick="checkyes()"> {{OCQ1op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" id="no" name="Question1" value="no" onclick="checkno()"> No
+                            <input type="radio" id="no" name="Question1" value="no" onclick="checkno()"> {{OCQ1op2}}
                         </div>
                         <br>
                         <div id="companypage" style="display: none;">
@@ -51,9 +51,10 @@
                         </div>
 
                         <div id="Q2" style="display: none;">                     
-                            <p><b>2. Are you currently represented by a lawyer?</b></p>
-                            <input type="radio" id="yes" name="Question2" value="yes" onclick="checkyes()">Yes
-                            <input type="radio" id="no" name="Question2" value="no" onclick="checkno()">No
+                            <p><b>{{OCQ2}}</b></p>
+                            <input type="radio" id="yes" name="Question2" value="yes" onclick="checkyes()"> {{OCQ2op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="no" name="Question2" value="no" onclick="checkno()"> {{OCQ2op2}}
                         </div>
                         <br>
                         <div id="representedpage" style="display: none;">
@@ -61,9 +62,10 @@
                         </div>
                         
                         <div id="Q3" style="display: none;">                     
-                            <p><b>3. Have you sought legal advice on this matter before?</b></p>
-                            <input type="radio" id="yes" name="Question3" value="yes" onclick="checkyes()">Yes
-                            <input type="radio" id="no" name="Question3" value="no" onclick="checkno()">No
+                            <p><b>{{OCQ3}}</b></p>
+                            <input type="radio" id="yes" name="Question3" value="yes" onclick="checkyes()"> {{OCQ3op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="no" name="Question3" value="no" onclick="checkno()"> {{OCQ3op2}}
                         </div>
                         <br>
                         <div id="soughtpage" style="display: none;">
@@ -71,10 +73,12 @@
                         </div>
                         
                         <div id="Q4" style="display: none;">                     
-                            <p><b>4. What is the nature of your matter</b></p>
-                            <input type="radio" id="civil" name="Question4" value="civil" onclick="check()">Civil
-                            <input type="radio" id="criminal" name="Question4" value="criminal" onclick="check()">Criminal
-                            <input type="radio" id="family" name="Question4" value="family" onclick="check()">Family
+                            <p><b>{{OCQ4}}</b></p>
+                            <input type="radio" id="civil" name="Question4" value="civil" onclick="check()"> {{OCQ4op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="criminal" name="Question4" value="criminal" onclick="check()"> {{OCQ4op2}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="family" name="Question4" value="family" onclick="check()"> {{OCQ4op3}}
                         </div>
                         <br>
                         <div id="civilpage" style="display: none;">

@@ -5,6 +5,8 @@ from resources.add_inputs import add_inputs_dict
 from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
+import os
+os.add_dll_directory(r"C:\\Program Files\\GTK3-Runtime Win64\\bin")
 from flask_weasyprint import HTML, render_pdf, CSS
 import random
 import ssl
@@ -492,9 +494,33 @@ def report(no):
 
 @app.route("/criteria")
 def OSLAS_criteria():
-    Question = list(col_oslas_criteria.find({"Q1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
-    Q1 = Question["Q1"]
-    return render_template('OSLAS_criteria.html', Q1 = Q1)
+    # OSLAS Criteria Question 1 database
+    OCQuestion1 = list(col_oslas_criteria.find({"OCQ1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
+    OCQ1 = OCQuestion1["OCQ1"]
+    OCQ1op1 = OCQuestion1["OCQ1op1"]
+    OCQ1op2 = OCQuestion1["OCQ1op2"]
+
+    # OSLAS Criteria Question 2 database
+    OCQuestion2 = list(col_oslas_criteria.find({"OCQ2": "2. Are you currently represented by a lawyer?"}))[0]
+    OCQ2 = OCQuestion2["OCQ2"]
+    OCQ2op1 = OCQuestion2["OCQ2op1"]
+    OCQ2op2 = OCQuestion2["OCQ2op2"]
+
+    # OSLAS Criteria Question 3 database
+    OCQuestion3 = list(col_oslas_criteria.find({"OCQ3": "3. Have you sought legal advice on this matter before?"}))[0]
+    OCQ3 = OCQuestion3["OCQ3"]
+    OCQ3op1 = OCQuestion3["OCQ3op1"]
+    OCQ3op2 = OCQuestion3["OCQ3op2"]
+
+    # OSLAS Criteria Question 4 database
+    OCQuestion4 = list(col_oslas_criteria.find({"OCQ4": "4. What is the nature of your matter"}))[0]
+    OCQ4 = OCQuestion4["OCQ4"]
+    OCQ4op1 = OCQuestion4["OCQ4op1"]
+    OCQ4op2 = OCQuestion4["OCQ4op2"]
+    OCQ4op3 = OCQuestion4["OCQ4op3"]
+
+
+    return render_template('OSLAS_criteria.html', OCQ1 = OCQ1, OCQ1op1 = OCQ1op1, OCQ1op2 = OCQ1op2, OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3)
 
 @app.route('/send/<email>')
 def send(email):
