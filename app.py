@@ -27,6 +27,7 @@ col = db.maintenance_qns
 col_pdfs = db.report_pdfs
 col_html = db.pdfs_html
 col_oslas_criteria = db.OSLAS_Criteria
+col_OC_Answers = db.OC_Answers
 
 @app.route('/')
 def index():
@@ -492,8 +493,25 @@ def report(no):
     css = CSS(filename = 'static/css/style.css')
     return render_pdf(HTML(string = page_html))
 
-@app.route("/criteria")
-def OSLAS_criteria():
+@app.route("/OSLAS_Criteria", methods=["POST", "GET"])
+def OSLAS_Criteria():
+    if request.method == "POST":
+        Question1 = request.form.getlist('Question1')
+        print(Question1[0])
+        Question2 = request.form.getlist('Question2')
+        print(Question2[0])
+        Question3 = request.form.getlist('Question3')
+        print(Question3[0])
+        Question4 = request.form.getlist('Question4')
+        print(Question4[0])
+
+        col_OC_Answers.insert_one({
+            "Question 1": Question1[0],
+            "Question 2": Question2[0],
+            "Question 3": Question3[0],
+            "Question 4": Question4[0]
+        })
+
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"OCQ1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
     OCQ1 = OCQuestion1["OCQ1"]
@@ -519,8 +537,10 @@ def OSLAS_criteria():
     OCQ4op2 = OCQuestion4["OCQ4op2"]
     OCQ4op3 = OCQuestion4["OCQ4op3"]
 
-
-    return render_template('OSLAS_criteria.html', OCQ1 = OCQ1, OCQ1op1 = OCQ1op1, OCQ1op2 = OCQ1op2, OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3)
+    return render_template('OSLAS_criteria.html', OCQ1 = OCQ1, OCQ1op1 = OCQ1op1, OCQ1op2 = OCQ1op2,
+    OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
+    OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
+    OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3)
 
 @app.route('/send/<email>')
 def send(email):
