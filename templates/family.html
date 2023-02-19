@@ -9,17 +9,17 @@
 <body>
     <br>
     <p><b>Which of the following category best describes the matter you are seeking advice on?</b></p>
-    <p><b>i. Integrated Family Application Management System (iFAMS)</b></p>
+    <p><b>{{Family_i}}</b></p>
     <div class="checkboxes">
-        <label><input type="checkbox" id="q5a" onclick="checkiFAMS()"> <span>Maintenance Order (i.e. Enforcement / variation/ application)</span></label>
+        <label><input type="checkbox" id="q5a" onclick="checkiFAMS()"> <span>{{Family_i_op1}}</span></label>
         <br><br>
-        <label><input type="checkbox" id="q5b" onclick="checkiFAMS()"> <span>Personal Protection Order</span>
+        <label><input type="checkbox" id="q5b" onclick="checkiFAMS()"> <span>{{Family_i_op2}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Personal Protection Order">(i)</a>
         </label>
         <br><br>
-        <label><input type="checkbox" id="q5c" onclick="checkiFAMS()"> <span>Mental Capacity Act Application (including appointment of a deputy)</span></label>
+        <label><input type="checkbox" id="q5c" onclick="checkiFAMS()"> <span>{{Family_i_op3}}</span></label>
         <br><br>
-        <label><input type="checkbox" id="q5d" onclick="checkiFAMS()"> <span>Vulnerable Adults Act Application</span>
+        <label><input type="checkbox" id="q5d" onclick="checkiFAMS()"> <span>{{Family_i_op4}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Vulnerable Adults Act Application">(i)</a>
         </label>
     </div>
@@ -32,13 +32,12 @@
 
     <br>
 
-    <p><b>ii. Divorce application (simplified track)</b></p>
-    <p><b>You and your spouse agree on the following:</b></p>
+    <p><b>{{Family_ii}}</b></p>
+    <p><b>{{Family_ii_prompt}}</b></p>
     <div class="checkboxes">
-        
-        <label><input type="checkbox" id="q6a" onclick="checksimplified()"> <span>The marriage has irretrievably broken down</span></label>
+        <label><input type="checkbox" id="q6a" onclick="checksimplified()"> <span>{{Family_ii_op1}}</span></label>
         <br><br>
-        <label><input type="checkbox" id="q6b" onclick="checksimplified()"> <span>Ancillary matters (i.e. child custody & control / maintenance and/or division of matrimonial assets)</span></label>
+        <label><input type="checkbox" id="q6b" onclick="checksimplified()"> <span>{{Family_ii_op2}}</span></label>
     </div>
 
     <br>
@@ -50,7 +49,7 @@
     <br>
 
     <div class="checkboxes">
-        <label><input type="checkbox" id="nones" onclick="checknone()"> <span>None of the above</span></label>
+        <label><input type="checkbox" id="nones" onclick="checknone()"> <span>{{Family_ii_op3}}</span></label>
     </div>
     
     <br><br>

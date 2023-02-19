@@ -5,8 +5,6 @@ from resources.add_inputs import add_inputs_dict
 from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
-import os
-os.add_dll_directory(r"C:\\Program Files\\GTK3-Runtime Win64\\bin")
 from flask_weasyprint import HTML, render_pdf, CSS
 import random
 import ssl
@@ -497,20 +495,39 @@ def report(no):
 def OSLAS_Criteria():
     if request.method == "POST":
         Question1 = request.form.getlist('Question1')
-        print(Question1[0])
+        # print(Question1[0])
         Question2 = request.form.getlist('Question2')
-        print(Question2[0])
+        # print(Question2[0])
         Question3 = request.form.getlist('Question3')
-        print(Question3[0])
+        # print(Question3[0])
         Question4 = request.form.getlist('Question4')
-        print(Question4[0])
+        # print(Question4[0])
 
-        col_OC_Answers.insert_one({
-            "Question 1": Question1[0],
-            "Question 2": Question2[0],
-            "Question 3": Question3[0],
-            "Question 4": Question4[0]
-        })
+        if Question1[0] == "yes":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0]
+            })
+        
+        if Question1[0] == "no" and Question2[0] == "yes":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0]
+            })
+
+        if Question1[0] == "no" and Question2[0] == "no" and Question3[0] == "yes":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0]
+            })
+        
+        if Question1[0] == "no" and Question2[0] == "no" and Question3[0] == "no":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0]
+            })
 
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"OCQ1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
@@ -537,10 +554,67 @@ def OSLAS_Criteria():
     OCQ4op2 = OCQuestion4["OCQ4op2"]
     OCQ4op3 = OCQuestion4["OCQ4op3"]
 
+    # OSLAS Criteria Civil(a) database
+    OCCivil_a = list(col_oslas_criteria.find({"Civil_a": "a. My claim is:"}))[0]
+    Civil_a = OCCivil_a["Civil_a"]
+    Civil_a_op1 = OCCivil_a["Civil_a_op1"]
+    Civil_a_op2 = OCCivil_a["Civil_a_op2"]
+    Civil_a_op3 = OCCivil_a["Civil_a_op3"]
+
+    # OSLAS Criteria Civil(b) database
+    OCCivil_b = list(col_oslas_criteria.find({"Civil_b": "b. My claim is regarding:"}))[0]
+    Civil_b = OCCivil_b["Civil_b"]
+    Civil_b_i = OCCivil_b["Civil_b_i"]
+    Civil_b_i_op1 = OCCivil_b["Civil_b_i_op1"]
+    Civil_b_i_op2 = OCCivil_b["Civil_b_i_op2"]
+    Civil_b_i_op3 = OCCivil_b["Civil_b_i_op3"]
+    Civil_b_i_op4 = OCCivil_b["Civil_b_i_op4"]
+    Civil_b_ii = OCCivil_b["Civil_b_ii"]
+    Civil_b_ii_op1 = OCCivil_b["Civil_b_ii_op1"]
+    Civil_b_ii_op2 = OCCivil_b["Civil_b_ii_op2"]
+    Civil_b_iii = OCCivil_b["Civil_b_iii"]
+    Civil_b_iii_op1 = OCCivil_b["Civil_b_iii_op1"]
+    Civil_b_iv = OCCivil_b["Civil_b_iv"]
+    Civil_b_iv_prompt = OCCivil_b["Civil_b_iv_prompt"]
+    Civil_b_iv_op1 = OCCivil_b["Civil_b_iv_op1"]
+    Civil_b_iv_op2 = OCCivil_b["Civil_b_iv_op2"]
+    Civil_b_iv_op3 = OCCivil_b["Civil_b_iv_op3"]
+    Civil_b_iv_op4 = OCCivil_b["Civil_b_iv_op4"]
+    Civil_b_v = OCCivil_b["Civil_b_v"]
+    Civil_b_v_op1 = OCCivil_b["Civil_b_v_op1"]
+
+    # OSLAS Criteria Family database
+    OCFamily = list(col_oslas_criteria.find({"Family_i": "i. Integrated Family Application Management System (iFAMS)"}))[0]
+    Family_i = OCFamily["Family_i"]
+    Family_i_op1 = OCFamily["Family_i_op1"]
+    Family_i_op2 = OCFamily["Family_i_op2"]
+    Family_i_op3 = OCFamily["Family_i_op3"]
+    Family_i_op4 = OCFamily["Family_i_op4"]
+    Family_ii = OCFamily["Family_ii"]
+    Family_ii_prompt = OCFamily["Family_ii_prompt"]
+    Family_ii_op1 = OCFamily["Family_ii_op1"]
+    Family_ii_op2 = OCFamily["Family_ii_op2"]
+    Family_ii_op3 = OCFamily["Family_ii_op3"]
+
+    # OSLAS Criteria Criminal database
+    OCCriminal = list(col_oslas_criteria.find({"Criminal": "Please select all that applies"}))[0]
+    Criminal = OCCriminal["Criminal"]
+    Criminal_op1 = OCCriminal["Criminal_op1"]
+    Criminal_op2 = OCCriminal["Criminal_op2"]
+    Criminal_op3 = OCCriminal["Criminal_op3"]
+    Criminal_op4 = OCCriminal["Criminal_op4"]
+    Criminal_op5 = OCCriminal["Criminal_op5"]
+    Criminal_op6 = OCCriminal["Criminal_op6"]
+    Criminal_op7 = OCCriminal["Criminal_op7"]
+
     return render_template('OSLAS_criteria.html', OCQ1 = OCQ1, OCQ1op1 = OCQ1op1, OCQ1op2 = OCQ1op2,
     OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
-    OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3)
+    OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
+    Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2, Civil_a_op3 = Civil_a_op3,
+    Civil_b = Civil_b, Civil_b_i = Civil_b_i, Civil_b_i_op1 = Civil_b_i_op1, Civil_b_i_op2 = Civil_b_i_op2, Civil_b_i_op3 = Civil_b_i_op3, Civil_b_i_op4 = Civil_b_i_op4, Civil_b_ii = Civil_b_ii, Civil_b_ii_op1 = Civil_b_ii_op1, Civil_b_ii_op2 = Civil_b_ii_op2, Civil_b_iii = Civil_b_iii, Civil_b_iii_op1 = Civil_b_iii_op1, Civil_b_iv = Civil_b_iv, Civil_b_iv_prompt = Civil_b_iv_prompt, Civil_b_iv_op1 = Civil_b_iv_op1, Civil_b_iv_op2 = Civil_b_iv_op2, Civil_b_iv_op3 = Civil_b_iv_op3, Civil_b_iv_op4 = Civil_b_iv_op4, Civil_b_v = Civil_b_v, Civil_b_v_op1 = Civil_b_v_op1,
+    Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
+    Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
 
 @app.route('/send/<email>')
 def send(email):

@@ -9,44 +9,44 @@
 <body>
     <br>
     <p><b>Which of the following category best describes the matter you are seeking advice on?</b></p>
-    <p><b>a. My claim is:</b></p>
+    <p><b>{{Civil_a}}</b></p>
     <div class="checkboxes">
-        <label><input type="checkbox"> <span>Less than $20 000</span>
+        <label><input type="checkbox"> <span>{{Civil_a_op1}}</span>
         <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Less than $20 000:</b> The limit can be raised to $30,000 if there is a Memorandum of Consent from both parties.">(i)</a>
         </label>
         <br><br>
-        <label><input type="checkbox"> <span>Filed within 2 years of the event which creates your cause of action</span>
+        <label><input type="checkbox"> <span>{{Civil_a_op2}}</span>
         <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Filed within 2 years:</b> A cause of action is the set of facts which entitles you to start a court action against another party.
         <br><br>
         Example: A shopkeeper who does not get paid after delivering goods to a customer may have a cause of action to claim the price of the unpaid goods.">(i)</a>
         </label>
         <br><br>
-        <label><input type="checkbox"> <span>None of the above</span></label>
+        <label><input type="checkbox"> <span>{{Civil_a_op3}}</span></label>
     </div>
 
     <br><br>
     
     <div>
-        <p><b>b. My claim is regarding:</b></p>
-        <p><b>i. Small Claims Tribunal </b></p>
+        <p><b>{{Civil_b}}</b></p>
+        <p><b>{{Civil_b_i}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox"> <span>Tenancy agreement for residential premises < 2 years</span>
+            <label><input type="checkbox"> <span>{{Civil_b_i_op1}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tenancy agreement for residential premises < 2 years:</b> This excludes the lease of industrial or commercial premises, or license of any premises for any period of time.">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox"> <span>Contract for sale of good</span>
+            <label><input type="checkbox"> <span>{{Civil_b_i_op2}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for sale of good:</b> This includes claims arising from a contract in which goods are sold or bought in exchange for money.
                 <br><br>
                 Example: Purchase of a TV">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox"> <span>Contract for provision of services</span>
+            <label><input type="checkbox"> <span>{{Civil_b_i_op3}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for the provision of services:</b> This includes claims arising from a contract to provide services involving skill or labour, or both, in exchange for money.
                 <br><br>
                 Example: Renovation contract.">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox"> <span>Damage to property not arising from or in connection with the use of a motor vehicle, or caused by a neighbour</span>
+            <label><input type="checkbox"> <span>{{Civil_b_i_op4}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Damage to property:</b> This includes claims in tort for damage caused to any property, which may be incurred by owners of a property because of careless, reckless or improper acts by others.
                 <br><br>
                 This does not include damage to property related to any of the following scenarios:
@@ -59,41 +59,44 @@
 
         <br><br>
 
-        <p><b>ii. Employment Claims Tribunal</b></p>
+        <p><b>{{Civil_b_ii}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox"> <span>Dispute is unresolved after mediation at Tripartite Alliance for Dispute Management (TADM)</span>
+            <label><input type="checkbox"> <span>{{Civil_b_ii_op1}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tripartite Alliance for Dispute Management (TADM):</b> TADM is established by the Ministry of Manpower (MOM), National Trades Union Congress (NTUC) and Singapore National Employers Federation (SNEF) to help employees and employers manage their employment disputes through advisory and mediation services.
                 <br><br>
                 Mediation at the TADM is compulsory before claims can be filed at the Employment Claims Tribunal (ECT). Please submit a mediation request to TADM as soon as your claim arises, as there are limits to the claim period. For more information, please refer to TADM’s Mediation Guide. ">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox"> <span>Received a claim referral certificate by an approved TADM mediator</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_ii_op2}}</span></label>
         </div>
 
         <br><br>
 
-        <p><b>iii. Community Disputes Resolutions Tribunal</b></p>
+        <p><b>{{Civil_b_iii}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox"> <span>Neighbour Disputes</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_iii_op1}}</span></label>
         </div>
 
         <br><br>
 
-        <p><b>iv. Protection from Harassment</b></p>
-        <p><b>You are seeking for the harasser to:</b></p>
+        <p><b>{{Civil_b_iv}}</b></p>
+        <p><b>{{Civil_b_iv_prompt}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox"> <span>Stop the harassing behaviour</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_iv_op1}}</span></label>
             <br><br>
-            <label><input type="checkbox"> <span>Undergo psychiatric treatment</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_iv_op2}}</span></label>
             <br><br>
-            <label><input type="checkbox"> <span>Stop spreading a false statement of fact</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_iv_op3}}</span></label>
             <br><br>
-            <label><input type="checkbox"> <span>Comply with other related civil law remedies</span></label>
+            <label><input type="checkbox"> <span>{{Civil_b_iv_op4}}</span></label>
         </div>
+        
         <br><br>
+
+        <p><b>{{Civil_b_v}}</b></p>  
+        <div class="checkboxes">
+            <label><input type="checkbox"> <span>{{Civil_b_v_op1}}</span></label>
+        </div>
     </div>
-    
-    <script>
-    </script>
 </body>
 </html>

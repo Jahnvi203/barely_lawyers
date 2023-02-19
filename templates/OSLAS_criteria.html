@@ -40,7 +40,7 @@
 
                 <div class="form-container">
                     <br>
-                    <form name="oslas" method="post">
+                    <form name="oslas" method="post" target="frame">
                         <!-- For Question 4 -->
                         <div id="OCQ4" style="display: none;">                     
                             <p><b>{{OCQ4}}</b></p>
@@ -114,6 +114,8 @@
                     </form>
             </div>
         </div>
+        <!-- This iframe is so that we can submit the form but not refresh the page -->
+        <iframe name="frame"></iframe>
         <script>
 
             function checkyes() {
