@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, make_response
+from flask import Flask, render_template, request, redirect, url_for, session, make_response, jsonify
 from pymongo import MongoClient
 from resources.add_annexes import add_annexes_dict
 from resources.add_inputs import add_inputs_dict
@@ -6,11 +6,13 @@ from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
 from flask_weasyprint import HTML, render_pdf, CSS
+from suggest_advice import suggest_advice
 import random
 import ssl
 import smtplib
 from email.mime.text import MIMEText
 import json
+import datetime
 
 app = Flask(__name__)
 app.secret_key = '1E44M1ixSeNGzO3T0dqIoXra7De5B46n'
@@ -505,20 +507,23 @@ def OSLAS_Criteria():
 
         if Question1[0] == "yes":
             col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0]
+                "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
+                "Current Date": datetime.datetime.now()
             })
         
         if Question1[0] == "no" and Question2[0] == "yes":
             col_OC_Answers.insert_one({
                 "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0]
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Current Date": datetime.datetime.now()
             })
 
         if Question1[0] == "no" and Question2[0] == "no" and Question3[0] == "yes":
             col_OC_Answers.insert_one({
                 "Are you enquiring as a representative of a company (i.e. Pte Ltd)?": Question1[0],
                 "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0]
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "Current Date": datetime.datetime.now()
             })
         
         if Question1[0] == "no" and Question2[0] == "no" and Question3[0] == "no":
@@ -555,33 +560,41 @@ def OSLAS_Criteria():
     OCQ4op3 = OCQuestion4["OCQ4op3"]
 
     # OSLAS Criteria Civil(a) database
-    OCCivil_a = list(col_oslas_criteria.find({"Civil_a": "a. My claim is:"}))[0]
+    OCCivil_a = list(col_oslas_criteria.find({"Civil_a": "a. I am the:"}))[0]
     Civil_a = OCCivil_a["Civil_a"]
     Civil_a_op1 = OCCivil_a["Civil_a_op1"]
     Civil_a_op2 = OCCivil_a["Civil_a_op2"]
-    Civil_a_op3 = OCCivil_a["Civil_a_op3"]
 
     # OSLAS Criteria Civil(b) database
-    OCCivil_b = list(col_oslas_criteria.find({"Civil_b": "b. My claim is regarding:"}))[0]
+    OCCivil_b = list(col_oslas_criteria.find({"Civil_b": "b. My claim arises from:"}))[0]
     Civil_b = OCCivil_b["Civil_b"]
-    Civil_b_i = OCCivil_b["Civil_b_i"]
-    Civil_b_i_op1 = OCCivil_b["Civil_b_i_op1"]
-    Civil_b_i_op2 = OCCivil_b["Civil_b_i_op2"]
-    Civil_b_i_op3 = OCCivil_b["Civil_b_i_op3"]
-    Civil_b_i_op4 = OCCivil_b["Civil_b_i_op4"]
-    Civil_b_ii = OCCivil_b["Civil_b_ii"]
-    Civil_b_ii_op1 = OCCivil_b["Civil_b_ii_op1"]
-    Civil_b_ii_op2 = OCCivil_b["Civil_b_ii_op2"]
-    Civil_b_iii = OCCivil_b["Civil_b_iii"]
-    Civil_b_iii_op1 = OCCivil_b["Civil_b_iii_op1"]
-    Civil_b_iv = OCCivil_b["Civil_b_iv"]
-    Civil_b_iv_prompt = OCCivil_b["Civil_b_iv_prompt"]
-    Civil_b_iv_op1 = OCCivil_b["Civil_b_iv_op1"]
-    Civil_b_iv_op2 = OCCivil_b["Civil_b_iv_op2"]
-    Civil_b_iv_op3 = OCCivil_b["Civil_b_iv_op3"]
-    Civil_b_iv_op4 = OCCivil_b["Civil_b_iv_op4"]
-    Civil_b_v = OCCivil_b["Civil_b_v"]
-    Civil_b_v_op1 = OCCivil_b["Civil_b_v_op1"]
+    Civil_b_op1 = OCCivil_b["Civil_b_op1"]
+    Civil_b_op2 = OCCivil_b["Civil_b_op2"]
+    Civil_b_op3 = OCCivil_b["Civil_b_op3"]
+    Civil_b_op4 = OCCivil_b["Civil_b_op4"]
+    Civil_b_op5 = OCCivil_b["Civil_b_op5"]
+    Civil_b_op6 = OCCivil_b["Civil_b_op6"]
+    Civil_b_op7 = OCCivil_b["Civil_b_op7"]
+    Civil_b_op8 = OCCivil_b["Civil_b_op8"]
+
+    # OSLAS Criteria Civil(c) respondent database
+    OCCivil_c_respondent = list(col_oslas_criteria.find({"Civil_c_respondent": "c. I want to:"}))[0]
+    Civil_c_respondent = OCCivil_c_respondent["Civil_c_respondent"]
+    Civil_c_respondent_op1 = OCCivil_c_respondent["Civil_c_respondent_op1"]
+    Civil_c_respondent_op2 = OCCivil_c_respondent["Civil_c_respondent_op2"]
+    Civil_c_respondent_op3 = OCCivil_c_respondent["Civil_c_respondent_op3"]
+    Civil_c_respondent_op4 = OCCivil_c_respondent["Civil_c_respondent_op4"]
+    Civil_c_respondent_op5 = OCCivil_c_respondent["Civil_c_respondent_op5"]
+    Civil_c_respondent_op6 = OCCivil_c_respondent["Civil_c_respondent_op6"]
+
+    # OSLAS Criteria Civil(c) claimant database
+    OCCivil_c_claimant = list(col_oslas_criteria.find({"Civil_c_claimant": "c. I want to:"}))[0]
+    Civil_c_claimant = OCCivil_c_claimant["Civil_c_claimant"]
+    Civil_c_claimant_op1 = OCCivil_c_claimant["Civil_c_claimant_op1"]
+    Civil_c_claimant_op2 = OCCivil_c_claimant["Civil_c_claimant_op2"]
+    Civil_c_claimant_op3 = OCCivil_c_claimant["Civil_c_claimant_op3"]
+    Civil_c_claimant_op4 = OCCivil_c_claimant["Civil_c_claimant_op4"]
+    Civil_c_claimant_op5 = OCCivil_c_claimant["Civil_c_claimant_op5"]
 
     # OSLAS Criteria Family database
     OCFamily = list(col_oslas_criteria.find({"Family_i": "i. Integrated Family Application Management System (iFAMS)"}))[0]
@@ -611,14 +624,31 @@ def OSLAS_Criteria():
     OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
     OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
-    Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2, Civil_a_op3 = Civil_a_op3,
-    Civil_b = Civil_b, Civil_b_i = Civil_b_i, Civil_b_i_op1 = Civil_b_i_op1, Civil_b_i_op2 = Civil_b_i_op2, Civil_b_i_op3 = Civil_b_i_op3, Civil_b_i_op4 = Civil_b_i_op4, Civil_b_ii = Civil_b_ii, Civil_b_ii_op1 = Civil_b_ii_op1, Civil_b_ii_op2 = Civil_b_ii_op2, Civil_b_iii = Civil_b_iii, Civil_b_iii_op1 = Civil_b_iii_op1, Civil_b_iv = Civil_b_iv, Civil_b_iv_prompt = Civil_b_iv_prompt, Civil_b_iv_op1 = Civil_b_iv_op1, Civil_b_iv_op2 = Civil_b_iv_op2, Civil_b_iv_op3 = Civil_b_iv_op3, Civil_b_iv_op4 = Civil_b_iv_op4, Civil_b_v = Civil_b_v, Civil_b_v_op1 = Civil_b_v_op1,
+    Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2,
+    Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
+    Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,
+    Civil_c_claimant = Civil_c_claimant, Civil_c_claimant_op1 = Civil_c_claimant_op1, Civil_c_claimant_op2 = Civil_c_claimant_op2, Civil_c_claimant_op3 = Civil_c_claimant_op3, Civil_c_claimant_op4 = Civil_c_claimant_op4, Civil_c_claimant_op5 = Civil_c_claimant_op5,
     Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
     Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
 
 @app.route('/send/<email>')
 def send(email):
     pass
+
+@app.route('/legal')
+def legal():
+    return render_template('legal.html')
+
+@app.route('/get_advice', methods=['POST'])
+def get_advice():
+    # Get the legal issue from the POST request data
+    legal_issue = request.form['legal_issue']
+
+    # Call the suggest_advice() function to get the top case facts and advice
+    top_case_facts, top_advice = suggest_advice(legal_issue)
+
+    # Return the top case facts and advice as a JSON object
+    return jsonify(top_case_facts=top_case_facts, top_advice=top_advice)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
