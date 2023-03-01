@@ -1,102 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename = 'css/style.css') }}"  rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <title>Civil</title>
 </head>
 <body>
-    <br>
+    
     <p><b>Which of the following category best describes the matter you are seeking advice on?</b></p>
     <p><b>{{Civil_a}}</b></p>
-    <div class="checkboxes">
-        <label><input type="checkbox"> <span>{{Civil_a_op1}}</span>
-        <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Less than $20 000:</b> The limit can be raised to $30,000 if there is a Memorandum of Consent from both parties.">(i)</a>
+    <div class="radioboxes">
+        <label><input type="radio" name="Question5a" value="claimant" onclick="checkparty()"> <span>{{Civil_a_op1}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Claimant:</b> The party who files the claim">(i)</a>
         </label>
         <br><br>
-        <label><input type="checkbox"> <span>{{Civil_a_op2}}</span>
-        <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Filed within 2 years:</b> A cause of action is the set of facts which entitles you to start a court action against another party.
-        <br><br>
-        Example: A shopkeeper who does not get paid after delivering goods to a customer may have a cause of action to claim the price of the unpaid goods.">(i)</a>
+        <label><input type="radio" name="Question5a" value="respondent" onclick="checkparty()"> <span>{{Civil_a_op2}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Respondent:</b> The party against whom the claim is filed is the respondent">(i)</a>
         </label>
-        <br><br>
-        <label><input type="checkbox"> <span>{{Civil_a_op3}}</span></label>
     </div>
 
     <br><br>
     
-    <div>
-        <p><b>{{Civil_b}}</b></p>
-        <p><b>{{Civil_b_i}}</b></p>
-        <div class="checkboxes">
-            <label><input type="checkbox"> <span>{{Civil_b_i_op1}}</span>
-                <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tenancy agreement for residential premises < 2 years:</b> This excludes the lease of industrial or commercial premises, or license of any premises for any period of time.">(i)</a>
-            </label>
-            <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_i_op2}}</span>
-                <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for sale of good:</b> This includes claims arising from a contract in which goods are sold or bought in exchange for money.
-                <br><br>
-                Example: Purchase of a TV">(i)</a>
-            </label>
-            <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_i_op3}}</span>
-                <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for the provision of services:</b> This includes claims arising from a contract to provide services involving skill or labour, or both, in exchange for money.
-                <br><br>
-                Example: Renovation contract.">(i)</a>
-            </label>
-            <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_i_op4}}</span>
-                <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Damage to property:</b> This includes claims in tort for damage caused to any property, which may be incurred by owners of a property because of careless, reckless or improper acts by others.
-                <br><br>
-                This does not include damage to property related to any of the following scenarios:
-                <br><br>
-                •	Arising from or in connection with the use of a motor vehicle. 
-                <br>
-                •	Caused by a neighbour (under Section 4 of the Community Disputes Resolution Act).">(i)</a>
-            </label>
-        </div>
-
+    <p><b>{{Civil_b}}</b></p>
+    <div class="radioboxes">
+        <label><input type="radio" name="Question5b" value="tenancy" onclick="checkparty()"> <span>{{Civil_b_op1}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tenancy agreement for residential premises < 2 years:</b> This excludes the lease of industrial or commercial premises, or license of any premises for any period of time.">(i)</a>
+        </label>
         <br><br>
-
-        <p><b>{{Civil_b_ii}}</b></p>
-        <div class="checkboxes">
-            <label><input type="checkbox"> <span>{{Civil_b_ii_op1}}</span>
-                <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tripartite Alliance for Dispute Management (TADM):</b> TADM is established by the Ministry of Manpower (MOM), National Trades Union Congress (NTUC) and Singapore National Employers Federation (SNEF) to help employees and employers manage their employment disputes through advisory and mediation services.
-                <br><br>
-                Mediation at the TADM is compulsory before claims can be filed at the Employment Claims Tribunal (ECT). Please submit a mediation request to TADM as soon as your claim arises, as there are limits to the claim period. For more information, please refer to TADM’s Mediation Guide. ">(i)</a>
-            </label>
+        <label><input type="radio" name="Question5b" value="contract_for_sale" onclick="checkparty()"> <span>{{Civil_b_op2}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for sale of good:</b> This includes claims arising from a contract in which goods are sold or bought in exchange for money.
             <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_ii_op2}}</span></label>
-        </div>
-
+            Example: Purchase of a TV">(i)</a>
+        </label>
         <br><br>
-
-        <p><b>{{Civil_b_iii}}</b></p>
-        <div class="checkboxes">
-            <label><input type="checkbox"> <span>{{Civil_b_iii_op1}}</span></label>
-        </div>
-
+        <label><input type="radio" name="Question5b" value="provision" onclick="checkparty()"> <span>{{Civil_b_op3}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for the provision of services:</b> This includes claims arising from a contract to provide services involving skill or labour, or both, in exchange for money.
+            <br><br>
+            Example: Renovation contract.">(i)</a>
+        </label>
         <br><br>
-
-        <p><b>{{Civil_b_iv}}</b></p>
-        <p><b>{{Civil_b_iv_prompt}}</b></p>
-        <div class="checkboxes">
-            <label><input type="checkbox"> <span>{{Civil_b_iv_op1}}</span></label>
+        <label><input type="radio" name="Question5b" value="damage_to_property" onclick="checkparty()"> <span>{{Civil_b_op4}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Damage to property:</b> This includes claims in tort for damage caused to any property, which may be incurred by owners of a property because of careless, reckless or improper acts by others.
             <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_iv_op2}}</span></label>
+            This does not include damage to property related to any of the following scenarios:
             <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_iv_op3}}</span></label>
-            <br><br>
-            <label><input type="checkbox"> <span>{{Civil_b_iv_op4}}</span></label>
-        </div>
-        
+            •	Arising from or in connection with the use of a motor vehicle. 
+            <br>
+            •	Caused by a neighbour (under Section 4 of the Community Disputes Resolution Act).">(i)</a>
+        </label>
         <br><br>
+        <label><input type="radio" name="Question5b"> <span>{{Civil_b_op5}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Employment matters">(i)</a>
+        </label>
+        <br><br>
+        <label><input type="radio" name="Question5b"> <span>{{Civil_b_op6}}</span>
+        </label>
+        <br><br>
+        <label><input type="radio" name="Question5b"> <span>{{Civil_b_op7}}</span>
+        </label>
+        <br><br>
+        <label><input type="radio" name="Question5b"> <span>{{Civil_b_op8}}</span>
+        </label>
+    </div>
 
-        <p><b>{{Civil_b_v}}</b></p>  
-        <div class="checkboxes">
-            <label><input type="checkbox"> <span>{{Civil_b_v_op1}}</span></label>
+    <br><br>
+
+    <div id="respondent" style="display: none;">
+        <p><b>{{Civil_c_respondent}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" name="Question5c_respondent" value="admit" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent" value="counter" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent" value="dispute" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent" value="appeal" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent" value="set" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op5}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent" value="none" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op6}}</span></label>
         </div>
     </div>
+
+    <br><br>
+
+    <div id="claimant" style="display: none;">
+        <p><b>{{Civil_c_claimant}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" name="Question5c_claimant"> <span>{{Civil_c_claimant_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant"> <span>{{Civil_c_claimant_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant"> <span>{{Civil_c_claimant_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant"> <span>{{Civil_c_claimant_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant"> <span>{{Civil_c_claimant_op5}}</span></label>
+        </div>
+    </div>
+
+    <div id="admitpage" style="display: none;">
+        {% include "admit.html" %}
+    </div>
+    <div id="counterclaimpage" style="display: none;">
+        {% include "counterclaim.html" %}
+    </div>
+    <div id="disputepage" style="display: none;">
+        {% include "dispute.html" %}
+    </div>
+    <div id="appealpage" style="display: none;">
+        {% include "appeal.html" %}
+    </div>
+    <div id="set_asidepage" style="display: none;">
+        {% include "set_aside.html" %}
+    </div>
+
+
+    <script>
+        function checkparty() {
+            Question5a = oslas.Question5a.value
+            Question5b = oslas.Question5b.value
+
+            if (Question5a == "respondent" && (Question5b == "tenancy" || Question5b == "contract_for_sale" || Question5b == "provision" || Question5b == "damage_to_property")) {
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "block";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+            }
+            else if (Question5a == "claimant" && (Question5b == "tenancy" || Question5b == "contract_for_sale" || Question5b == "provision" || Question5b == "damage_to_property")) {
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "block";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+            }
+        }
+
+        function check_civil_c_respondent() {
+            Question5c_respondent = oslas.Question5c_respondent.value
+
+            if (Question5c_respondent == "admit") {
+                var admitpage = document.getElementById("admitpage");
+                admitpage.style.display = "block";
+            }
+
+            if (Question5c_respondent == "counter") {
+                var counterclaimpage = document.getElementById("counterclaimpage");
+                counterclaimpage.style.display = "block";
+            }
+
+            if (Question5c_respondent == "dispute") {
+                var disputepage = document.getElementById("disputepage");
+                disputepage.style.display = "block";
+            }
+
+            if (Question5c_respondent == "appeal") {
+                var appealpage = document.getElementById("appealpage");
+                appealpage.style.display = "block";
+            }
+
+            if (Question5c_respondent == "set") {
+                var set_asidepage = document.getElementById("set_asidepage");
+                set_asidepage.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>

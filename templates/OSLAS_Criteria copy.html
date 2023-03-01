@@ -37,12 +37,12 @@
 
                 <h4 id="help">Help us better understand your case</h4>
                 <br>
-
+                
                 <form name="oslas" method="post" target="frame">
-                <div id="OSLASform" class="form-container">
+                <div class="form-container">
                     <br>
                         <!-- For Question 4 -->
-                        <div id="OCQ4" style="display: none;">            
+                        <div id="OCQ4" style="display: none;">               
                             <p><b>{{OCQ4}}</b></p>
                             <input type="radio" id="civil" name="Question4" value="civil" onclick="check()"> {{OCQ4op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,11 +64,11 @@
                         </div>
 
                         <!-- For Question 1 -->
-                        <div id="OCQ1">  
+                        <div id="OCQ1">       
                             <p><b>{{OCQ1}}</b></p>
-                            <input type="radio" name="Question1" value="yes" onclick="checkyes()"> {{OCQ1op1}}
+                            <input type="radio" id="yes" name="Question1" value="yes" onclick="checkyes()"> {{OCQ1op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="Question1" value="no" onclick="checkno()"> {{OCQ1op2}}
+                            <input type="radio" id="no" name="Question1" value="no" onclick="checkno()"> {{OCQ1op2}}
                         </div>
                         <br>
                         <div id="companypage" style="display: none;">
@@ -76,11 +76,11 @@
                         </div>
 
                         <!-- For Question 2 -->
-                        <div id="OCQ2" style="display: none;">               
+                        <div id="OCQ2" style="display: none;">                     
                             <p><b>{{OCQ2}}</b></p>
-                            <input type="radio" name="Question2" value="yes" onclick="checkyes()"> {{OCQ2op1}}
+                            <input type="radio" id="yes" name="Question2" value="yes" onclick="checkyes()"> {{OCQ2op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="Question2" value="no" onclick="checkno()"> {{OCQ2op2}}
+                            <input type="radio" id="no" name="Question2" value="no" onclick="checkno()"> {{OCQ2op2}}
                         </div>
                         <br>
                         <div id="representedpage" style="display: none;">
@@ -90,9 +90,9 @@
                         <!-- For Question 3 -->
                         <div id="OCQ3" style="display: none;">                     
                             <p><b>{{OCQ3}}</b></p>
-                            <input type="radio" name="Question3" value="yes" onclick="checkyes()"> {{OCQ3op1}}
+                            <input type="radio" id="yes" name="Question3" value="yes" onclick="checkyes()"> {{OCQ3op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="Question3" value="no" onclick="checkno()"> {{OCQ3op2}}
+                            <input type="radio" id="no" name="Question3" value="no" onclick="checkno()"> {{OCQ3op2}}
                         </div>
                         <br>
                         <div id="soughtpage" style="display: none;">

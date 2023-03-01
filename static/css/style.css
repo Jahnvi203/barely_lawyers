@@ -387,3 +387,14 @@ label {
 iframe{
     display: none;
 }
+
+#OSLASform {
+    font-size: 30px;
+}
+
+#admitmessage, #disputemessage, #appealmessage, #setmessage, #countermessage{
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+    color: red;
+}
