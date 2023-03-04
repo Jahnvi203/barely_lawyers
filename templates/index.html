@@ -14,8 +14,6 @@
         <nav class="navbar">
             <a class="navbar-brand" href="#">
                 <img src="https://www.linkpicture.com/q/cjc_logo_1.png" class="d-inline-block align-top" alt="CJC Logo" id="cjc-logo">
-                <img src="https://www.linkpicture.com/q/menu_icon_1.png" alt="Menu Icon" id="menu-icon">
-                <span class="navbar-brand mb-0 h1">MENU</span>
             </a>
         </nav>
         <div class="row">
@@ -30,8 +28,8 @@
                         </p>
                         <div id="c1" class="accordion-collapse collapse" aria-labelledby="h1" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
-                                <p>&emsp;<a href="{{ url_for('maintenance', prev_qn_no = '0') }}">Maintenance</a></p>
-                                <p>&emsp;Divorce</p>
+                                <p>&emsp;<a href="{{ url_for('maintenance', prev_qn_no = '0', back = '0') }}">Maintenance</a></p>
+                                <p>&emsp;<a href="{{ url_for('divorce', prev_qn_no = '0', back = '0') }}">Divorce</a></p>
                             </div>
                         </div>
                     </div>

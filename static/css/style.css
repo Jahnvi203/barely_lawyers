@@ -91,6 +91,8 @@ h1 {
     padding: 0px !important;
     background-color: #F1EEDB !important;
     border: none !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 .accordion-body {
@@ -99,7 +101,7 @@ h1 {
 }
 
 .accordion-body p {
-    margin-top: 10px;;
+    margin-top: 10px;
     margin-bottom: 0px !important;
 }
 
@@ -145,6 +147,27 @@ h1 {
     width: 100%;
     border-radius: 30px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.dashboard-card.card {
+    text-align: center;
+    background-color: rgba(241, 238, 219, 0.3);
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+    margin-bottom: 25px;
+}
+
+.dashboard-label {
+    color: #646464;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dashboard-value {
+    color: #F7A01B;
+    margin-top: -10px;
 }
 
 .option-card.card:hover {
@@ -204,7 +227,7 @@ h1 {
     font-weight: bold;
 }
 
-input[type="text"], input[type="tel"], input[type="email"] {
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
     background-color: #F1EEDB;
     border: 2px solid #F7A01B;
     padding: 5px;
@@ -320,6 +343,7 @@ label {
     background-color: white !important;
     border: none !important;
     color: black;
+    font-size: xx-large;
 }
 
 #email-link-label {
@@ -351,4 +375,76 @@ label {
 
 .accordion-body a:hover {
     color: #0d6efd;
+}
+
+#signup-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input[name=signup_cpwd] {
+    margin-top: -10px;
+}
+
+.graph {
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.accordion-header.cms, .accordion-body.cms {
+    padding: 10px 20px 15px 20px !important;
+    text-align: left;
+    margin-bottom: 0px !important;
+}
+
+.accordion-body.cms p {
+    margin-top: -10px !important;
+    margin-bottom: 5px !important;
+    font-size: 0.8rem;
+}
+
+.accordion-button {
+    margin: 0px !important;
+}
+
+.btn.btn-primary.edit-button {
+    padding: 0px 10px 2px 10px;
+    background-color: #F7A01B;
+    border: 2px solid #F7A01B;
+    margin-top: 15px;
+}
+
+.btn.btn-primary.edit-button:hover {
+    padding: 0px 10px 2px 10px;
+    background-color: #F1EEDB;
+    color: black;
+    border: 2px solid #F7A01B;
+}
+
+.btn.btn-primary.edit-button:focus {
+    padding: 0px 10px 2px 10px;
+    background-color: #F1EEDB;
+    color: black;
+    border: 2px solid #F7A01B;
+}
+
+.edit-question-input {
+    width: 100%;
+}
+
+.edit-question-label {
+    margin-top: 8px !important;
+    text-align: left;
+}
+
+.card.annex {
+    background-color: #F1EEDB;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.ckeditor {
+    width: 100%;
+    height: 100%;
 }

@@ -7,7 +7,7 @@
         <link href="{{ url_for('static', filename = 'css/style.css') }}"  rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <title>Maintenance</title>
+        <title>Divorce</title>
     </head>
     <body>
         <!-- Menu Navigation Bar -->
@@ -29,7 +29,7 @@
                         <div id="c1" class="accordion-collapse collapse" aria-labelledby="h1" data-bs-parent="#sidebar_accordion">
                             <div class="accordion-body">
                                 <p>&emsp;<a href="{{ url_for('maintenance', prev_qn_no = '0', back = '0') }}">Maintenance</a></p>
-                                <p>&emsp;Divorce</p>
+                                <p>&emsp;<a href="{{ url_for('divorce', prev_qn_no = '0', back = '0') }}">Divorce</a></p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                         <br>
                     {% endif %}
                     <div class="row" id="options-row">
-                        <form action="{{ url_for('maintenance', prev_qn_no = current, back = '0') }}" method="POST">
+                        <form action="{{ url_for('divorce', prev_qn_no = current, back = '0') }}" method="POST">
                             {{ html|safe }}
                             {% if is_glossary %}
                                 <div class="glossary">
@@ -144,6 +144,7 @@
                                         <div class="offcanvas-body">
                                             <div>
                                                 <p>{{ glossary_html|safe }}</p>
+                                                <br>
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +173,7 @@
                                             window.history.replaceState(null, null, window.location.href);
                                         }
                                     </script>
-                                    <a type="button" class="btn btn-primary" id="back-button" href="{{ url_for('maintenance', prev_qn_no = current, back = '1') }}">< Back</a>
+                                    <a type="button" class="btn btn-primary" id="back-button" href="{{ url_for('divorce', prev_qn_no = current, back = '1') }}">< Back</a>
                                     <input type="submit" class="btn btn-primary" id="next-button" value="Next >">
                                 </div>
                             {% else %}
