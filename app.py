@@ -596,6 +596,42 @@ def OSLAS_Criteria():
     Civil_c_claimant_op4 = OCCivil_c_claimant["Civil_c_claimant_op4"]
     Civil_c_claimant_op5 = OCCivil_c_claimant["Civil_c_claimant_op5"]
 
+    # OSLAS Criteria Civil(c) employment database
+    OCCivil_c_employment = list(col_oslas_criteria.find({"Civil_c_employment": "c. My current situation:"}))[0]
+    Civil_c_employment = OCCivil_c_employment["Civil_c_employment"]
+    Civil_c_claimant_employment_op1 = OCCivil_c_employment["Civil_c_claimant_employment_op1"]
+    Civil_c_claimant_employment_op2 = OCCivil_c_employment["Civil_c_claimant_employment_op2"]
+    Civil_c_respondent_employment_op1 = OCCivil_c_employment["Civil_c_respondent_employment_op1"]
+    Civil_c_employment_none = OCCivil_c_employment["Civil_c_employment_none"]
+
+    # OSLAS Criteria Civil(d) claimant database
+    OCCivil_d_claimant = list(col_oslas_criteria.find({"Civil_d_claimant": "d. My claim is:"}))[0]
+    Civil_d_claimant = OCCivil_d_claimant["Civil_d_claimant"]
+    Civil_d_claimant_op1 = OCCivil_d_claimant["Civil_d_claimant_op1"]
+    Civil_d_claimant_op2 = OCCivil_d_claimant["Civil_d_claimant_op2"]
+    Civil_d_claimant_op3 = OCCivil_d_claimant["Civil_d_claimant_op3"]
+
+    # OSLAS Criteria Civil(d) claimant employment database
+    OCCivil_d_claimant_employment = list(col_oslas_criteria.find({"Civil_d_claimant_employment": "d. I wish to:"}))[0]
+    Civil_d_claimant_employment = OCCivil_d_claimant_employment["Civil_d_claimant_employment"]
+    Civil_d_claimant_employment_op1 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op1"]
+    Civil_d_claimant_employment_op2 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op2"]
+    Civil_d_claimant_employment_op3 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op3"]
+    Civil_d_claimant_employment_op4 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op4"]
+    Civil_d_claimant_employment_op5 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op5"]
+    Civil_d_claimant_employment_op6 = OCCivil_d_claimant_employment["Civil_d_claimant_employment_op6"]
+
+    # OSLAS Criteria Civil(d) respondent employment database
+    OCCivil_d_respondent_employment = list(col_oslas_criteria.find({"Civil_d_respondent_employment": "d. I wish to:"}))[0]
+    Civil_d_respondent_employment = OCCivil_d_respondent_employment["Civil_d_respondent_employment"]
+    Civil_d_respondent_employment_op1 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op1"]
+    Civil_d_respondent_employment_op2 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op2"]
+    Civil_d_respondent_employment_op3 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op3"]
+    Civil_d_respondent_employment_op4 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op4"]
+    Civil_d_respondent_employment_op5 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op5"]
+    Civil_d_respondent_employment_op6 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op6"]
+    Civil_d_respondent_employment_op7 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op7"]
+
     # OSLAS Criteria Family database
     OCFamily = list(col_oslas_criteria.find({"Family_i": "i. Integrated Family Application Management System (iFAMS)"}))[0]
     Family_i = OCFamily["Family_i"]
@@ -628,6 +664,10 @@ def OSLAS_Criteria():
     Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
     Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,
     Civil_c_claimant = Civil_c_claimant, Civil_c_claimant_op1 = Civil_c_claimant_op1, Civil_c_claimant_op2 = Civil_c_claimant_op2, Civil_c_claimant_op3 = Civil_c_claimant_op3, Civil_c_claimant_op4 = Civil_c_claimant_op4, Civil_c_claimant_op5 = Civil_c_claimant_op5,
+    Civil_c_employment = Civil_c_employment, Civil_c_claimant_employment_op1 = Civil_c_claimant_employment_op1, Civil_c_claimant_employment_op2 = Civil_c_claimant_employment_op2, Civil_c_respondent_employment_op1 = Civil_c_respondent_employment_op1, Civil_c_employment_none = Civil_c_employment_none,
+    Civil_d_claimant = Civil_d_claimant, Civil_d_claimant_op1 = Civil_d_claimant_op1, Civil_d_claimant_op2 = Civil_d_claimant_op2, Civil_d_claimant_op3 = Civil_d_claimant_op3, 
+    Civil_d_claimant_employment = Civil_d_claimant_employment, Civil_d_claimant_employment_op1 = Civil_d_claimant_employment_op1, Civil_d_claimant_employment_op2 = Civil_d_claimant_employment_op2, Civil_d_claimant_employment_op3 = Civil_d_claimant_employment_op3, Civil_d_claimant_employment_op4 = Civil_d_claimant_employment_op4, Civil_d_claimant_employment_op5 = Civil_d_claimant_employment_op5, Civil_d_claimant_employment_op6 = Civil_d_claimant_employment_op6, 
+    Civil_d_respondent_employment = Civil_d_respondent_employment, Civil_d_respondent_employment_op1 = Civil_d_respondent_employment_op1, Civil_d_respondent_employment_op2 = Civil_d_respondent_employment_op2, Civil_d_respondent_employment_op3 = Civil_d_respondent_employment_op3, Civil_d_respondent_employment_op4 = Civil_d_respondent_employment_op4, Civil_d_respondent_employment_op5 = Civil_d_respondent_employment_op5, Civil_d_respondent_employment_op6 = Civil_d_respondent_employment_op6, Civil_d_respondent_employment_op7 = Civil_d_respondent_employment_op7,
     Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
     Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
 

@@ -40,9 +40,9 @@
 
                 <form name="oslas" method="post" target="frame">
                 <div id="OSLASform" class="form-container">
-                    <br>
                         <!-- For Question 4 -->
-                        <div id="OCQ4" style="display: none;">            
+                        <div id="OCQ4" style="display: none;">     
+                            <br>     
                             <p><b>{{OCQ4}}</b></p>
                             <input type="radio" id="civil" name="Question4" value="civil" onclick="check()"> {{OCQ4op1}}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -50,8 +50,9 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="radio" id="family" name="Question4" value="family" onclick="check()"> {{OCQ4op3}}
                         </div>
-                        <br>
+                        
                         <div id="civilpage" style="display: none;">
+                            <br>
                             {% include "civil.html" %}
                         </div>
 
@@ -63,6 +64,7 @@
                             {% include "family.html" %}
                         </div>
 
+                        <br>
                         <!-- For Question 1 -->
                         <div id="OCQ1">  
                             <p><b>{{OCQ1}}</b></p>
@@ -277,6 +279,78 @@
                 var OCQ4 = document.getElementById("OCQ4");
                 OCQ4.style.display = "none";
 
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var admitpage = document.getElementById("admitpage");
+                admitpage.style.display = "none";
+
+                var counterclaimpage = document.getElementById("counterclaimpage");
+                counterclaimpage.style.display = "none";
+
+                var disputepage = document.getElementById("disputepage");
+                disputepage.style.display = "none";
+
+                var appealpage = document.getElementById("appealpage");
+                appealpage.style.display = "none";
+
+                var set_asidepage = document.getElementById("set_asidepage");
+                set_asidepage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var dispute_is_unresolved_page = document.getElementById("dispute_is_unresolved_page");
+                dispute_is_unresolved_page.style.display = "none";
+
+                var Civil_d_claimant_employment = document.getElementById("Civil_d_claimant_employment");
+                Civil_d_claimant_employment.style.display = "none";
+
+                var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
+                Civil_d_respondent_employment.style.display = "none";
+
+                var file_a_claim = document.getElementById("file_a_claim");
+                file_a_claim.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_page = document.getElementById("appeal_against_page");
+                appeal_against_page.style.display = "none";
+
+                var enforce_employment_page = document.getElementById("enforce_employment_page");
+                enforce_employment_page.style.display = "none";
+
+                var set_aside_employment_page = document.getElementById("set_aside_employment_page");
+                set_aside_employment_page.style.display = "none";
+
+                var settle_dispute_counterclaim_page = document.getElementById("settle_dispute_counterclaim_page");
+                settle_dispute_counterclaim_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+
                 var prev = document.getElementById("prev-btn");
                 prev.style.display = "none";
 
@@ -308,6 +382,201 @@
                 var familybtn = document.getElementById("family");
                 if (familybtn.type == "radio") {
                     familybtn.checked = false;
+                }
+
+                var claimantbtn = document.getElementById("Question5a_claimant");
+                if (claimantbtn.type == "radio") {
+                    claimantbtn.checked = false;
+                }
+
+                var respondentbtn = document.getElementById("Question5a_respondent");
+                if (respondentbtn.type == "radio") {
+                    respondentbtn.checked = false;
+                }
+
+                var tenancybtn = document.getElementById("Question5b_tenancy");
+                if (tenancybtn.type == "radio") {
+                    tenancybtn.checked = false;
+                }
+
+                var contract_for_salebtn = document.getElementById("Question5b_contract_for_sale");
+                if (contract_for_salebtn.type == "radio") {
+                    contract_for_salebtn.checked = false;
+                }
+
+                var provisionbtn = document.getElementById("Question5b_provision");
+                if (provisionbtn.type == "radio") {
+                    provisionbtn.checked = false;
+                }
+
+                var damage_to_propertybtn = document.getElementById("Question5b_damage_to_property");
+                if (damage_to_propertybtn.type == "radio") {
+                    damage_to_propertybtn.checked = false;
+                }
+
+                var Question5b_op5btn = document.getElementById("Question5b_op5");
+                if (Question5b_op5btn.type == "radio") {
+                    Question5b_op5btn.checked = false;
+                }
+
+                var Question5b_op6btn = document.getElementById("Question5b_op6");
+                if (Question5b_op6btn.type == "radio") {
+                    Question5b_op6btn.checked = false;
+                }
+
+                var Question5b_op7btn = document.getElementById("Question5b_op7");
+                if (Question5b_op7btn.type == "radio") {
+                    Question5b_op7btn.checked = false;
+                }
+
+                var Question5b_op8btn = document.getElementById("Question5b_op8");
+                if (Question5b_op8btn.type == "radio") {
+                    Question5b_op8btn.checked = false;
+                }
+
+                var Civil_c_respondent_op1_btn = document.getElementById("Civil_c_respondent_op1");
+                if (Civil_c_respondent_op1_btn.type == "radio") {
+                    Civil_c_respondent_op1_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op2_btn = document.getElementById("Civil_c_respondent_op2");
+                if (Civil_c_respondent_op2_btn.type == "radio") {
+                    Civil_c_respondent_op2_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op3_btn = document.getElementById("Civil_c_respondent_op3");
+                if (Civil_c_respondent_op3_btn.type == "radio") {
+                    Civil_c_respondent_op3_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op4_btn = document.getElementById("Civil_c_respondent_op4");
+                if (Civil_c_respondent_op4_btn.type == "radio") {
+                    Civil_c_respondent_op4_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op5_btn = document.getElementById("Civil_c_respondent_op5");
+                if (Civil_c_respondent_op5_btn.type == "radio") {
+                    Civil_c_respondent_op5_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op6_btn = document.getElementById("Civil_c_respondent_op6");
+                if (Civil_c_respondent_op6_btn.type == "radio") {
+                    Civil_c_respondent_op6_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op1_btn = document.getElementById("Civil_c_claimant_op1");
+                if (Civil_c_claimant_op1_btn.type == "radio") {
+                    Civil_c_claimant_op1_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op2_btn = document.getElementById("Civil_c_claimant_op2");
+                if (Civil_c_claimant_op2_btn.type == "radio") {
+                    Civil_c_claimant_op2_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op3_btn = document.getElementById("Civil_c_claimant_op3");
+                if (Civil_c_claimant_op3_btn.type == "radio") {
+                    Civil_c_claimant_op3_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op4_btn = document.getElementById("Civil_c_claimant_op4");
+                if (Civil_c_claimant_op4_btn.type == "radio") {
+                    Civil_c_claimant_op4_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op5_btn = document.getElementById("Civil_c_claimant_op5");
+                if (Civil_c_claimant_op5_btn.type == "radio") {
+                    Civil_c_claimant_op5_btn.checked = false;
+                }
+
+                var Civil_c_claimant_employment_op1_btn = document.getElementById("Civil_c_claimant_employment_op1");
+                if (Civil_c_claimant_employment_op1_btn.type == "checkbox") {
+                    Civil_c_claimant_employment_op1_btn.checked = false;
+                }
+
+                var Civil_c_claimant_employment_op2_btn = document.getElementById("Civil_c_claimant_employment_op2");
+                if (Civil_c_claimant_employment_op2_btn.type == "checkbox") {
+                    Civil_c_claimant_employment_op2_btn.checked = false;
+                }
+
+                var Civil_c_employment_none_btn = document.getElementById("Civil_c_employment_none");
+                if (Civil_c_employment_none_btn.type == "checkbox") {
+                    Civil_c_employment_none_btn.checked = false;
+                }
+
+                var Civil_c_respondent_employment_op1_btn = document.getElementById("Civil_c_respondent_employment_op1");
+                if (Civil_c_respondent_employment_op1_btn.type == "radio") {
+                    Civil_c_respondent_employment_op1_btn.checked = false;
+                }
+
+                var Civil_c_employment_none1_btn = document.getElementById("Civil_c_employment_none1");
+                if (Civil_c_employment_none1_btn.type == "radio") {
+                    Civil_c_employment_none1_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op1_btn = document.getElementById("Civil_d_claimant_employment_op1");
+                if (Civil_d_claimant_employment_op1_btn.type == "radio") {
+                    Civil_d_claimant_employment_op1_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op2_btn = document.getElementById("Civil_d_claimant_employment_op2");
+                if (Civil_d_claimant_employment_op2_btn.type == "radio") {
+                    Civil_d_claimant_employment_op2_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op3_btn = document.getElementById("Civil_d_claimant_employment_op3");
+                if (Civil_d_claimant_employment_op3_btn.type == "radio") {
+                    Civil_d_claimant_employment_op3_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op4_btn = document.getElementById("Civil_d_claimant_employment_op4");
+                if (Civil_d_claimant_employment_op4_btn.type == "radio") {
+                    Civil_d_claimant_employment_op4_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op5_btn = document.getElementById("Civil_d_claimant_employment_op5");
+                if (Civil_d_claimant_employment_op5_btn.type == "radio") {
+                    Civil_d_claimant_employment_op5_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op6_btn = document.getElementById("Civil_d_claimant_employment_op6");
+                if (Civil_d_claimant_employment_op6_btn.type == "radio") {
+                    Civil_d_claimant_employment_op6_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op1_btn = document.getElementById("Civil_d_respondent_employment_op1");
+                if (Civil_d_respondent_employment_op1_btn.type == "radio") {
+                    Civil_d_respondent_employment_op1_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op2_btn = document.getElementById("Civil_d_respondent_employment_op2");
+                if (Civil_d_respondent_employment_op2_btn.type == "radio") {
+                    Civil_d_respondent_employment_op2_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op3_btn = document.getElementById("Civil_d_respondent_employment_op3");
+                if (Civil_d_respondent_employment_op3_btn.type == "radio") {
+                    Civil_d_respondent_employment_op3_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op4_btn = document.getElementById("Civil_d_respondent_employment_op4");
+                if (Civil_d_respondent_employment_op4_btn.type == "radio") {
+                    Civil_d_respondent_employment_op4_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op5_btn = document.getElementById("Civil_d_respondent_employment_op5");
+                if (Civil_d_respondent_employment_op5_btn.type == "radio") {
+                    Civil_d_respondent_employment_op5_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op6_btn = document.getElementById("Civil_d_respondent_employment_op6");
+                if (Civil_d_respondent_employment_op6_btn.type == "radio") {
+                    Civil_d_respondent_employment_op6_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op7_btn = document.getElementById("Civil_d_respondent_employment_op7");
+                if (Civil_d_respondent_employment_op7_btn.type == "radio") {
+                    Civil_d_respondent_employment_op7_btn.checked = false;
                 }
             }
 
