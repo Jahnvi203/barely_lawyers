@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename = 'css/style.css') }}"  rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <title>OSLAS Criteria</title>
+    </head>
+    <body>
+        <!-- Menu Navigation Bar -->
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.linkpicture.com/q/cjc_logo_1.png" class="d-inline-block align-top" alt="CJC Logo" id="cjc-logo">
+                <img src="https://www.linkpicture.com/q/menu_icon_1.png" alt="Menu Icon" id="menu-icon">
+                <span class="navbar-brand mb-0 h1">MENU</span>
+                <div class="contact">
+                    <span>
+                        <img class="phoneIMG" src="https://www.linkpicture.com/q/Phone.png">
+                        +65 6557 4100 
+                        <br>
+                        <img class="emailIMG" src="https://www.linkpicture.com/q/Email_1.png">
+                        help@cjc.org.sg
+                    </span>
+                </div>
+            </a>
+        </nav>
+
+        <div class="col-12" class="intro-container">
+            <div class="intro">
+                <h2 id="intro_heading"><u>Initial Questionnaire</u></h2>
+                <br>
+
+                <h4 id="help">Help us better understand your case</h4>
+                <br>
+
+                <form name="oslas" method="post" target="frame">
+                <div id="OSLASform" class="form-container">
+                        <!-- For Question 4 -->
+                        <div id="OCQ4" style="display: none;">     
+                            <br>     
+                            <p><b>{{OCQ4}}</b></p>
+                            <input type="radio" id="civil" name="Question4" value="civil" onclick="check()"> {{OCQ4op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="criminal" name="Question4" value="criminal" onclick="check()"> {{OCQ4op2}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="family" name="Question4" value="family" onclick="check()"> {{OCQ4op3}}
+                        </div>
+                        
+                        <div id="civilpage" style="display: none;">
+                            <br>
+                            {% include "civil.html" %}
+                        </div>
+
+                        <div id="criminalpage" style="display: none;">
+                            {% include "criminal.html" %}
+                        </div>
+
+                        <div id="familypage" style="display: none;">
+                            {% include "family.html" %}
+                        </div>
+
+                        <br>
+                        <!-- For Question 1 -->
+                        <div id="OCQ1">  
+                            <p><b>{{OCQ1}}</b></p>
+                            <input type="radio" name="Question1" value="yes" onclick="checkyes()"> {{OCQ1op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="Question1" value="no" onclick="checkno()"> {{OCQ1op2}}
+                        </div>
+                        <br>
+                        <div id="companypage" style="display: none;">
+                            {% include "company.html" %}
+                        </div>
+
+                        <!-- For Question 2 -->
+                        <div id="OCQ2" style="display: none;">               
+                            <p><b>{{OCQ2}}</b></p>
+                            <input type="radio" name="Question2" value="yes" onclick="checkyes()"> {{OCQ2op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="Question2" value="no" onclick="checkno()"> {{OCQ2op2}}
+                        </div>
+                        <br>
+                        <div id="representedpage" style="display: none;">
+                            {% include "represented.html" %}
+                        </div>
+                        
+                        <!-- For Question 3 -->
+                        <div id="OCQ3" style="display: none;">                     
+                            <p><b>{{OCQ3}}</b></p>
+                            <input type="radio" name="Question3" value="yes" onclick="checkyes()"> {{OCQ3op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="Question3" value="no" onclick="checkno()"> {{OCQ3op2}}
+                        </div>
+                        <br>
+                        <div id="soughtpage" style="display: none;">
+                            {% include "sought.html" %}
+                        </div>
+                        <br>
+                </div>
+                        <br>
+                        <div id="prev-btn" style="display: none;">
+                            <button type="button" class="btn btn-primary" onclick="prev()">Previous</button>
+                        </div>
+                        <div id="next-btn" style="display: none;">
+                            <button type="button" class="btn btn-primary" onclick="next()">Next</button>
+                        </div>
+                        <br>
+                        <div id="submit-btn" style="display: none;">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- This iframe is so that we can submit the form but not refresh the page -->
+        <iframe name="frame"></iframe>
+        <script>
+
+            function checkyes() {
+                ans1 = oslas.Question1.value
+                ans2 = oslas.Question2.value
+                ans3 = oslas.Question3.value
+
+                if (ans1 == "yes") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "block";
+
+                    var OCQ2 = document.getElementById("OCQ2");
+                    OCQ2.style.display = "none";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "none";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+                }
+
+                if (ans2 == "yes") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "block";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "none";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+                }
+
+                if (ans3 == "yes") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "block";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+                }
+            }
+
+            function checkno() {
+                ans1 = oslas.Question1.value
+                ans2 = oslas.Question2.value
+                ans3 = oslas.Question3.value
+
+                if (ans1 == "no") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "none";
+
+                    var OCQ2 = document.getElementById("OCQ2");
+                    OCQ2.style.display = "block";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "none";
+                }
+
+                if (ans2 == "no") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "none";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "block";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "none";
+                }
+
+                if (ans3 == "no") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "block";
+                }
+            }
+
+            function next() {
+                var OCQ1 = document.getElementById("OCQ1");
+                OCQ1.style.display = "none";
+
+                var OCQ2 = document.getElementById("OCQ2");
+                OCQ2.style.display = "none";
+
+                var OCQ3 = document.getElementById("OCQ3");
+                OCQ3.style.display = "none";
+
+                var OCQ4 = document.getElementById("OCQ4");
+                OCQ4.style.display = "block";
+
+                var prev = document.getElementById("prev-btn");
+                prev.style.display = "block";
+
+                var next = document.getElementById("next-btn");
+                next.style.display = "none";
+
+                var submit = document.getElementById("submit-btn");
+                submit.style.display = "block";
+            }
+
+            function prev() {
+                var OCQ1 = document.getElementById("OCQ1");
+                OCQ1.style.display = "block";
+
+                var OCQ2 = document.getElementById("OCQ2");
+                OCQ2.style.display = "block";
+
+                var OCQ3 = document.getElementById("OCQ3");
+                OCQ3.style.display = "block";
+
+                var OCQ4 = document.getElementById("OCQ4");
+                OCQ4.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var admitpage = document.getElementById("admitpage");
+                admitpage.style.display = "none";
+
+                var counterclaimpage = document.getElementById("counterclaimpage");
+                counterclaimpage.style.display = "none";
+
+                var disputepage = document.getElementById("disputepage");
+                disputepage.style.display = "none";
+
+                var appealpage = document.getElementById("appealpage");
+                appealpage.style.display = "none";
+
+                var set_asidepage = document.getElementById("set_asidepage");
+                set_asidepage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var dispute_is_unresolved_page = document.getElementById("dispute_is_unresolved_page");
+                dispute_is_unresolved_page.style.display = "none";
+
+                var Civil_d_claimant_employment = document.getElementById("Civil_d_claimant_employment");
+                Civil_d_claimant_employment.style.display = "none";
+
+                var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
+                Civil_d_respondent_employment.style.display = "none";
+
+                var file_a_claim = document.getElementById("file_a_claim");
+                file_a_claim.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_page = document.getElementById("appeal_against_page");
+                appeal_against_page.style.display = "none";
+
+                var enforce_employment_page = document.getElementById("enforce_employment_page");
+                enforce_employment_page.style.display = "none";
+
+                var set_aside_employment_page = document.getElementById("set_aside_employment_page");
+                set_aside_employment_page.style.display = "none";
+
+                var settle_dispute_counterclaim_page = document.getElementById("settle_dispute_counterclaim_page");
+                settle_dispute_counterclaim_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+
+                var prev = document.getElementById("prev-btn");
+                prev.style.display = "none";
+
+                var next = document.getElementById("next-btn");
+                next.style.display = "block";
+
+                var civilpage = document.getElementById("civilpage");
+                civilpage.style.display = "none";
+
+                var criminalpage = document.getElementById("criminalpage");
+                criminalpage.style.display = "none";
+
+                var familypage = document.getElementById("familypage");
+                familypage.style.display = "none";
+
+                var submit = document.getElementById("submit-btn");
+                submit.style.display = "none";
+
+                var civilbtn = document.getElementById("civil");
+                if (civilbtn.type == "radio") {
+                    civilbtn.checked = false;
+                }
+
+                var criminalbtn = document.getElementById("criminal");
+                if (criminalbtn.type == "radio") {
+                    criminalbtn.checked = false;
+                }
+
+                var familybtn = document.getElementById("family");
+                if (familybtn.type == "radio") {
+                    familybtn.checked = false;
+                }
+
+                var claimantbtn = document.getElementById("Question5a_claimant");
+                if (claimantbtn.type == "radio") {
+                    claimantbtn.checked = false;
+                }
+
+                var respondentbtn = document.getElementById("Question5a_respondent");
+                if (respondentbtn.type == "radio") {
+                    respondentbtn.checked = false;
+                }
+
+                var tenancybtn = document.getElementById("Question5b_tenancy");
+                if (tenancybtn.type == "radio") {
+                    tenancybtn.checked = false;
+                }
+
+                var contract_for_salebtn = document.getElementById("Question5b_contract_for_sale");
+                if (contract_for_salebtn.type == "radio") {
+                    contract_for_salebtn.checked = false;
+                }
+
+                var provisionbtn = document.getElementById("Question5b_provision");
+                if (provisionbtn.type == "radio") {
+                    provisionbtn.checked = false;
+                }
+
+                var damage_to_propertybtn = document.getElementById("Question5b_damage_to_property");
+                if (damage_to_propertybtn.type == "radio") {
+                    damage_to_propertybtn.checked = false;
+                }
+
+                var Question5b_op5btn = document.getElementById("Question5b_op5");
+                if (Question5b_op5btn.type == "radio") {
+                    Question5b_op5btn.checked = false;
+                }
+
+                var Question5b_op6btn = document.getElementById("Question5b_op6");
+                if (Question5b_op6btn.type == "radio") {
+                    Question5b_op6btn.checked = false;
+                }
+
+                var Question5b_op7btn = document.getElementById("Question5b_op7");
+                if (Question5b_op7btn.type == "radio") {
+                    Question5b_op7btn.checked = false;
+                }
+
+                var Question5b_op8btn = document.getElementById("Question5b_op8");
+                if (Question5b_op8btn.type == "radio") {
+                    Question5b_op8btn.checked = false;
+                }
+
+                var Civil_c_respondent_op1_btn = document.getElementById("Civil_c_respondent_op1");
+                if (Civil_c_respondent_op1_btn.type == "radio") {
+                    Civil_c_respondent_op1_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op2_btn = document.getElementById("Civil_c_respondent_op2");
+                if (Civil_c_respondent_op2_btn.type == "radio") {
+                    Civil_c_respondent_op2_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op3_btn = document.getElementById("Civil_c_respondent_op3");
+                if (Civil_c_respondent_op3_btn.type == "radio") {
+                    Civil_c_respondent_op3_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op4_btn = document.getElementById("Civil_c_respondent_op4");
+                if (Civil_c_respondent_op4_btn.type == "radio") {
+                    Civil_c_respondent_op4_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op5_btn = document.getElementById("Civil_c_respondent_op5");
+                if (Civil_c_respondent_op5_btn.type == "radio") {
+                    Civil_c_respondent_op5_btn.checked = false;
+                }
+
+                var Civil_c_respondent_op6_btn = document.getElementById("Civil_c_respondent_op6");
+                if (Civil_c_respondent_op6_btn.type == "radio") {
+                    Civil_c_respondent_op6_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op1_btn = document.getElementById("Civil_c_claimant_op1");
+                if (Civil_c_claimant_op1_btn.type == "radio") {
+                    Civil_c_claimant_op1_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op2_btn = document.getElementById("Civil_c_claimant_op2");
+                if (Civil_c_claimant_op2_btn.type == "radio") {
+                    Civil_c_claimant_op2_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op3_btn = document.getElementById("Civil_c_claimant_op3");
+                if (Civil_c_claimant_op3_btn.type == "radio") {
+                    Civil_c_claimant_op3_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op4_btn = document.getElementById("Civil_c_claimant_op4");
+                if (Civil_c_claimant_op4_btn.type == "radio") {
+                    Civil_c_claimant_op4_btn.checked = false;
+                }
+
+                var Civil_c_claimant_op5_btn = document.getElementById("Civil_c_claimant_op5");
+                if (Civil_c_claimant_op5_btn.type == "radio") {
+                    Civil_c_claimant_op5_btn.checked = false;
+                }
+
+                var Civil_c_claimant_employment_op1_btn = document.getElementById("Civil_c_claimant_employment_op1");
+                if (Civil_c_claimant_employment_op1_btn.type == "checkbox") {
+                    Civil_c_claimant_employment_op1_btn.checked = false;
+                }
+
+                var Civil_c_claimant_employment_op2_btn = document.getElementById("Civil_c_claimant_employment_op2");
+                if (Civil_c_claimant_employment_op2_btn.type == "checkbox") {
+                    Civil_c_claimant_employment_op2_btn.checked = false;
+                }
+
+                var Civil_c_employment_none_btn = document.getElementById("Civil_c_employment_none");
+                if (Civil_c_employment_none_btn.type == "checkbox") {
+                    Civil_c_employment_none_btn.checked = false;
+                }
+
+                var Civil_c_respondent_employment_op1_btn = document.getElementById("Civil_c_respondent_employment_op1");
+                if (Civil_c_respondent_employment_op1_btn.type == "radio") {
+                    Civil_c_respondent_employment_op1_btn.checked = false;
+                }
+
+                var Civil_c_employment_none1_btn = document.getElementById("Civil_c_employment_none1");
+                if (Civil_c_employment_none1_btn.type == "radio") {
+                    Civil_c_employment_none1_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op1_btn = document.getElementById("Civil_d_claimant_employment_op1");
+                if (Civil_d_claimant_employment_op1_btn.type == "radio") {
+                    Civil_d_claimant_employment_op1_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op2_btn = document.getElementById("Civil_d_claimant_employment_op2");
+                if (Civil_d_claimant_employment_op2_btn.type == "radio") {
+                    Civil_d_claimant_employment_op2_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op3_btn = document.getElementById("Civil_d_claimant_employment_op3");
+                if (Civil_d_claimant_employment_op3_btn.type == "radio") {
+                    Civil_d_claimant_employment_op3_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op4_btn = document.getElementById("Civil_d_claimant_employment_op4");
+                if (Civil_d_claimant_employment_op4_btn.type == "radio") {
+                    Civil_d_claimant_employment_op4_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op5_btn = document.getElementById("Civil_d_claimant_employment_op5");
+                if (Civil_d_claimant_employment_op5_btn.type == "radio") {
+                    Civil_d_claimant_employment_op5_btn.checked = false;
+                }
+
+                var Civil_d_claimant_employment_op6_btn = document.getElementById("Civil_d_claimant_employment_op6");
+                if (Civil_d_claimant_employment_op6_btn.type == "radio") {
+                    Civil_d_claimant_employment_op6_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op1_btn = document.getElementById("Civil_d_respondent_employment_op1");
+                if (Civil_d_respondent_employment_op1_btn.type == "radio") {
+                    Civil_d_respondent_employment_op1_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op2_btn = document.getElementById("Civil_d_respondent_employment_op2");
+                if (Civil_d_respondent_employment_op2_btn.type == "radio") {
+                    Civil_d_respondent_employment_op2_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op3_btn = document.getElementById("Civil_d_respondent_employment_op3");
+                if (Civil_d_respondent_employment_op3_btn.type == "radio") {
+                    Civil_d_respondent_employment_op3_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op4_btn = document.getElementById("Civil_d_respondent_employment_op4");
+                if (Civil_d_respondent_employment_op4_btn.type == "radio") {
+                    Civil_d_respondent_employment_op4_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op5_btn = document.getElementById("Civil_d_respondent_employment_op5");
+                if (Civil_d_respondent_employment_op5_btn.type == "radio") {
+                    Civil_d_respondent_employment_op5_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op6_btn = document.getElementById("Civil_d_respondent_employment_op6");
+                if (Civil_d_respondent_employment_op6_btn.type == "radio") {
+                    Civil_d_respondent_employment_op6_btn.checked = false;
+                }
+
+                var Civil_d_respondent_employment_op7_btn = document.getElementById("Civil_d_respondent_employment_op7");
+                if (Civil_d_respondent_employment_op7_btn.type == "radio") {
+                    Civil_d_respondent_employment_op7_btn.checked = false;
+                }
+            }
+
+            function check() {
+                ans = oslas.Question4.value
+
+                if (ans == "civil") {
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "block";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+                }
+
+                else if (ans == "criminal") {
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "block";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                }
+
+                else if (ans == "family") {
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "block";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>
