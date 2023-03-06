@@ -21,7 +21,6 @@ def suggest_advice(new_case_fact):
 
     # Get the indices of the top 3 most similar legal issues
     similar_indices = similarities.argsort()[0][-3:]
-    print(similar_indices)
 
     # Get the corresponding case facts and advice for the top 3 most similar case facts
     top_case_facts = list(df.iloc[similar_indices]['Case Facts'])
