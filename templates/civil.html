@@ -17,11 +17,11 @@
     <!-- Question Civil 5a -->
     <p><b>{{Civil_a}}</b></p>
     <div class="radioboxes">
-        <label><input type="radio" id="Question5a_claimant" name="Question5a" value="claimant" onclick="checkparty()"> <span>{{Civil_a_op1}}</span>
+        <label><input type="radio" name="Question5a" value="{{Civil_a_op1}}" onclick="checkparty()"> <span>{{Civil_a_op1}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Claimant:</b> The party who files the claim">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5a_respondent" name="Question5a" value="respondent" onclick="checkparty()"> <span>{{Civil_a_op2}}</span>
+        <label><input type="radio" name="Question5a" value="{{Civil_a_op2}}" onclick="checkparty()"> <span>{{Civil_a_op2}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Respondent:</b> The party against whom the claim is filed is the respondent">(i)</a>
         </label>
     </div>
@@ -31,23 +31,23 @@
     <!-- Question Civil 5b -->
     <p><b>{{Civil_b}}</b></p>
     <div class="radioboxes">
-        <label><input type="radio" id="Question5b_tenancy" name="Question5b" value="tenancy" onclick="checkparty()"> <span>{{Civil_b_op1}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op1}}" onclick="checkparty()"> <span>{{Civil_b_op1}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tenancy agreement for residential premises < 2 years:</b> This excludes the lease of industrial or commercial premises, or license of any premises for any period of time.">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_contract_for_sale" name="Question5b" value="contract_for_sale" onclick="checkparty()"> <span>{{Civil_b_op2}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op2}}" onclick="checkparty()"> <span>{{Civil_b_op2}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for sale of good:</b> This includes claims arising from a contract in which goods are sold or bought in exchange for money.
             <br><br>
             Example: Purchase of a TV">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_provision" name="Question5b" value="provision" onclick="checkparty()"> <span>{{Civil_b_op3}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op3}}" onclick="checkparty()"> <span>{{Civil_b_op3}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Contract for the provision of services:</b> This includes claims arising from a contract to provide services involving skill or labour, or both, in exchange for money.
             <br><br>
             Example: Renovation contract.">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_damage_to_property" name="Question5b" value="damage_to_property" onclick="checkparty()"> <span>{{Civil_b_op4}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op4}}" onclick="checkparty()"> <span>{{Civil_b_op4}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Damage to property:</b> This includes claims in tort for damage caused to any property, which may be incurred by owners of a property because of careless, reckless or improper acts by others.
             <br><br>
             This does not include damage to property related to any of the following scenarios:
@@ -57,17 +57,17 @@
             •	Caused by a neighbour (under Section 4 of the Community Disputes Resolution Act).">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_op5" name="Question5b" value="employment" onclick="checkparty()"> <span>{{Civil_b_op5}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op5}}" onclick="checkparty()"> <span>{{Civil_b_op5}}</span>
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Employment matters">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_op6" name="Question5b"> <span>{{Civil_b_op6}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op6}}"> <span>{{Civil_b_op6}}</span>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_op7" name="Question5b"> <span>{{Civil_b_op7}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op7}}"> <span>{{Civil_b_op7}}</span>
         </label>
         <br><br>
-        <label><input type="radio" id="Question5b_op8" name="Question5b" value="none" onclick="checkparty()"> <span>{{Civil_b_op8}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op8}}" onclick="checkparty()"> <span>{{Civil_b_op8}}</span>
         </label>
     </div>
 
@@ -76,17 +76,17 @@
         <br><br>
         <p><b>{{Civil_c_respondent}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="Civil_c_respondent_op1" name="Question5c_respondent" value="admit" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op1}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op1" name="Question5c_respondent" value="{{Civil_c_respondent_op1}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_respondent_op2" name="Question5c_respondent" value="counter" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op2}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op2" name="Question5c_respondent" value="{{Civil_c_respondent_op2}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op2}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_respondent_op3" name="Question5c_respondent" value="dispute" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op3}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op3" name="Question5c_respondent" value="{{Civil_c_respondent_op3}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op3}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_respondent_op4" name="Question5c_respondent" value="appeal" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op4}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op4" name="Question5c_respondent" value="{{Civil_c_respondent_op4}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op4}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_respondent_op5" name="Question5c_respondent" value="set" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op5}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op5" name="Question5c_respondent" value="{{Civil_c_respondent_op5}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op5}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_respondent_op6" name="Question5c_respondent" value="none" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op6}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_op6" name="Question5c_respondent" value="{{Civil_c_respondent_op6}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op6}}</span></label>
         </div>
     </div>
 
@@ -95,15 +95,15 @@
         <br><br>
         <p><b>{{Civil_c_claimant}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="Civil_c_claimant_op1" name="Question5c_claimant" value="file" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op1}}</span></label>
+            <label><input type="radio" id="Civil_c_claimant_op1" name="Question5c_claimant" value="{{Civil_c_claimant_op1}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op2" name="Question5c_claimant" value="appeal_claimant" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op2}}</span></label>
+            <label><input type="radio" id="Civil_c_claimant_op2" name="Question5c_claimant" value="{{Civil_c_claimant_op2}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op2}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op3" name="Question5c_claimant" value="set_claimant" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op3}}</span></label>
+            <label><input type="radio" id="Civil_c_claimant_op3" name="Question5c_claimant" value="{{Civil_c_claimant_op3}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op3}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op4" name="Question5c_claimant" value="execute" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op4}}</span></label>
+            <label><input type="radio" id="Civil_c_claimant_op4" name="Question5c_claimant" value="{{Civil_c_claimant_op4}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op4}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op5" name="Question5c_claimant" value="none" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op5}}</span></label>
+            <label><input type="radio" id="Civil_c_claimant_op5" name="Question5c_claimant" value="{{Civil_c_claimant_op5}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op5}}</span></label>
         </div>
     </div>
 
@@ -112,16 +112,16 @@
         <br><br>
         <p><b>{{Civil_c_employment}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox" id="Civil_c_claimant_employment_op1" name="Question5c_claimant_employment" value="Civil_c_claimant_employment_op1" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_claimant_employment_op1}}</span>
+            <label><input type="checkbox" id="Civil_c_claimant_employment_op1" name="Question5c_claimant_employment" value="{{Civil_c_claimant_employment_op1}}" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_claimant_employment_op1}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Tripartite Alliance for Dispute Management (TADM):</b> TADM is established by the Ministry of Manpower (MOM), National Trades Union Congress (NTUC) and Singapore National Employers Federation (SNEF) to help employees and employers manage their employment disputes through advisory and mediation services.
                 <br><br>
                 Mediation at the TADM is compulsory before claims can be filed at the Employment Claims Tribunal (ECT). Please submit a mediation request to TADM as soon as your claim arises, as there are limits to the claim period. For more information, please refer to TADM’s Mediation Guide.
                 ">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox" id="Civil_c_claimant_employment_op2" name="Question5c_claimant_employment" value="Civil_c_claimant_employment_op2" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_claimant_employment_op2}}</span></label>
+            <label><input type="checkbox" id="Civil_c_claimant_employment_op2" name="Question5c_claimant_employment" value="{{Civil_c_claimant_employment_op2}}" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_claimant_employment_op2}}</span></label>
             <br><br>
-            <label><input type="checkbox" id="Civil_c_employment_none" name="Question5c_claimant_employment" value="none" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_employment_none}}</span></label>
+            <label><input type="checkbox" id="Civil_c_employment_none" name="Question5c_claimant_employment" value="{{Civil_c_employment_none}}" onclick="check_civil_c_claimant_employment()"> <span>{{Civil_c_employment_none}}</span></label>
         </div>
     </div>
 
@@ -132,7 +132,7 @@
         <div class="radioboxes">
             <label><input type="radio" id="Civil_c_respondent_employment_op1" name="Question5c_respondent_employment" value="Civil_c_respondent_employment_op1" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_respondent_employment_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_c_employment_none1" name="Question5c_respondent_employment" value="none" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_employment_none}}</span></label>
+            <label><input type="radio" id="Civil_c_employment_none1" name="Question5c_respondent_employment" value="{{Civil_c_employment_none}}" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_employment_none}}</span></label>
         </div>
     </div>
 
@@ -141,18 +141,18 @@
         <br><br>
         <p><b>{{Civil_d_claimant}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox" id="Civil_d_claimant_op1" name="Question5d_claimant" value="Civil_d_claimant_op1" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op1}}</span>
+            <label><input type="checkbox" id="Civil_d_claimant_op1" name="Question5d_claimant" value="{{Civil_d_claimant_op1}}" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op1}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Less than $20 000:</b> The limit can be raised to $30,000 if there is a Memorandum of Consent from both parties.">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox" id="Civil_d_claimant_op2" name="Question5d_claimant" value="Civil_d_claimant_op2" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op2}}</span>
+            <label><input type="checkbox" id="Civil_d_claimant_op2" name="Question5d_claimant" value="{{Civil_d_claimant_op2}}" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op2}}</span>
                 <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Filed within 2 years:</b> A cause of action is the set of facts which entitles you to start a court action against another party.
                 <br><br>
                 Example: A shopkeeper who does not get paid after delivering goods to a customer may have a cause of action to claim the price of the unpaid goods.
                 ">(i)</a>
             </label>
             <br><br>
-            <label><input type="checkbox" id="Civil_d_claimant_op3" name="Question5d_claimant" value="none" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op3}}</span></label>
+            <label><input type="checkbox" id="Civil_d_claimant_op3" name="Question5d_claimant" value="{{Civil_d_claimant_op3}}" onclick="check_civil_d_claimant()"> <span>{{Civil_d_claimant_op3}}</span></label>
         </div>
     </div>
 
@@ -161,17 +161,17 @@
         <br><br>
         <p><b>{{Civil_d_claimant_employment}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="Civil_d_claimant_employment_op1" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op1" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op1}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op1" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op1}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_claimant_employment_op2" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op2" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op2}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op2" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op2}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op2}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_claimant_employment_op3" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op3" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op3}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op3" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op3}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op3}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_claimant_employment_op4" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op4" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op4}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op4" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op4}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op4}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_claimant_employment_op5" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op5" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op5}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op5" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op5}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op5}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_claimant_employment_op6" name="Question5d_claimant_employment" value="Civil_d_claimant_employment_op6" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op6}}</span></label>
+            <label><input type="radio" id="Civil_d_claimant_employment_op6" name="Question5d_claimant_employment" value="{{Civil_d_claimant_employment_op6}}" onclick="check_Question5d_claimant_employment()"> <span>{{Civil_d_claimant_employment_op6}}</span></label>
         </div>
     </div>
 
@@ -298,7 +298,7 @@
             Question5b = oslas.Question5b.value
             console.log(Question5b)
 
-            if (Question5a == "respondent" && (Question5b == "tenancy" || Question5b == "contract_for_sale" || Question5b == "provision" || Question5b == "damage_to_property")) {
+            if (Question5a == "{{Civil_a_op2}}" && (Question5b == "{{Civil_b_op1}}" || Question5b == "{{Civil_b_op2}}" || Question5b == "{{Civil_b_op3}}" || Question5b == "{{Civil_b_op4}}")) {
                 var respondent = document.getElementById("respondent");
                 respondent.style.display = "block";
 
@@ -320,7 +320,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5a == "claimant" && (Question5b == "tenancy" || Question5b == "contract_for_sale" || Question5b == "provision" || Question5b == "damage_to_property")) {
+            else if (Question5a == "{{Civil_a_op1}}" && (Question5b == "{{Civil_b_op1}}" || Question5b == "{{Civil_b_op2}}" || Question5b == "{{Civil_b_op3}}" || Question5b == "{{Civil_b_op4}}")) {
                 var claimant = document.getElementById("claimant");
                 claimant.style.display = "block";
 
@@ -342,7 +342,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5a == "claimant" && Question5b == "employment") {
+            else if (Question5a == "{{Civil_a_op1}}" && Question5b == "{{Civil_b_op5}}") {
                 var claimant_employment = document.getElementById("claimant_employment");
                 claimant_employment.style.display = "block";
 
@@ -364,7 +364,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5a == "respondent" && Question5b == "employment") {
+            else if (Question5a == "{{Civil_a_op2}}" && Question5b == "{{Civil_b_op5}}") {
                 var respondent_employment = document.getElementById("respondent_employment");
                 respondent_employment.style.display = "block";
 
@@ -386,7 +386,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5b == "none") {
+            else if (Question5b == "{{Civil_b_op8}}") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
@@ -407,13 +407,22 @@
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
             }
         }
 
         function check_civil_c_respondent() {
             Question5c_respondent = oslas.Question5c_respondent.value
 
-            if (Question5c_respondent == "admit") {
+            if (Question5c_respondent == "{{Civil_c_respondent_op1}}") {
                 var admitpage = document.getElementById("admitpage");
                 admitpage.style.display = "block";
 
@@ -433,7 +442,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_respondent == "counter") {
+            if (Question5c_respondent == "{{Civil_c_respondent_op2}}") {
                 var counterclaimpage = document.getElementById("counterclaimpage");
                 counterclaimpage.style.display = "block";
 
@@ -453,7 +462,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_respondent == "dispute") {
+            if (Question5c_respondent == "{{Civil_c_respondent_op3}}") {
                 var disputepage = document.getElementById("disputepage");
                 disputepage.style.display = "block";
 
@@ -473,7 +482,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_respondent == "appeal") {
+            if (Question5c_respondent == "{{Civil_c_respondent_op4}}") {
                 var appealpage = document.getElementById("appealpage");
                 appealpage.style.display = "block";
 
@@ -493,7 +502,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_respondent == "set") {
+            if (Question5c_respondent == "{{Civil_c_respondent_op5}}") {
                 var set_asidepage = document.getElementById("set_asidepage");
                 set_asidepage.style.display = "block";
 
@@ -513,7 +522,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_respondent == "none") {
+            if (Question5c_respondent == "None of the above") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
@@ -537,7 +546,7 @@
         function check_civil_c_claimant() {
             Question5c_claimant = oslas.Question5c_claimant.value
 
-            if (Question5c_claimant == "file") {
+            if (Question5c_claimant == "{{Civil_c_claimant_op1}}") {
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "block";
 
@@ -554,7 +563,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_claimant == "appeal_claimant") {
+            if (Question5c_claimant == "{{Civil_c_claimant_op2}}") {
                 var appeal_claimantpage = document.getElementById("appeal_claimantpage");
                 appeal_claimantpage.style.display = "block";
 
@@ -571,7 +580,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_claimant == "set_claimant") {
+            if (Question5c_claimant == "{{Civil_c_claimant_op3}}") {
                 var set_claimantpage = document.getElementById("set_claimantpage");
                 set_claimantpage.style.display = "block";
 
@@ -588,7 +597,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_claimant == "execute") {
+            if (Question5c_claimant == "{{Civil_c_claimant_op4}}") {
                 var executepage = document.getElementById("executepage");
                 executepage.style.display = "block";
 
@@ -605,7 +614,7 @@
                 nonepage.style.display = "none";
             }
 
-            if (Question5c_claimant == "none") {
+            if (Question5c_claimant == "None of the above") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
@@ -668,6 +677,21 @@
                 var Civil_d_claimant_employment = document.getElementById("Civil_d_claimant_employment");
                 Civil_d_claimant_employment.style.display = "none";
 
+                var file_a_claim = document.getElementById("file_a_claim");
+                file_a_claim.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_page = document.getElementById("appeal_against_page");
+                appeal_against_page.style.display = "none";
+
+                var enforce_employment_page = document.getElementById("enforce_employment_page");
+                enforce_employment_page.style.display = "none";
+
+                var set_aside_employment_page = document.getElementById("set_aside_employment_page");
+                set_aside_employment_page.style.display = "none";
+
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             } 
@@ -687,6 +711,21 @@
 
                 var dispute_is_unresolved_page = document.getElementById("dispute_is_unresolved_page");
                 dispute_is_unresolved_page.style.display = "none";
+
+                var file_a_claim = document.getElementById("file_a_claim");
+                file_a_claim.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_page = document.getElementById("appeal_against_page");
+                appeal_against_page.style.display = "none";
+
+                var enforce_employment_page = document.getElementById("enforce_employment_page");
+                enforce_employment_page.style.display = "none";
+
+                var set_aside_employment_page = document.getElementById("set_aside_employment_page");
+                set_aside_employment_page.style.display = "none";
             } 
             else {
                 var dispute_is_unresolved_page = document.getElementById("dispute_is_unresolved_page");
@@ -703,14 +742,14 @@
         function check_civil_c_respondent_employment() {
             Question5c_respondent_employment = oslas.Question5c_respondent_employment.value
 
-            if (Question5c_respondent_employment == "Civil_c_respondent_employment_op1") {
+            if (Question5c_respondent_employment == "{{Civil_c_respondent_employment_op1}}") {
                 var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
                 Civil_d_respondent_employment.style.display = "block";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5c_respondent_employment == "none") {
+            else if (Question5c_respondent_employment == "None of the above") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
@@ -729,7 +768,7 @@
         function check_Question5d_claimant_employment() {
             Question5d_claimant_employment = oslas.Question5d_claimant_employment.value
             
-            if (Question5d_claimant_employment == "Civil_d_claimant_employment_op1") {
+            if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op1}}") {
                 var file_a_claim = document.getElementById("file_a_claim");
                 file_a_claim.style.display = "block";
 
@@ -748,7 +787,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_claimant_employment == "Civil_d_claimant_employment_op2") {
+            else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op2}}") {
                 var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
                 resolve_the_dispute_online.style.display = "block";
 
@@ -767,7 +806,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             } 
-            else if (Question5d_claimant_employment == "Civil_d_claimant_employment_op3") {
+            else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op3}}") {
                 var appeal_against_page = document.getElementById("appeal_against_page");
                 appeal_against_page.style.display = "block";
 
@@ -786,7 +825,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_claimant_employment == "Civil_d_claimant_employment_op4") {
+            else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op4}}") {
                 var enforce_employment_page = document.getElementById("enforce_employment_page");
                 enforce_employment_page.style.display = "block";
 
@@ -805,7 +844,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_claimant_employment == "Civil_d_claimant_employment_op5") {
+            else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op5}}") {
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
                 set_aside_employment_page.style.display = "block";
 
@@ -824,7 +863,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_claimant_employment == "Civil_d_claimant_employment_op6") {
+            else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op6}}") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
@@ -848,7 +887,7 @@
         function check_Question5d_respondent_employment() {
             Question5d_respondent_employment = oslas.Question5d_respondent_employment.value
 
-            if (Question5d_respondent_employment == "Civil_d_respondent_employment_op1" || Question5d_respondent_employment == "Civil_d_respondent_employment_op2" || Question5d_respondent_employment == "Civil_d_respondent_employment_op3") {
+            if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op1}}" || Question5d_respondent_employment == "{{Civil_d_respondent_employment_op2}}" || Question5d_respondent_employment == "{{Civil_d_respondent_employment_op3}}") {
                 var settle_dispute_counterclaim_page = document.getElementById("settle_dispute_counterclaim_page");
                 settle_dispute_counterclaim_page.style.display = "block";
 
@@ -864,7 +903,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_respondent_employment == "Civil_d_respondent_employment_op4") {
+            else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op4}}") {
                 var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
                 resolve_the_dispute_online.style.display = "block";
 
@@ -880,7 +919,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_respondent_employment == "Civil_d_respondent_employment_op5") {
+            else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op5}}") {
                 var appeal_against_page = document.getElementById("appeal_against_page");
                 appeal_against_page.style.display = "block";
 
@@ -896,7 +935,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_respondent_employment == "Civil_d_respondent_employment_op6") {
+            else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op6}}") {
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
                 set_aside_employment_page.style.display = "block";
 
@@ -912,7 +951,7 @@
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
-            else if (Question5d_respondent_employment == "Civil_d_respondent_employment_op7") {
+            else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op7}}") {
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "block";
 
