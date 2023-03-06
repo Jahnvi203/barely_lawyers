@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, make_response, Response
+from flask import Flask, render_template, request, redirect, url_for, session, make_response, Response, jsonify
 from pymongo import MongoClient
 from resources.add_annexes import add_annexes_dict
 from resources.add_inputs import add_inputs_dict
@@ -21,6 +21,7 @@ from collections import Counter
 import requests
 from flask_ckeditor import CKEditor
 from operator import itemgetter
+from suggest_advice import suggest_advice
 
 app = Flask(__name__)
 app.secret_key = '1E44M1ixSeNGzO3T0dqIoXra7De5B46n'
@@ -2090,6 +2091,21 @@ def annex_update_effect(annex_name, type):
         return redirect(url_for('maintenance_cms'))
     elif type == "divorce":
         return redirect(url_for('divorce_cms'))
+    
+@app.route('/admin/predictor')
+def predictor():
+    return render_template('predictor.html')
+
+@app.route('/admin/get_advice', methods=['POST'])
+def get_advice():
+    # Get the legal issue from the POST request data
+    case_facts = request.form['case_facts']
+
+    # Call the suggest_advice() function to get the top case facts and advice
+    top_case_facts, top_advice = suggest_advice(case_facts)
+
+    # Return the top case facts and advice as a JSON object
+    return jsonify(top_case_facts=top_case_facts, top_advice=top_advice)
 
 if __name__ == '__main__':
     app.debug = True
