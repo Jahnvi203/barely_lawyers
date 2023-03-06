@@ -448,3 +448,49 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     width: 100%;
     height: 100%;
 }
+
+iframe{
+    display: none;
+}
+
+#OSLASform {
+    font-size: 30px;
+}
+
+#admitmessage, #disputemessage, #appealmessage, #setmessage, #countermessage{
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+    color: red;
+}
+
+@media only screen and (max-width: 500px) {
+    .contact {
+        display: none;
+    }
+}
+
+.contact {
+    color: white;
+    position:absolute; right: 30px; top: 20px
+}
+
+#help {
+    color:orange;
+}
+
+.form-container {
+    border-radius: 30px; 
+    background-color: #F1EEDB;
+    margin: auto;
+}
+
+#companymessage, #representedmessage, #soughtmessage, #sg_chargedmessage, #chargedmessage, #nonemessage, #iFAMSmessage, #simplifiedmessage {
+    border-radius: 30px; 
+    background-color: #FADFB4;
+    margin: auto;
+}
+
+#unrepresented, #one_off {
+    color: red;
+}
