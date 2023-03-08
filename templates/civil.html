@@ -61,14 +61,31 @@
             <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Employment matters">(i)</a>
         </label>
         <br><br>
-        <label><input type="radio" name="Question5b" value="{{Civil_b_op6}}"> <span>{{Civil_b_op6}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op6}}" onclick="checkparty()"> <span>{{Civil_b_op6}}</span>
         </label>
         <br><br>
-        <label><input type="radio" name="Question5b" value="{{Civil_b_op7}}"> <span>{{Civil_b_op7}}</span>
+        <label><input type="radio" name="Question5b" value="{{Civil_b_op7}}" onclick="checkparty()"> <span>{{Civil_b_op7}}</span>
         </label>
         <br><br>
         <label><input type="radio" name="Question5b" value="{{Civil_b_op8}}" onclick="checkparty()"> <span>{{Civil_b_op8}}</span>
         </label>
+    </div>
+
+    <!-- This is for Civil 5a == claimant and Civil 5b == claim-->
+    <div id="claimant" style="display: none;">
+        <br><br>
+        <p><b>{{Civil_c_claimant}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" id="Civil_c_claimant_op1" name="Question5c_claimant" value="{{Civil_c_claimant_op1}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" id="Civil_c_claimant_op2" name="Question5c_claimant" value="{{Civil_c_claimant_op2}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" id="Civil_c_claimant_op3" name="Question5c_claimant" value="{{Civil_c_claimant_op3}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" id="Civil_c_claimant_op4" name="Question5c_claimant" value="{{Civil_c_claimant_op4}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" id="Civil_c_claimant_op5" name="Question5c_claimant" value="{{Civil_c_claimant_op5}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op5}}</span></label>
+        </div>
     </div>
 
     <!-- This is for Civil 5a == respondent and Civil 5b == claim-->
@@ -87,23 +104,6 @@
             <label><input type="radio" id="Civil_c_respondent_op5" name="Question5c_respondent" value="{{Civil_c_respondent_op5}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op5}}</span></label>
             <br><br>
             <label><input type="radio" id="Civil_c_respondent_op6" name="Question5c_respondent" value="{{Civil_c_respondent_op6}}" onclick="check_civil_c_respondent()"> <span>{{Civil_c_respondent_op6}}</span></label>
-        </div>
-    </div>
-
-    <!-- This is for Civil 5a == claimant and Civil 5b == claim-->
-    <div id="claimant" style="display: none;">
-        <br><br>
-        <p><b>{{Civil_c_claimant}}</b></p>
-        <div class="radioboxes">
-            <label><input type="radio" id="Civil_c_claimant_op1" name="Question5c_claimant" value="{{Civil_c_claimant_op1}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op1}}</span></label>
-            <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op2" name="Question5c_claimant" value="{{Civil_c_claimant_op2}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op2}}</span></label>
-            <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op3" name="Question5c_claimant" value="{{Civil_c_claimant_op3}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op3}}</span></label>
-            <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op4" name="Question5c_claimant" value="{{Civil_c_claimant_op4}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op4}}</span></label>
-            <br><br>
-            <label><input type="radio" id="Civil_c_claimant_op5" name="Question5c_claimant" value="{{Civil_c_claimant_op5}}" onclick="check_civil_c_claimant()"> <span>{{Civil_c_claimant_op5}}</span></label>
         </div>
     </div>
 
@@ -130,7 +130,7 @@
         <br><br>
         <p><b>{{Civil_c_employment}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="Civil_c_respondent_employment_op1" name="Question5c_respondent_employment" value="Civil_c_respondent_employment_op1" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_respondent_employment_op1}}</span></label>
+            <label><input type="radio" id="Civil_c_respondent_employment_op1" name="Question5c_respondent_employment" value="{{Civil_c_respondent_employment_op1}}" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_respondent_employment_op1}}</span></label>
             <br><br>
             <label><input type="radio" id="Civil_c_employment_none1" name="Question5c_respondent_employment" value="{{Civil_c_employment_none}}" onclick="check_civil_c_respondent_employment()"> <span>{{Civil_c_employment_none}}</span></label>
         </div>
@@ -175,20 +175,20 @@
         </div>
     </div>
 
-    <!-- This is for 5d == File a claim -->
+    <!-- This is for Civil 5a == claimant, Civil 5b == employment_matters and Civil 5c == Civil_c_claimant_employment_op1 && Civil_c_claimant_employment_op2 and 5d == File a claim -->
     <div id="file_a_claim" style="display: none;">
         <br><br>
-        <p><b>I have...</b></p>
+        <p><b>{{Civil_e_claimant_employment}}</b></p>
         <div class="checkboxes">
-            <label><input type="checkbox" id="" name="Question" value="" onclick=""> <span>Completed the Pre-filing assessment on the Community Justice and Tribunals System (CJTS)</span></label>
+            <label><input type="checkbox" id="Civil_e_claimant_employment_op1" name="Question5e_claimant_employment" value="{{Civil_e_claimant_employment_op1}}" onclick="check_Question5e_claimant_employment()"> <span>{{Civil_e_claimant_employment_op1}}</span></label>
             <br><br>
-            <label><input type="checkbox" id="" name="Question" value="" onclick=""> <span>Filed my claim on the Community Justice and Tribunals System (CJTS)</span></label>
+            <label><input type="checkbox" id="Civil_e_claimant_employment_op2" name="Question5e_claimant_employment" value="{{Civil_e_claimant_employment_op2}}" onclick="check_Question5e_claimant_employment()"> <span>{{Civil_e_claimant_employment_op2}}</span></label>
             <br><br>
-            <label><input type="checkbox" id="" name="Question" value="" onclick=""> <span>Served the documents on the Respondent</span></label>
+            <label><input type="checkbox" id="Civil_e_claimant_employment_op3" name="Question5e_claimant_employment" value="{{Civil_e_claimant_employment_op3}}" onclick="check_Question5e_claimant_employment()"> <span>{{Civil_e_claimant_employment_op3}}</span></label>
             <br><br>
-            <label><input type="checkbox" id="" name="Question" value="" onclick=""> <span>Filed a declaration of service</span></label>
+            <label><input type="checkbox" id="Civil_e_claimant_employment_op4" name="Question5e_claimant_employment" value="{{Civil_e_claimant_employment_op4}}" onclick="check_Question5e_claimant_employment()"> <span>{{Civil_e_claimant_employment_op4}}</span></label>
             <br><br>
-            <label><input type="checkbox" id="" name="Question" value="" onclick=""> <span></span>None of the above</label>
+            <label><input type="checkbox" id="Civil_e_claimant_employment_op5" name="Question5e_claimant_employment" value="{{Civil_e_claimant_employment_op5}}" onclick="check_Question5e_claimant_employment()"> <span>{{Civil_e_claimant_employment_op5}}</span></label>
         </div>
     </div>
 
@@ -197,32 +197,89 @@
         <br><br>
         <p><b>{{Civil_d_respondent_employment}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="Civil_d_respondent_employment_op1" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op1" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op1}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op1}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op2" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op2" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op2}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op2}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op2}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op3" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op3" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op3}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op3}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op3}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op4" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op4" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op4}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op4}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op4}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op5" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op5" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op5}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op5}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op5}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op6" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op6" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op6}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op6}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op6}}</span></label>
             <br><br>
-            <label><input type="radio" id="Civil_d_respondent_employment_op7" name="Question5d_respondent_employment" value="Civil_d_respondent_employment_op7" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op7}}</span></label>
+            <label><input type="radio" name="Question5d_respondent_employment" value="{{Civil_d_respondent_employment_op7}}" onclick="check_Question5d_respondent_employment()"> <span>{{Civil_d_respondent_employment_op7}}</span></label>
+        </div>
+    </div>
+
+    <!-- This is for 5a == claimant and 5b == Neighbour Disputes -->
+    <div id="Civil_c_claimant_neighbour" style="display: none;">
+        <br><br>
+        <p><b>{{Civil_c_claimant_neighbour}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op1}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op2}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op3}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op4}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op5}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op5}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_claimant_neighbour" value="{{Civil_c_claimant_neighbour_op6}}" onclick="check_Question5c_claimant_neighbour()"> <span>{{Civil_c_claimant_neighbour_op6}}</span></label>
+        </div>
+    </div>
+
+    <!-- This is for 5a == claimant and 5c_neighbour == File a claim -->
+    <div id="file_a_claim_neighbour" style="display: none;">
+        <br><br>
+        <p><b>{{Civil_d_claimant_neighbour}}</b></p>
+        <div class="checkboxes">
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op1" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op1}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op1}}</span></label>
+            <br><br>
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op2" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op2}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op2}}</span></label>
+            <br><br>
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op3" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op3}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op3}}</span></label>
+            <br><br>
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op4" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op4}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op4}}</span></label>
+            <br><br>
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op5" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op5}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op5}}</span></label>
+            <br><br>
+            <label><input type="checkbox" id="Civil_d_claimant_neighbour_op6" name="Question5d_claimant_neighbour" value="{{Civil_d_claimant_neighbour_op6}}" onclick="check_Question5d_claimant_neighbour()"> <span>{{Civil_d_claimant_neighbour_op6}}</span></label>
+        </div>
+    </div>
+
+    <!-- This is for 5a == respondent and 5b == Neighbour Disputes -->
+    <div id="Civil_c_respondent_neighbour" style="display: none;">
+        <br><br>
+        <p><b>{{Civil_c_respondent_neighbour}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op1}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op2}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op3}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op4}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op5}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op5}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_neighbour" value="{{Civil_c_respondent_neighbour_op6}}" onclick="check_Question5c_respondent_neighbour()"> <span>{{Civil_c_respondent_neighbour_op6}}</span></label>
         </div>
     </div>
 
     <!-- This is for 5d == Resolve the dispute online -->
     <div id="resolve_the_dispute_online" style="display: none;">
         <br><br>
-        <p><b>I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:</b></p>
+        <p><b>{{Resolve_the_dispute_online}}</b></p>
         <div class="radioboxes">
-            <label><input type="radio" id="" name="Question" value="" onclick=""> <span>eNegotiation</span></label>
+            <label><input type="radio" name="QuestionResolve_the_dispute_online" value="{{Resolve_the_dispute_online_op1}}" onclick="check_resolve_the_dispute_online()"> <span>{{Resolve_the_dispute_online_op1}}</span></label>
             <br><br>
-            <label><input type="radio" id="" name="Question" value="" onclick=""> <span>eMediation</span></label>
+            <label><input type="radio" name="QuestionResolve_the_dispute_online" value="{{Resolve_the_dispute_online_op2}}" onclick="check_resolve_the_dispute_online()"> <span>{{Resolve_the_dispute_online_op2}}</span></label>
             <br><br>
-            <label><input type="radio" id="" name="Question" value="" onclick=""> <span>None of the above</span></label>
+            <label><input type="radio" name="QuestionResolve_the_dispute_online" value="{{Resolve_the_dispute_online_op3}}" onclick="check_resolve_the_dispute_online()"> <span>{{Resolve_the_dispute_online_op3}}</span></label>
         </div>
     </div>
 
@@ -247,7 +304,7 @@
     <div id="settle_dispute_counterclaim_page" style="display: none;">
         {% include "settle_dispute_counterclaim.html" %}
     </div>
-    
+
 
     <!-- This 5 pages are for respondent -->
     <div id="admitpage" style="display: none;">
@@ -287,6 +344,46 @@
         {% include "claimant_d.html" %}
     </div>
 
+    <!-- This 1 page is for Appeal Agianst Neighbour Question 5c -->
+    <div id="appeal_against_neighbour_page" style="display: none;">
+        {% include "appeal_against_neighbour.html" %}
+    </div>
+
+    <!-- This 1 page is for Enforce Neighbour Question 5c -->
+    <div id="enforce_neighbour_page" style="display: none;">
+        {% include "enforce_neighbour.html" %}
+    </div>
+
+    <!-- This 1 page is for Set Aside Neighbour Question 5c -->
+    <div id="set_aside_neighbour_page" style="display: none;">
+        {% include "set_aside_neighbour.html" %}
+    </div>
+
+    <!-- This 1 page is for None of the above selected for Question 5e -->
+    <div id="none_of_the_above_page" style="display: none;">
+        {% include "none_of_the_above.html" %}
+    </div>
+
+    <!-- This 1 page is for Question 5d Claimant Neighbour -->
+    <div id="Question5d_claimant_neighbour_page" style="display: none;">
+        {% include "Question5d_claimant_neighbour_page.html" %}
+    </div>
+
+    <!-- This is for respondent_employment5d == settle / dispute / file a counterclaim -->
+    <div id="settle_dispute_page" style="display: none;">
+        {% include "settle_dispute.html" %}
+    </div>
+
+    <!-- This 1 page is for eNegotiation -->
+    <div id="eNegotiation_page" style="display: none;">
+        {% include "eNegotiation.html" %}
+    </div>
+
+    <!-- This 1 page is for eMediation -->
+    <div id="eMediation_page" style="display: none;">
+        {% include "eMediation.html" %}
+    </div>
+
     <!-- This 1 page is for all the None of the Above choices -->
     <div id="none" style="display: none;">
         {% include "none.html" %}
@@ -317,6 +414,9 @@
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
@@ -338,6 +438,9 @@
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
@@ -361,6 +464,9 @@
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
             }
@@ -382,6 +488,9 @@
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
@@ -416,6 +525,83 @@
 
                 var executepage = document.getElementById("executepage");
                 executepage.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+            }
+            else if (Question5a == "{{Civil_a_op1}}" && Question5b == "{{Civil_b_op6}}") {
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "block";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5a == "{{Civil_a_op2}}" && Question5b == "{{Civil_b_op6}}") {
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "block";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
             }
         }
 
@@ -748,6 +934,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5c_respondent_employment == "None of the above") {
                 var nonepage = document.getElementById("none");
@@ -755,6 +944,9 @@
 
                 var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
                 Civil_d_respondent_employment.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else {
                 var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
@@ -762,6 +954,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
         }
 
@@ -786,6 +981,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op2}}") {
                 var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
@@ -805,6 +1003,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             } 
             else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op3}}") {
                 var appeal_against_page = document.getElementById("appeal_against_page");
@@ -824,6 +1025,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op4}}") {
                 var enforce_employment_page = document.getElementById("enforce_employment_page");
@@ -843,6 +1047,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op5}}") {
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
@@ -862,6 +1069,9 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_claimant_employment == "{{Civil_d_claimant_employment_op6}}") {
                 var nonepage = document.getElementById("none");
@@ -881,6 +1091,9 @@
 
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
                 set_aside_employment_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             } 
         }
 
@@ -902,6 +1115,15 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op4}}") {
                 var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
@@ -918,6 +1140,15 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op5}}") {
                 var appeal_against_page = document.getElementById("appeal_against_page");
@@ -934,6 +1165,15 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op6}}") {
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
@@ -950,6 +1190,15 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
             }
             else if (Question5d_respondent_employment == "{{Civil_d_respondent_employment_op7}}") {
                 var nonepage = document.getElementById("none");
@@ -966,9 +1215,388 @@
 
                 var set_aside_employment_page = document.getElementById("set_aside_employment_page");
                 set_aside_employment_page.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
+            }
+        }
+
+        function check_Question5e_claimant_employment() {
+            var op1 = $("#Civil_e_claimant_employment_op1").is(":checked");
+            console.log(op1)
+            var op2 = $("#Civil_e_claimant_employment_op2").is(":checked");
+            console.log(op2)
+            var op3 = $("#Civil_e_claimant_employment_op3").is(":checked");
+            console.log(op3)
+            var op4 = $("#Civil_e_claimant_employment_op4").is(":checked");
+            console.log(op4)
+            var op5 = $("#Civil_e_claimant_employment_op5").is(":checked");
+            console.log(op5)
+
+            if (op1 == true && op2 == true && op3 == true && op4 == true && op5 == false) {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == false && op4 == false && op5 == true) {
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
+            }
+        }
+
+        function check_resolve_the_dispute_online() {
+            QuestionResolve_the_dispute_online = oslas.QuestionResolve_the_dispute_online.value
+
+            if (QuestionResolve_the_dispute_online == "{{Resolve_the_dispute_online_op1}}") {
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "block";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (QuestionResolve_the_dispute_online == "{{Resolve_the_dispute_online_op2}}") {
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "block";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (QuestionResolve_the_dispute_online == "{{Resolve_the_dispute_online_op3}}") {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+            }
+        }
+
+        function check_Question5c_claimant_neighbour() {
+            Question5c_claimant_neighbour = oslas.Question5c_claimant_neighbour.value
+
+            if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op1}}") {
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "block";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op2}}") {
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "block";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op3}}") {
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "block";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+
+            }
+            else if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op4}}") {
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "block";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op5}}") {
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "block";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_claimant_neighbour == "{{Civil_c_claimant_neighbour_op6}}") {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+            }
+        }
+
+        function check_Question5d_claimant_neighbour() {
+            var op1 = $("#Civil_d_claimant_neighbour_op1").is(":checked");
+            console.log(op1)
+            var op2 = $("#Civil_d_claimant_neighbour_op2").is(":checked");
+            console.log(op2)
+            var op3 = $("#Civil_d_claimant_neighbour_op3").is(":checked");
+            console.log(op3)
+            var op4 = $("#Civil_d_claimant_neighbour_op4").is(":checked");
+            console.log(op4)
+            var op5 = $("#Civil_d_claimant_neighbour_op5").is(":checked");
+            console.log(op5)
+            var op6 = $("#Civil_d_claimant_neighbour_op6").is(":checked");
+            console.log(op6)
+
+            if (op1 == true && op2 == false && op3 == false && op4 == false && op5 == false && op6 == false) {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == true && op3 == false && op4 == false && op5 == false && op6 == false) {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == true && op4 == false && op5 == false && op6 == false) {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == false && op4 == true && op5 == false && op6 == false) {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == false && op4 == false && op5 == true && op6 == false) {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "block";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == false && op4 == false && op5 == false && op6 == true) {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+            }
+            else {
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+        }
+
+        function check_Question5c_respondent_neighbour() {
+            Question5c_respondent_neighbour = oslas.Question5c_respondent_neighbour.value
+
+            if (Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op1}}" || Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op2}}") {
+                var settle_dispute_page = document.getElementById("settle_dispute_page");
+                settle_dispute_page.style.display = "block";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op3}}") {
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "block";
+
+                var settle_dispute_page = document.getElementById("settle_dispute_page");
+                settle_dispute_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op4}}") {
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "block";
+
+                var settle_dispute_page = document.getElementById("settle_dispute_page");
+                settle_dispute_page.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op5}}") {
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "block";
+
+                var settle_dispute_page = document.getElementById("settle_dispute_page");
+                settle_dispute_page.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5c_respondent_neighbour == "{{Civil_c_respondent_neighbour_op6}}") {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+
+                var settle_dispute_page = document.getElementById("settle_dispute_page");
+                settle_dispute_page.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
             }
         }
 
     </script>
 </body>
 </html>
+

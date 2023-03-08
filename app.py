@@ -1466,11 +1466,9 @@ def OSLAS_Criteria():
         Question5d_claimant = request.form.getlist('Question5d_claimant')
         Question5c_claimant_employment = request.form.getlist('Question5c_claimant_employment')
         Question5d_claimant_employment = request.form.getlist('Question5d_claimant_employment')
-        print(Question5b[0])
-        print(Question5c_claimant_employment)
-        print(Question5d_claimant_employment)
-
         Question5c_respondent = request.form.getlist('Question5c_respondent')
+        Question5c_respondent_employment = request.form.getlist('Question5c_respondent_employment')
+        Question5d_respondent_employment = request.form.getlist('Question5d_respondent_employment')
 
 
         # When the answer for Question 1 is "Yes"
@@ -1497,7 +1495,7 @@ def OSLAS_Criteria():
                 "Current Date": datetime.now()
             })
         
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", and Question 5b is "None of the above"
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant/Respondent" and Question 5b is "None of the above"
         if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5b[0] == "None of the above":
             col_OC_Answers.insert_one({
                 "Are you enquiring as a representative of a company?": Question1[0],
@@ -1537,7 +1535,7 @@ def OSLAS_Criteria():
             })
 
         # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "File a Claim"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" :
+        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant":
             col_OC_Answers.insert_one({
                 "Are you enquiring as a representative of a company?": Question1[0],
                 "Are you currently represented by a lawyer?": Question2[0],
@@ -1550,7 +1548,32 @@ def OSLAS_Criteria():
                 "Current Date": datetime.now()
             })
 
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property"
+        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and (Question5b[0] == "Tenancy agreement for residential premises not exceeding 2 years" or Question5b[0] == "Contract for sale of good" or Question5b[0] == "Contract for provision of services" or Question5b[0] == "Damage to property not arising from or in connection with the use of a motor vehicle, or caused by a neighbour"):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I want to": Question5c_respondent[0],
+                "Current Date": datetime.now()
+            })
 
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Employment", 
+        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_respondent_employment[0],
+                "I wish to": Question5d_respondent_employment[0],
+                "Current Date": datetime.now()
+            })
 
 
     # OSLAS Criteria Question 1 database
@@ -1651,6 +1674,52 @@ def OSLAS_Criteria():
     Civil_d_respondent_employment_op6 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op6"]
     Civil_d_respondent_employment_op7 = OCCivil_d_respondent_employment["Civil_d_respondent_employment_op7"]
 
+    # OSLAS Criteria Civil(e) claimant employment database
+    OCCivil_e_claimant_employment = list(col_oslas_criteria.find({"Civil_e_claimant_employment": "I have..."}))[0]
+    Civil_e_claimant_employment = OCCivil_e_claimant_employment["Civil_e_claimant_employment"]
+    Civil_e_claimant_employment_op1 = OCCivil_e_claimant_employment["Civil_e_claimant_employment_op1"]
+    Civil_e_claimant_employment_op2 = OCCivil_e_claimant_employment["Civil_e_claimant_employment_op2"]
+    Civil_e_claimant_employment_op3 = OCCivil_e_claimant_employment["Civil_e_claimant_employment_op3"]
+    Civil_e_claimant_employment_op4 = OCCivil_e_claimant_employment["Civil_e_claimant_employment_op4"]
+    Civil_e_claimant_employment_op5 = OCCivil_e_claimant_employment["Civil_e_claimant_employment_op5"]
+
+    # OSLAS Criteria Resolve the dispute online database
+    OCResolve_the_dispute_online = list(col_oslas_criteria.find({"Resolve_the_dispute_online": "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:"}))[0]
+    Resolve_the_dispute_online = OCResolve_the_dispute_online["Resolve_the_dispute_online"]
+    Resolve_the_dispute_online_op1 = OCResolve_the_dispute_online["Resolve_the_dispute_online_op1"]
+    Resolve_the_dispute_online_op2 = OCResolve_the_dispute_online["Resolve_the_dispute_online_op2"]
+    Resolve_the_dispute_online_op3 = OCResolve_the_dispute_online["Resolve_the_dispute_online_op3"]
+
+    # OSLAS Criteria Civil(c) claimant neighbour database 
+    OCCivil_c_neighbour = list(col_oslas_criteria.find({"Civil_c_claimant_neighbour": "c. I wish to:"}))[0]
+    Civil_c_claimant_neighbour = OCCivil_c_neighbour["Civil_c_claimant_neighbour"]
+    Civil_c_claimant_neighbour_op1 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op1"]
+    Civil_c_claimant_neighbour_op2 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op2"]
+    Civil_c_claimant_neighbour_op3 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op3"]
+    Civil_c_claimant_neighbour_op4 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op4"]
+    Civil_c_claimant_neighbour_op5 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op5"]
+    Civil_c_claimant_neighbour_op6 = OCCivil_c_neighbour["Civil_c_claimant_neighbour_op6"]
+
+    # OSLAS Criteria Civil(d) claimant neighbour database
+    OCCivil_d_claimant_neighbour = list(col_oslas_criteria.find({"Civil_d_claimant_neighbour": "I have..."}))[0]
+    Civil_d_claimant_neighbour = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour"]
+    Civil_d_claimant_neighbour_op1 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op1"]
+    Civil_d_claimant_neighbour_op2 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op2"]
+    Civil_d_claimant_neighbour_op3 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op3"]
+    Civil_d_claimant_neighbour_op4 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op4"]
+    Civil_d_claimant_neighbour_op5 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op5"]
+    Civil_d_claimant_neighbour_op6 = OCCivil_d_claimant_neighbour["Civil_d_claimant_neighbour_op6"]
+
+    # OSLAS Criteria Civil(c) respondent neighbour database 
+    OCCivil_c_respondent_neighbour = list(col_oslas_criteria.find({"Civil_c_respondent_neighbour": "c. I wish to:"}))[0]
+    Civil_c_respondent_neighbour = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour"]
+    Civil_c_respondent_neighbour_op1 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op1"]
+    Civil_c_respondent_neighbour_op2 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op2"]
+    Civil_c_respondent_neighbour_op3 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op3"]
+    Civil_c_respondent_neighbour_op4 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op4"]
+    Civil_c_respondent_neighbour_op5 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op5"]
+    Civil_c_respondent_neighbour_op6 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op6"]
+
     # OSLAS Criteria Family database
     OCFamily = list(col_oslas_criteria.find({"Family_i": "i. Integrated Family Application Management System (iFAMS)"}))[0]
     Family_i = OCFamily["Family_i"]
@@ -1687,6 +1756,11 @@ def OSLAS_Criteria():
     Civil_d_claimant = Civil_d_claimant, Civil_d_claimant_op1 = Civil_d_claimant_op1, Civil_d_claimant_op2 = Civil_d_claimant_op2, Civil_d_claimant_op3 = Civil_d_claimant_op3, 
     Civil_d_claimant_employment = Civil_d_claimant_employment, Civil_d_claimant_employment_op1 = Civil_d_claimant_employment_op1, Civil_d_claimant_employment_op2 = Civil_d_claimant_employment_op2, Civil_d_claimant_employment_op3 = Civil_d_claimant_employment_op3, Civil_d_claimant_employment_op4 = Civil_d_claimant_employment_op4, Civil_d_claimant_employment_op5 = Civil_d_claimant_employment_op5, Civil_d_claimant_employment_op6 = Civil_d_claimant_employment_op6, 
     Civil_d_respondent_employment = Civil_d_respondent_employment, Civil_d_respondent_employment_op1 = Civil_d_respondent_employment_op1, Civil_d_respondent_employment_op2 = Civil_d_respondent_employment_op2, Civil_d_respondent_employment_op3 = Civil_d_respondent_employment_op3, Civil_d_respondent_employment_op4 = Civil_d_respondent_employment_op4, Civil_d_respondent_employment_op5 = Civil_d_respondent_employment_op5, Civil_d_respondent_employment_op6 = Civil_d_respondent_employment_op6, Civil_d_respondent_employment_op7 = Civil_d_respondent_employment_op7,
+    Civil_e_claimant_employment = Civil_e_claimant_employment, Civil_e_claimant_employment_op1 = Civil_e_claimant_employment_op1, Civil_e_claimant_employment_op2 = Civil_e_claimant_employment_op2, Civil_e_claimant_employment_op3 = Civil_e_claimant_employment_op3, Civil_e_claimant_employment_op4 = Civil_e_claimant_employment_op4, Civil_e_claimant_employment_op5 = Civil_e_claimant_employment_op5,
+    Resolve_the_dispute_online = Resolve_the_dispute_online, Resolve_the_dispute_online_op1 = Resolve_the_dispute_online_op1, Resolve_the_dispute_online_op2 = Resolve_the_dispute_online_op2, Resolve_the_dispute_online_op3 = Resolve_the_dispute_online_op3,
+    Civil_c_claimant_neighbour = Civil_c_claimant_neighbour, Civil_c_claimant_neighbour_op1 = Civil_c_claimant_neighbour_op1, Civil_c_claimant_neighbour_op2 = Civil_c_claimant_neighbour_op2, Civil_c_claimant_neighbour_op3 = Civil_c_claimant_neighbour_op3, Civil_c_claimant_neighbour_op4 = Civil_c_claimant_neighbour_op4, Civil_c_claimant_neighbour_op5 = Civil_c_claimant_neighbour_op5, Civil_c_claimant_neighbour_op6 = Civil_c_claimant_neighbour_op6,
+    Civil_d_claimant_neighbour = Civil_d_claimant_neighbour, Civil_d_claimant_neighbour_op1 = Civil_d_claimant_neighbour_op1, Civil_d_claimant_neighbour_op2 = Civil_d_claimant_neighbour_op2, Civil_d_claimant_neighbour_op3 = Civil_d_claimant_neighbour_op3, Civil_d_claimant_neighbour_op4 = Civil_d_claimant_neighbour_op4, Civil_d_claimant_neighbour_op5 = Civil_d_claimant_neighbour_op5, Civil_d_claimant_neighbour_op6 = Civil_d_claimant_neighbour_op6,
+    Civil_c_respondent_neighbour = Civil_c_respondent_neighbour, Civil_c_respondent_neighbour_op1 = Civil_c_respondent_neighbour_op1, Civil_c_respondent_neighbour_op2 = Civil_c_respondent_neighbour_op2, Civil_c_respondent_neighbour_op3 = Civil_c_respondent_neighbour_op3, Civil_c_respondent_neighbour_op4 = Civil_c_respondent_neighbour_op4, Civil_c_respondent_neighbour_op5 = Civil_c_respondent_neighbour_op5, Civil_c_respondent_neighbour_op6 = Civil_c_respondent_neighbour_op6,
     Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
     Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
 
