@@ -1462,14 +1462,30 @@ def OSLAS_Criteria():
         Question4 = request.form.getlist('Question4')
         Question5a = request.form.getlist('Question5a')
         Question5b = request.form.getlist('Question5b')
+
         Question5c_claimant = request.form.getlist('Question5c_claimant')
         Question5d_claimant = request.form.getlist('Question5d_claimant')
+
         Question5c_claimant_employment = request.form.getlist('Question5c_claimant_employment')
         Question5d_claimant_employment = request.form.getlist('Question5d_claimant_employment')
+        Question5e_claimant_employment = request.form.getlist('Question5e_claimant_employment')
+
+
         Question5c_respondent = request.form.getlist('Question5c_respondent')
         Question5c_respondent_employment = request.form.getlist('Question5c_respondent_employment')
         Question5d_respondent_employment = request.form.getlist('Question5d_respondent_employment')
 
+        Question5c_claimant_neighbour = request.form.getlist('Question5c_claimant_neighbour')
+        Question5d_claimant_neighbour = request.form.getlist('Question5d_claimant_neighbour')
+
+        Question5c_respondent_neighbour = request.form.getlist('Question5c_respondent_neighbour')
+
+        QuestionResolve_the_dispute_online = request.form.getlist('QuestionResolve_the_dispute_online')
+
+        Criminal5 = request.form.getlist('Criminal5')
+
+        Family_Question5a = request.form.getlist('Family_Question5a')
+        Family_Question5b = request.form.getlist('Family_Question5b')
 
         # When the answer for Question 1 is "Yes"
         if Question1[0] == "Yes":
@@ -1494,6 +1510,29 @@ def OSLAS_Criteria():
                 "Have you sought legal advice on this matter before?": Question3[0],
                 "Current Date": datetime.now()
             })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Criminal"
+        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Criminal":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "Please select all that applies": Criminal5,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Family", Question 5a and Question 5b
+        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Family":
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "i. Integrated Family Application Management System (iFAMS)": Family_Question5a,
+                "ii. Divorce application (simplified track)": Family_Question5b,
+                "Current Date": datetime.now()
+                })
         
         # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant/Respondent" and Question 5b is "None of the above"
         if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5b[0] == "None of the above":
