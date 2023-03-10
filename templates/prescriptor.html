@@ -44,13 +44,14 @@
                 data: { case_facts: caseFacts },
                 success: function(response) {
                     // Check if the response is in the expected format
+                    var caseFactsHtml = '<h4><u>Cases</u></h4>';
+                    var adviceHtml = '<h4><u>Advices</u></h4>';
                     if (response && response.top_case_facts && Array.isArray(response.top_case_facts) && response.top_advice && Array.isArray(response.top_advice)) {
                     // Build the case facts and advice HTML string
-                        var caseFactsHtml = '';
-                        var adviceHtml = '';
+                        
                         for (var i = 0; i < response.top_case_facts.length; i++) {
-                            caseFactsHtml += '<p>Case Fact ' + (i+1) + ': ' + response.top_case_facts[i] + '</p>';
-                            adviceHtml += '<p>Advice ' + (i+1) + ': ' + response.top_advice[i] + '</p>';
+                            caseFactsHtml += '<p><b>Case Fact ' + (i+1) + ':</b> ' + response.top_case_facts[i] + '</p>';
+                            adviceHtml += '<p><b>Advice ' + (i+1) + ':</b> ' + response.top_advice[i] + '</p>';
                         }
 
                     // Display the case facts and advice in the advice container

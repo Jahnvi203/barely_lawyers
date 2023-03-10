@@ -2556,9 +2556,9 @@ def annex_update_effect(annex_name, type):
     elif type == "divorce":
         return redirect(url_for('divorce_cms'))
     
-@app.route('/admin/predictor')
-def predictor():
-    return render_template('predictor.html')
+@app.route('/admin/prescriptor')
+def prescriptor():
+    return render_template('prescriptor.html')
 
 @app.route('/admin/get_advice', methods=['POST'])
 def get_advice():
