@@ -75,7 +75,7 @@ h1 {
     margin: 0px !important;
 }
 
-#our-services {
+#our-services, #our-services-OSLAS, #our-services-prescriptive {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 2px solid black;
@@ -482,7 +482,7 @@ iframe{
 .form-container {
     border-radius: 30px; 
     background-color: #F1EEDB;
-    margin: auto;
+    margin-left: 50px;
 }
 
 #companymessage, #representedmessage, #soughtmessage, #sg_chargedmessage, #chargedmessage, #nonemessage, #iFAMSmessage, #simplifiedmessage {
@@ -493,4 +493,9 @@ iframe{
 
 #unrepresented, #one_off {
     color: red;
+}
+
+#OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Question5_criminal, #Question5i_family, #Question5ii_family{
+    text-align: left;
+    padding-left: 50px;
 }

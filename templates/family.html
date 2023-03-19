@@ -8,9 +8,9 @@
 </head>
 <body>
     <br>
-    <p><b>5. Which of the following category best describes the matter you are seeking advice on?</b></p>
-    <p><b>{{Family_i}}</b></p>
-    <div class="checkboxes">
+    <p id="Question5"><b>5. Which of the following category best describes the matter you are seeking advice on?</b></p>
+    <div id="Question5i_family" class="checkboxes">
+        <p><b>{{Family_i}}</b></p>
         <label><input type="checkbox" id="q5a" name="Family_Question5a" value="{{Family_i_op1}}" onclick="checkiFAMS()"> <span>{{Family_i_op1}}</span></label>
         <br><br>
         <label><input type="checkbox" id="q5b" name="Family_Question5a" value="{{Family_i_op2}}" onclick="checkiFAMS()"> <span>{{Family_i_op2}}</span>
@@ -31,10 +31,10 @@
     </div>
 
     <br>
-
-    <p><b>{{Family_ii}}</b></p>
-    <p><b>{{Family_ii_prompt}}</b></p>
-    <div class="checkboxes">
+    
+    <div id="Question5ii_family" class="checkboxes">
+        <p><b>{{Family_ii}}</b></p>
+        <p><b>{{Family_ii_prompt}}</b></p>
         <label><input type="checkbox" id="q6a" name="Family_Question5b" value="{{Family_ii_op1}}" onclick="checksimplified()"> <span>{{Family_ii_op1}}</span></label>
         <br><br>
         <label><input type="checkbox" id="q6b" name="Family_Question5b" value="{{Family_ii_op2}}" onclick="checksimplified()"> <span>{{Family_ii_op2}}</span></label>
