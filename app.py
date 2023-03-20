@@ -1752,6 +1752,10 @@ def OSLAS_Criteria():
     OCQ4op2 = OCQuestion4["OCQ4op2"]
     OCQ4op3 = OCQuestion4["OCQ4op3"]
 
+    # OSLAS Criteria Question 5 database
+    OCQuestion5 = list(col_oslas_criteria.find({"OCQ5": "5. Which of the following category best describes the matter you are seeking advice on?"}))[0]
+    OCQ5 = OCQuestion5["OCQ5"]
+
     # OSLAS Criteria Civil(a) database
     OCCivil_a = list(col_oslas_criteria.find({"Civil_a": "a. I am the:"}))[0]
     Civil_a = OCCivil_a["Civil_a"]
@@ -1899,6 +1903,7 @@ def OSLAS_Criteria():
     OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
     OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
+    OCQ5 = OCQ5,
     Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2,
     Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
     Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,
@@ -2556,8 +2561,19 @@ def annex_update_effect(annex_name, type):
     elif type == "divorce":
         return redirect(url_for('divorce_cms'))
     
-@app.route('/admin/cms/oslas')
+@app.route('/admin/cms/oslas', methods=["POST", "GET"])
 def oslas_cms():
+    if request.method == "POST":
+        Updated_Question1 = request.form.getlist('Question1')
+        Updated_OCQ1op1 = request.form.getlist('OCQ1op1')
+        Updated_OCQ1op2 = request.form.getlist('OCQ1op2')
+
+        col_oslas_criteria.update_one({"QN": "1"}, {'$set': {"OCQ1op1": Updated_OCQ1op1[0]}})
+
+        print(Updated_Question1)
+        print(Updated_OCQ1op1)
+        print(Updated_OCQ1op2)
+
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"OCQ1": "1. Are you enquiring as a representative of a company (i.e. Pte Ltd)?"}))[0]
     OCQ1 = OCQuestion1["OCQ1"]
@@ -2582,6 +2598,10 @@ def oslas_cms():
     OCQ4op1 = OCQuestion4["OCQ4op1"]
     OCQ4op2 = OCQuestion4["OCQ4op2"]
     OCQ4op3 = OCQuestion4["OCQ4op3"]
+
+    # OSLAS Criteria Question 5 database
+    OCQuestion5 = list(col_oslas_criteria.find({"OCQ5": "5. Which of the following category best describes the matter you are seeking advice on?"}))[0]
+    OCQ5 = OCQuestion5["OCQ5"]
 
     # OSLAS Criteria Civil(a) database
     OCCivil_a = list(col_oslas_criteria.find({"Civil_a": "a. I am the:"}))[0]
@@ -2730,6 +2750,7 @@ def oslas_cms():
     OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
     OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
+    OCQ5 = OCQ5,
     Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2,
     Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
     Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,

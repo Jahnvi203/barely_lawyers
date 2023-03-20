@@ -499,3 +499,20 @@ iframe{
     text-align: left;
     padding-left: 50px;
 }
+
+#collapse1, #collapse2, #collapse3, #collapse4, #collapse5{
+    text-align: left;
+    padding-left: 50px;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(2); /* IE 9 */
+    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+    transform: scale(2);
+}
+
+input[type="checkbox"] {
+    -ms-transform: scale(2); /* IE 9 */
+    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+    transform: scale(2);
+}

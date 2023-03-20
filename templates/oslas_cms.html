@@ -160,40 +160,100 @@
                     <br>
                     <div class="questions">
                         <h4>Questions</h4>
-                        <div class="accordion cms" id="OCQ1_accordion">
+                        <div class="accordion cms" id="oslas_accordion">
                             <div class="accordion-item cms">
                                 <p class="accordion-header cms" id="OCQ1">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                                         {{OCQ1}}
                                     </button>
                                 </p>
-                                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="OCQ1" data-bs-parent="#OCQ1_accordion">
+                                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="OCQ1" data-bs-parent="#oslas_accordion">
                                     <div class="accordion-body">
-                                        <p><b>Option 1: </b>{{OCQ1op1}}</p>
-                                        <p><b>Option 2: </b>{{OCQ1op2}}</p>
+                                        <form method="post">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Question1" type="text" required value="{{OCQ1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="OCQ1op1" type="text" required value="{{OCQ1op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="OCQ1op2" type="text" required value="{{OCQ1op2}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Submit</button>
+                                        </form>
+                                        <br><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item cms">
                                 <p class="accordion-header cms" id="OCQ2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-controls="">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                         {{OCQ2}}
                                     </button>
                                 </p>
+                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="OCQ2" data-bs-parent="#oslas_accordion">
+                                    <div class="accordion-body">
+                                        <p><b>Option 1: </b>{{OCQ2op1}}</p>
+                                        <p><b>Option 2: </b>{{OCQ2op2}}</p>
+                                        <button name='edit_button_5' id='edit_button_5' class='btn btn-primary edit-button' onClick='get_clicked_button()'>Edit</button>
+                                        <br><br>
+                                    </div>
+                                </div>
                             </div>
                             <div class="accordion-item cms">
                                 <p class="accordion-header cms" id="OCQ3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-controls="">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                         {{OCQ3}}
                                     </button>
                                 </p>
+                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="OCQ3" data-bs-parent="#oslas_accordion">
+                                    <div class="accordion-body">
+                                        <p><b>Option 1: </b>{{OCQ3op1}}</p>
+                                        <p><b>Option 2: </b>{{OCQ3op2}}</p>
+                                        <button name='edit_button_5' id='edit_button_5' class='btn btn-primary edit-button' onClick='get_clicked_button()'>Edit</button>
+                                        <br><br>
+                                    </div>
+                                </div>
                             </div>
                             <div class="accordion-item cms">
                                 <p class="accordion-header cms" id="OCQ4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-controls="">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                                         {{OCQ4}}
                                     </button>
                                 </p>
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="OCQ4" data-bs-parent="#oslas_accordion">
+                                    <div class="accordion-body">
+                                        <p><b>Option 1: </b>{{OCQ4op1}}</p>
+                                        <p><b>Option 2: </b>{{OCQ4op2}}</p>
+                                        <p><b>Option 3: </b>{{OCQ4op3}}</p>
+                                        <button name='edit_button_5' id='edit_button_5' class='btn btn-primary edit-button' onClick='get_clicked_button()'>Edit</button>
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item cms">
+                                <p class="accordion-header cms" id="OCQ5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                        {{OCQ5}}
+                                    </button>
+                                </p>
+                                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="OCQ5" data-bs-parent="#oslas_accordion">
+                                    <div class="accordion-body">
+                                        <button name='edit_button_5' id='edit_button_5' class='btn btn-primary edit-button' onClick='get_clicked_button()'>Edit</button>
+                                        <br><br>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
