@@ -449,10 +449,6 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     height: 100%;
 }
 
-iframe{
-    display: none;
-}
-
 #OSLASform {
     font-size: 30px;
 }

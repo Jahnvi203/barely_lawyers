@@ -2173,6 +2173,10 @@ def divorce_dashboard():
         return render_template("divorce_dashboard.html", n_responses = n_responses, n_un = q2_values[2], n_pd = q2_values[0], n_ud = q2_values[1])
     else:
         return redirect(url_for('admin_login'))
+    
+@app.route('/admin/dashboard/oslas')
+def oslas_dashboard():
+    return render_template("oslas_dashboard.html")
 
 @app.route('/admin/cms/maintenance')
 def maintenance_cms():
