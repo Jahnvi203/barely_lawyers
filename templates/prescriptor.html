@@ -1,26 +1,176 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Legal Advice System</title>
-	<!-- Include required CSS files -->
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
-	<!-- Create a container for the web page -->
-	<div class="container mt-5">
-		<!-- Create a form to take in legal issues -->
-		<form id="case-facts-form" class="form-group">
-			<label for="case-facts">Enter your Case Facts:</label>
-			<input type="text" id="case-facts" name="case-facts" class="form-control">
-			<br>
-			<!-- Create a button to submit the form -->
-			<button type="submit" class="btn btn-primary">Get advice</button>
-		</form>
-		<!-- Create a container for displaying the advice -->
-		<div id="advice-container" class="mt-3">
-			<!-- Advice will be displayed here -->
-		</div>
-	</div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename = 'css/style.css') }}"  rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <title>OSLAS CMS</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.linkpicture.com/q/cjc_logo_1.png" class="d-inline-block align-top" alt="CJC Logo" id="cjc-logo">
+            </a>
+        </nav>
+        <div class="row">
+            <div class="col col-sm-2 col-sm-push-10" id="sidebar">
+                <h5 id="our-services">Preliminary Intake Assessment</h5>
+                <div class="accordion" id="s1_sidebar_accordion">
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="hh1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cc1" aria-expanded="false" aria-controls="cc1">
+                                DASHBOARD
+                            </button>
+                        </p>
+                        <div id="cc1" class="accordion-collapse collapse" aria-labelledby="hh1" data-bs-parent="#s1_sidebar_accordion">
+                            <div class="accordion" id="s3_sidebar_accordion">
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="false" aria-controls="c1">
+                                            &emsp;Family Law
+                                        </button>
+                                    </p>
+                                    <div id="c1" class="accordion-collapse collapse" aria-labelledby="h1" data-bs-parent="#s3_sidebar_accordion">
+                                        <div class="accordion-body">
+                                            <p>&emsp;&emsp;<a href="{{ url_for('maintenance_dashboard') }}">Maintenance</a></p>
+                                            <p>&emsp;&emsp;<a href="{{ url_for('divorce_dashboard') }}">Divorce</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+                                            &emsp;Criminal Law
+                                        </button>
+                                    </p>
+                                    <div id="c2" class="accordion-collapse collapse" aria-labelledby="h2" data-bs-parent="#s3_sidebar_accordion">
+                                        <div class="accordion-body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+                                            &emsp;Civil Law
+                                        </button>
+                                    </p>
+                                    <div id="c3" class="accordion-collapse collapse" aria-labelledby="h3" data-bs-parent="#s3_sidebar_accordion">
+                                        <div class="accordion-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="s2_sidebar_accordion">
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="hh2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cc2" aria-expanded="false" aria-controls="cc2">
+                                CMS
+                            </button>
+                        </p>
+                        <div id="cc2" class="accordion-collapse collapse" aria-labelledby="hh2" data-bs-parent="#s2_sidebar_accordion">
+                            <div class="accordion" id="s4_sidebar_accordion">
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="false" aria-controls="c4">
+                                            &emsp;Family Law
+                                        </button>
+                                    </p>
+                                    <div id="c4" class="accordion-collapse collapse" aria-labelledby="h4" data-bs-parent="#s4_sidebar_accordion">
+                                        <div class="accordion-body">
+                                            <p>&emsp;&emsp;<a href="{{ url_for('maintenance_cms') }}">Maintenance</a></p>
+                                            <p>&emsp;&emsp;<a href="{{ url_for('divorce_cms') }}">Divorce</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="false" aria-controls="c5">
+                                            &emsp;Criminal Law
+                                        </button>
+                                    </p>
+                                    <div id="c5" class="accordion-collapse collapse" aria-labelledby="h5" data-bs-parent="#s4_sidebar_accordion">
+                                        <div class="accordion-body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <p class="accordion-header" id="h6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6" aria-expanded="false" aria-controls="c6">
+                                            &emsp;Civil Law
+                                        </button>
+                                    </p>
+                                    <div id="c6" class="accordion-collapse collapse" aria-labelledby="h6" data-bs-parent="#s4_sidebar_accordion">
+                                        <div class="accordion-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
+                <h5 id="our-services-OSLAS">Preliminary Assessment for OSLAS Questionnaire</h5>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                DASHBOARD
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>&emsp;<a href="{{ url_for('oslas_dashboard') }}">Overview</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                CMS
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>&emsp;<a href="{{ url_for('oslas_cms') }}">OSLAS Criteria</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <h5 id="our-services-prescriptive">Prescriptive Analysis</h5>
+                <div>               
+                    <p><a href="{{ url_for('prescriptor') }}">Course of Action Prescriptor</a></p>
+                </div>
+            </div>
+            <div class="col col-sm-10 col-sm-pull-2" class="intro-container">
+                <!-- Create a container for the web page -->
+                <div class="container mt-5">
+                    <!-- Create a form to take in legal issues -->
+                    <form id="case-facts-form" class="form-group">
+                        <label for="case-facts">Enter your Case Facts:</label>
+                        <input type="text" id="case-facts" name="case-facts" class="form-control">
+                        <br>
+                        <!-- Create a button to submit the form -->
+                        <button type="submit" class="btn btn-primary">Get advice</button>
+                    </form>
+                    <!-- Create a container for displaying the advice -->
+                    <div id="advice-container" class="mt-3">
+                        <!-- Advice will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+            
 
 	<!-- Include required JS files -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
