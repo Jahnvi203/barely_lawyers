@@ -16,7 +16,7 @@
             </a>
         </nav>
         <div class="row">
-            <div class="col col-sm-2 col-sm-push-10" id="sidebar">
+            <div class="col-2 col-sm-2 col-sm-push-10" id="sidebar">
                 <h5 id="our-services">Preliminary Intake Assessment</h5>
                 <div class="accordion" id="s1_sidebar_accordion">
                     <div class="accordion-item">
@@ -151,16 +151,19 @@
                     <p><a href="{{ url_for('prescriptor') }}">Course of Action Prescriptor</a></p>
                 </div>
             </div>
-            <div class="col col-sm-10 col-sm-pull-2" class="intro-container">
+            <div class="col-10 col-sm-10 col-sm-pull-2" class="intro-container">
                 <div class="intro">
                     <h2 class="intro_heading">OSLAS Dashboard</h2>
                     <br>
                     <div class="overview">
                         <h4>Overview</h4>
+                        <!-- <iframe style="display: block; background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);width: 100%;height: 100vh;"  
+                            src="https://charts.mongodb.com/charts-project-0-veskn/embed/dashboards?id=6409a28b-e8e3-4e75-85d3-c20589f34054&theme=light&autoRefresh=true&maxDataAge=60&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale">
+                        </iframe> -->
+                        <iframe style="display: block; background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);width: 100%;height: 100vh;"  
+                            src="https://charts.mongodb.com/charts-project-0-veskn/embed/dashboards?id=6409a28b-e8e3-4e75-85d3-c20589f34054&theme=light&autoRefresh=true&maxDataAge=60&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed">
+                        </iframe>
                     </div>
-                    <iframe style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);width: 100vw;height: 100vh;"  
-                        src="https://charts.mongodb.com/charts-project-0-veskn/embed/dashboards?id=6409a28b-e8e3-4e75-85d3-c20589f34054&theme=light&autoRefresh=true&maxDataAge=60&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed">
-                    </iframe>
                 </div>
             </div>
         </div>

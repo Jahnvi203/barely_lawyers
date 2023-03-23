@@ -453,6 +453,10 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     font-size: 30px;
 }
 
+#advice-container {
+    font-size: 20px;
+}
+
 #admitmessage, #disputemessage, #appealmessage, #setmessage, #countermessage{
     border-radius: 30px; 
     background-color: #FADFB4;
