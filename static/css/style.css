@@ -468,6 +468,13 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     .contact {
         display: none;
     }
+    /* #OSLASform {
+        font-size: 10px;
+    } */
+    .form-container {
+        margin: 0 auto;
+        width: 80%;
+      }
 }
 
 .contact {
