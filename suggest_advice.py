@@ -13,8 +13,9 @@ def suggest_advice(new_case_fact, threshold=0.15):
     
     # Define stop words
     stop_words = set(stopwords.words('english'))
-    stop_words.add('Applicant') 
-    stop_words.add('maintenance')
+    stop_words_list = ["applicant", "maintenance"]
+    for word in stop_words_list:
+        stop_words.add(word)
 
     # Remove stop words from case facts and subtype
     df['Case Facts'] = df['Case Facts'].apply(lambda x: ' '.join([word for word in x.split() if word.lower() not in stop_words]))

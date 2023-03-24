@@ -460,21 +460,19 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
 #admitmessage, #disputemessage, #appealmessage, #setmessage, #countermessage{
     border-radius: 30px; 
     background-color: #FADFB4;
-    margin: auto;
-    color: red;
 }
 
 @media only screen and (max-width: 500px) {
     .contact {
         display: none;
     }
-    /* #OSLASform {
-        font-size: 10px;
-    } */
-    .form-container {
-        margin: 0 auto;
-        width: 80%;
-      }
+    #OSLASform {
+        font-size: 20px;
+    }
+    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Question5_criminal, #Question5i_family, #Question5ii_family{
+        text-align: left;
+        padding-left: 5px;
+    }
 }
 
 .contact {
@@ -489,22 +487,15 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
 .form-container {
     border-radius: 30px; 
     background-color: #F1EEDB;
-    margin-left: 50px;
 }
 
 #companymessage, #representedmessage, #soughtmessage, #sg_chargedmessage, #chargedmessage, #nonemessage, #iFAMSmessage, #simplifiedmessage {
     border-radius: 30px; 
     background-color: #FADFB4;
-    margin: auto;
 }
 
 #unrepresented, #one_off {
     color: red;
-}
-
-#OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Question5_criminal, #Question5i_family, #Question5ii_family{
-    text-align: left;
-    padding-left: 50px;
 }
 
 #collapse1, #collapse2, #collapse3, #collapse4, #collapse5, #collapse6, #collapse7, #collapse8, #collapse9, #collapse10, #collapse11, #collapse12, #collapse13, #collapse14, #collapse15, #collapse16, #collapse17, #collapse18, #collapse19, #collapse20{
@@ -512,14 +503,34 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     padding-left: 50px;
 }
 
-input[type="radio"] {
-    -ms-transform: scale(2); /* IE 9 */
-    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
-    transform: scale(2);
+@media only screen and (min-width: 500px) {
+    input[type="radio"] {
+        transform: scale(1.5);
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+    }
+
+    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Question5_criminal, #Question5i_family, #Question5ii_family{
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    #companymessage, #representedmessage, #soughtmessage, #sg_chargedmessage, #chargedmessage, #nonemessage, #iFAMSmessage, #simplifiedmessage, #admitmessage, #disputemessage, #appealmessage, #setmessage, #countermessage {
+        border-radius: 30px; 
+        background-color: #FADFB4;
+        margin-left: 50px;
+    }
+
 }
 
-input[type="checkbox"] {
-    -ms-transform: scale(2); /* IE 9 */
-    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
-    transform: scale(2);
+ul {
+    margin-left: 0; /* Remove default margin */
+    padding-left: 20px; /* Add some padding to the left */
+}
+  
+li {
+    margin: 0;
+    padding: 0;
 }

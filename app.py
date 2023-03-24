@@ -5,7 +5,7 @@ from resources.add_inputs import add_inputs_dict
 from resources.annexes import annexes_dict
 from resources.glossaries import glossaries_dict
 from resources.download_annexes import download_annexes_dict
-# from flask_weasyprint import HTML, render_pdf, CSS
+from flask_weasyprint import HTML, render_pdf, CSS
 import random
 import ssl
 import smtplib
