@@ -524,13 +524,3 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     }
 
 }
-
-ul {
-    margin-left: 0; /* Remove default margin */
-    padding-left: 20px; /* Add some padding to the left */
-}
-  
-li {
-    margin: 0;
-    padding: 0;
-}
