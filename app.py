@@ -1875,8 +1875,94 @@ def OSLAS_Criteria():
     Civil_c_respondent_neighbour_op5 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op5"]
     Civil_c_respondent_neighbour_op6 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op6"]
 
+    # OSLAS Criteria Civil(c) claimant harassment database
+    OCCivil_c_claimant_harassment = list(col_oslas_criteria.find({"QN": "19"}))[0]
+    Civil_c_claimant_harassment = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment"]
+    Civil_c_claimant_harassment_op1 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op1"]
+    Civil_c_claimant_harassment_op2 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op2"] 
+    Civil_c_claimant_harassment_op3 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op3"] 
+    Civil_c_claimant_harassment_op4 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op4"] 
+    Civil_c_claimant_harassment_op5 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op5"] 
+    Civil_c_claimant_harassment_op6 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op6"] 
+
+    # OSLAS Criteria Civil(d) claimant harassment database
+    OCCivil_d_claimant_harassment = list(col_oslas_criteria.find({"QN": "20"}))[0]
+    Civil_d_claimant_harassment = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment"]
+    Civil_d_claimant_harassment_op1 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op1"]
+    Civil_d_claimant_harassment_op2 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op2"]
+    Civil_d_claimant_harassment_op3 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op3"]
+    Civil_d_claimant_harassment_op4 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op4"]
+
+    # OSLAS Criteria Civil(e) claimant harassment database
+    OCCivil_e_claimant_harassment = list(col_oslas_criteria.find({"QN": "21"}))[0]
+    Civil_e_claimant_harassment = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment"]
+    Civil_e_claimant_harassment_op1 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op1"]
+    Civil_e_claimant_harassment_op2 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op2"]
+    Civil_e_claimant_harassment_op3 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op3"]
+    Civil_e_claimant_harassment_op4 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op4"]
+
+    # OSLAS Criteria Civil(f) claimant harassment database
+    OCCivil_f_claimant_harassment = list(col_oslas_criteria.find({"QN": "22"}))[0]
+    Civil_f_claimant_harassment = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment"]
+    Civil_f_claimant_harassment_op1 = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment_op1"]
+    Civil_f_claimant_harassment_op2 = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment_op2"]
+
+    # OSLAS Criteria Civil(g)(i) claimant harassment database
+    OCCivil_g_i_claimant_harassment = list(col_oslas_criteria.find({"QN": "23"}))[0]
+    Civil_g_i_claimant_harassment = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment"]
+    Civil_g_i_claimant_harassment_op1 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op1"]
+    Civil_g_i_claimant_harassment_op2 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op2"]
+    Civil_g_i_claimant_harassment_op3 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op3"]
+    Civil_g_i_claimant_harassment_op4 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op4"]
+    Civil_g_i_claimant_harassment_op5 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op5"]
+
+    # OSLAS Criteria Civil(g)(ii) claimant harassment database
+    OCCivil_g_ii_claimant_harassment = list(col_oslas_criteria.find({"QN": "24"}))[0]
+    Civil_g_ii_claimant_harassment = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment"]
+    Civil_g_ii_claimant_harassment_op1 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op1"]
+    Civil_g_ii_claimant_harassment_op2 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op2"]
+    Civil_g_ii_claimant_harassment_op3 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op3"]
+    Civil_g_ii_claimant_harassment_op4 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op4"]
+    Civil_g_ii_claimant_harassment_op5 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op5"]
+
+    # OSLAS Criteria Civil(c) respondent harassment database
+    OCCivil_c_respondent_harassment = list(col_oslas_criteria.find({"QN": "25"}))[0]
+    Civil_c_respondent_harassment = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment"]
+    Civil_c_respondent_harassment_op1 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op1"]
+    Civil_c_respondent_harassment_op2 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op2"]
+    Civil_c_respondent_harassment_op3 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op3"]
+    Civil_c_respondent_harassment_op4 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op4"]
+    Civil_c_respondent_harassment_op5 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op5"]
+
+    # OSLAS Criteria Civil(d) respondent harassment database
+    OCCivil_d_respondent_harassment = list(col_oslas_criteria.find({"QN": "26"}))[0]
+    Civil_d_respondent_harassment = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment"]
+    Civil_d_respondent_harassment_op1 = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment_op1"]
+    Civil_d_respondent_harassment_op2 = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment_op2"]
+
+    # OSLAS Criteria Civil(e)(i) respondent harassment database
+    OCCivil_e_i_respondent_harassment = list(col_oslas_criteria.find({"QN": "27"}))[0]
+    Civil_e_i_respondent_harassment = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment"]
+    Civil_e_i_respondent_harassment_op1 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op1"]
+    Civil_e_i_respondent_harassment_op2 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op2"]
+    Civil_e_i_respondent_harassment_op3 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op3"]
+
+    # OSLAS Criteria Civil(e)(ii) respondent harassment database
+    OCCivil_e_ii_respondent_harassment = list(col_oslas_criteria.find({"QN": "28"}))[0]
+    Civil_e_ii_respondent_harassment = OCCivil_e_ii_respondent_harassment["Civil_e_ii_respondent_harassment"]
+    Civil_e_ii_respondent_harassment_op1 = OCCivil_e_ii_respondent_harassment["Civil_e_ii_respondent_harassment_op1"]
+
+    # OSLAS Criteria Civil(f) respondent harassment database
+    OCCivil_f_respondent_harassment = list(col_oslas_criteria.find({"QN": "29"}))[0]
+    Civil_f_respondent_harassment = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment"]
+    Civil_f_respondent_harassment_op1 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op1"]
+    Civil_f_respondent_harassment_op2 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op2"]
+    Civil_f_respondent_harassment_op3 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op3"]
+    Civil_f_respondent_harassment_op4 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op4"]
+    Civil_f_respondent_harassment_op5 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op5"]
+
     # OSLAS Criteria Family database
-    OCFamily = list(col_oslas_criteria.find({"QN": "19"}))[0]
+    OCFamily = list(col_oslas_criteria.find({"QN": "30"}))[0]
     Family_i = OCFamily["Family_i"]
     Family_i_op1 = OCFamily["Family_i_op1"]
     Family_i_op2 = OCFamily["Family_i_op2"]
@@ -1889,7 +1975,7 @@ def OSLAS_Criteria():
     Family_ii_op3 = OCFamily["Family_ii_op3"]
 
     # OSLAS Criteria Criminal database
-    OCCriminal = list(col_oslas_criteria.find({"QN": "20"}))[0]
+    OCCriminal = list(col_oslas_criteria.find({"QN": "31"}))[0]
     Criminal = OCCriminal["Criminal"]
     Criminal_op1 = OCCriminal["Criminal_op1"]
     Criminal_op2 = OCCriminal["Criminal_op2"]
@@ -1917,6 +2003,17 @@ def OSLAS_Criteria():
     Civil_c_claimant_neighbour = Civil_c_claimant_neighbour, Civil_c_claimant_neighbour_op1 = Civil_c_claimant_neighbour_op1, Civil_c_claimant_neighbour_op2 = Civil_c_claimant_neighbour_op2, Civil_c_claimant_neighbour_op3 = Civil_c_claimant_neighbour_op3, Civil_c_claimant_neighbour_op4 = Civil_c_claimant_neighbour_op4, Civil_c_claimant_neighbour_op5 = Civil_c_claimant_neighbour_op5, Civil_c_claimant_neighbour_op6 = Civil_c_claimant_neighbour_op6,
     Civil_d_claimant_neighbour = Civil_d_claimant_neighbour, Civil_d_claimant_neighbour_op1 = Civil_d_claimant_neighbour_op1, Civil_d_claimant_neighbour_op2 = Civil_d_claimant_neighbour_op2, Civil_d_claimant_neighbour_op3 = Civil_d_claimant_neighbour_op3, Civil_d_claimant_neighbour_op4 = Civil_d_claimant_neighbour_op4, Civil_d_claimant_neighbour_op5 = Civil_d_claimant_neighbour_op5, Civil_d_claimant_neighbour_op6 = Civil_d_claimant_neighbour_op6,
     Civil_c_respondent_neighbour = Civil_c_respondent_neighbour, Civil_c_respondent_neighbour_op1 = Civil_c_respondent_neighbour_op1, Civil_c_respondent_neighbour_op2 = Civil_c_respondent_neighbour_op2, Civil_c_respondent_neighbour_op3 = Civil_c_respondent_neighbour_op3, Civil_c_respondent_neighbour_op4 = Civil_c_respondent_neighbour_op4, Civil_c_respondent_neighbour_op5 = Civil_c_respondent_neighbour_op5, Civil_c_respondent_neighbour_op6 = Civil_c_respondent_neighbour_op6,
+    Civil_c_claimant_harassment = Civil_c_claimant_harassment, Civil_c_claimant_harassment_op1 = Civil_c_claimant_harassment_op1, Civil_c_claimant_harassment_op2 = Civil_c_claimant_harassment_op2, Civil_c_claimant_harassment_op3 = Civil_c_claimant_harassment_op3, Civil_c_claimant_harassment_op4 = Civil_c_claimant_harassment_op4, Civil_c_claimant_harassment_op5 = Civil_c_claimant_harassment_op5, Civil_c_claimant_harassment_op6 = Civil_c_claimant_harassment_op6,
+    Civil_d_claimant_harassment = Civil_d_claimant_harassment, Civil_d_claimant_harassment_op1 = Civil_d_claimant_harassment_op1, Civil_d_claimant_harassment_op2 = Civil_d_claimant_harassment_op2, Civil_d_claimant_harassment_op3 = Civil_d_claimant_harassment_op3, Civil_d_claimant_harassment_op4 = Civil_d_claimant_harassment_op4,
+    Civil_e_claimant_harassment = Civil_e_claimant_harassment, Civil_e_claimant_harassment_op1 = Civil_e_claimant_harassment_op1, Civil_e_claimant_harassment_op2 = Civil_e_claimant_harassment_op2, Civil_e_claimant_harassment_op3 = Civil_e_claimant_harassment_op3, Civil_e_claimant_harassment_op4 = Civil_e_claimant_harassment_op4,
+    Civil_f_claimant_harassment = Civil_f_claimant_harassment, Civil_f_claimant_harassment_op1 = Civil_f_claimant_harassment_op1, Civil_f_claimant_harassment_op2 = Civil_f_claimant_harassment_op2,
+    Civil_g_i_claimant_harassment = Civil_g_i_claimant_harassment, Civil_g_i_claimant_harassment_op1 = Civil_g_i_claimant_harassment_op1, Civil_g_i_claimant_harassment_op2 = Civil_g_i_claimant_harassment_op2, Civil_g_i_claimant_harassment_op3 = Civil_g_i_claimant_harassment_op3, Civil_g_i_claimant_harassment_op4 = Civil_g_i_claimant_harassment_op4, Civil_g_i_claimant_harassment_op5 = Civil_g_i_claimant_harassment_op5,
+    Civil_g_ii_claimant_harassment = Civil_g_ii_claimant_harassment, Civil_g_ii_claimant_harassment_op1 = Civil_g_ii_claimant_harassment_op1, Civil_g_ii_claimant_harassment_op2 = Civil_g_ii_claimant_harassment_op2, Civil_g_ii_claimant_harassment_op3 = Civil_g_ii_claimant_harassment_op3, Civil_g_ii_claimant_harassment_op4 = Civil_g_ii_claimant_harassment_op4, Civil_g_ii_claimant_harassment_op5 = Civil_g_ii_claimant_harassment_op5,
+    Civil_c_respondent_harassment = Civil_c_respondent_harassment, Civil_c_respondent_harassment_op1 = Civil_c_respondent_harassment_op1, Civil_c_respondent_harassment_op2 = Civil_c_respondent_harassment_op2, Civil_c_respondent_harassment_op3 = Civil_c_respondent_harassment_op3, Civil_c_respondent_harassment_op4 = Civil_c_respondent_harassment_op4, Civil_c_respondent_harassment_op5 = Civil_c_respondent_harassment_op5,
+    Civil_d_respondent_harassment = Civil_d_respondent_harassment, Civil_d_respondent_harassment_op1 = Civil_d_respondent_harassment_op1, Civil_d_respondent_harassment_op2 = Civil_d_respondent_harassment_op2,
+    Civil_e_i_respondent_harassment = Civil_e_i_respondent_harassment, Civil_e_i_respondent_harassment_op1 = Civil_e_i_respondent_harassment_op1, Civil_e_i_respondent_harassment_op2 = Civil_e_i_respondent_harassment_op2, Civil_e_i_respondent_harassment_op3 = Civil_e_i_respondent_harassment_op3,
+    Civil_e_ii_respondent_harassment = Civil_e_ii_respondent_harassment, Civil_e_ii_respondent_harassment_op1 = Civil_e_ii_respondent_harassment_op1,
+    Civil_f_respondent_harassment = Civil_f_respondent_harassment, Civil_f_respondent_harassment_op1 = Civil_f_respondent_harassment_op1, Civil_f_respondent_harassment_op2 = Civil_f_respondent_harassment_op2, Civil_f_respondent_harassment_op3 = Civil_f_respondent_harassment_op3, Civil_f_respondent_harassment_op4 = Civil_f_respondent_harassment_op4, Civil_f_respondent_harassment_op5 = Civil_f_respondent_harassment_op5, 
     Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
     Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
 
@@ -2680,6 +2777,70 @@ def oslas_cms():
         Updated_Civil_c_respondent_neighbour_op5 = request.form.getlist('Civil_c_respondent_neighbour_op5')
         Updated_Civil_c_respondent_neighbour_op6 = request.form.getlist('Civil_c_respondent_neighbour_op6')
 
+        Updated_Civil_c_claimant_harassment = request.form.getlist('Civil_c_claimant_harassment')
+        Updated_Civil_c_claimant_harassment_op1 = request.form.getlist('Civil_c_claimant_harassment_op1')
+        Updated_Civil_c_claimant_harassment_op2 = request.form.getlist('Civil_c_claimant_harassment_op2')
+        Updated_Civil_c_claimant_harassment_op3 = request.form.getlist('Civil_c_claimant_harassment_op3')
+        Updated_Civil_c_claimant_harassment_op4 = request.form.getlist('Civil_c_claimant_harassment_op4')
+        Updated_Civil_c_claimant_harassment_op5 = request.form.getlist('Civil_c_claimant_harassment_op5')
+        Updated_Civil_c_claimant_harassment_op6 = request.form.getlist('Civil_c_claimant_harassment_op6')
+
+        Updated_Civil_d_claimant_harassment = request.form.getlist('Civil_d_claimant_harassment')
+        Updated_Civil_d_claimant_harassment_op1 = request.form.getlist('Civil_d_claimant_harassment_op1')
+        Updated_Civil_d_claimant_harassment_op2 = request.form.getlist('Civil_d_claimant_harassment_op2')
+        Updated_Civil_d_claimant_harassment_op3 = request.form.getlist('Civil_d_claimant_harassment_op3')
+        Updated_Civil_d_claimant_harassment_op4 = request.form.getlist('Civil_d_claimant_harassment_op4')
+
+        Updated_Civil_e_claimant_harassment = request.form.getlist('Civil_e_claimant_harassment')
+        Updated_Civil_e_claimant_harassment_op1 = request.form.getlist('Civil_e_claimant_harassment_op1')
+        Updated_Civil_e_claimant_harassment_op2 = request.form.getlist('Civil_e_claimant_harassment_op2')
+        Updated_Civil_e_claimant_harassment_op3 = request.form.getlist('Civil_e_claimant_harassment_op3')
+        Updated_Civil_e_claimant_harassment_op4 = request.form.getlist('Civil_e_claimant_harassment_op4')
+
+        Updated_Civil_f_claimant_harassment = request.form.getlist('Civil_f_claimant_harassment')
+        Updated_Civil_f_claimant_harassment_op1 = request.form.getlist('Civil_f_claimant_harassment_op1')
+        Updated_Civil_f_claimant_harassment_op2 = request.form.getlist('Civil_f_claimant_harassment_op2')
+
+        Updated_Civil_g_i_claimant_harassment = request.form.getlist('Civil_g_i_claimant_harassment')
+        Updated_Civil_g_i_claimant_harassment_op1 = request.form.getlist('Civil_g_i_claimant_harassment_op1')
+        Updated_Civil_g_i_claimant_harassment_op2 = request.form.getlist('Civil_g_i_claimant_harassment_op2')
+        Updated_Civil_g_i_claimant_harassment_op3 = request.form.getlist('Civil_g_i_claimant_harassment_op3')
+        Updated_Civil_g_i_claimant_harassment_op4 = request.form.getlist('Civil_g_i_claimant_harassment_op4')
+        Updated_Civil_g_i_claimant_harassment_op5 = request.form.getlist('Civil_g_i_claimant_harassment_op5')
+
+        Updated_Civil_g_ii_claimant_harassment = request.form.getlist('Civil_g_ii_claimant_harassment')
+        Updated_Civil_g_ii_claimant_harassment_op1 = request.form.getlist('Civil_g_ii_claimant_harassment_op1')
+        Updated_Civil_g_ii_claimant_harassment_op2 = request.form.getlist('Civil_g_ii_claimant_harassment_op2')
+        Updated_Civil_g_ii_claimant_harassment_op3 = request.form.getlist('Civil_g_ii_claimant_harassment_op3')
+        Updated_Civil_g_ii_claimant_harassment_op4 = request.form.getlist('Civil_g_ii_claimant_harassment_op4')
+        Updated_Civil_g_ii_claimant_harassment_op5 = request.form.getlist('Civil_g_ii_claimant_harassment_op5')
+
+        Updated_Civil_c_respondent_harassment = request.form.getlist('Civil_c_respondent_harassment')
+        Updated_Civil_c_respondent_harassment_op1 = request.form.getlist('Civil_c_respondent_harassment_op1')
+        Updated_Civil_c_respondent_harassment_op2 = request.form.getlist('Civil_c_respondent_harassment_op2')
+        Updated_Civil_c_respondent_harassment_op3 = request.form.getlist('Civil_c_respondent_harassment_op3')
+        Updated_Civil_c_respondent_harassment_op4 = request.form.getlist('Civil_c_respondent_harassment_op4')
+        Updated_Civil_c_respondent_harassment_op5 = request.form.getlist('Civil_c_respondent_harassment_op5')
+
+        Updated_Civil_d_respondent_harassment = request.form.getlist('Civil_d_respondent_harassment')
+        Updated_Civil_d_respondent_harassment_op1 = request.form.getlist('Civil_d_respondent_harassment_op1')
+        Updated_Civil_d_respondent_harassment_op2 = request.form.getlist('Civil_d_respondent_harassment_op2')
+
+        Updated_Civil_e_i_respondent_harassment = request.form.getlist('Civil_e_i_respondent_harassment')
+        Updated_Civil_e_i_respondent_harassment_op1 = request.form.getlist('Civil_e_i_respondent_harassment_op1')
+        Updated_Civil_e_i_respondent_harassment_op2 = request.form.getlist('Civil_e_i_respondent_harassment_op2')
+        Updated_Civil_e_i_respondent_harassment_op3 = request.form.getlist('Civil_e_i_respondent_harassment_op3')
+
+        Updated_Civil_e_ii_respondent_harassment = request.form.getlist('Civil_e_ii_respondent_harassment')
+        Updated_Civil_e_ii_respondent_harassment_op1 = request.form.getlist('Civil_e_ii_respondent_harassment_op1')
+
+        Updated_Civil_f_respondent_harassment = request.form.getlist('Civil_f_respondent_harassment')
+        Updated_Civil_f_respondent_harassment_op1 = request.form.getlist('Civil_f_respondent_harassment_op1')
+        Updated_Civil_f_respondent_harassment_op2 = request.form.getlist('Civil_f_respondent_harassment_op2')
+        Updated_Civil_f_respondent_harassment_op3 = request.form.getlist('Civil_f_respondent_harassment_op3')
+        Updated_Civil_f_respondent_harassment_op4 = request.form.getlist('Civil_f_respondent_harassment_op4')
+        Updated_Civil_f_respondent_harassment_op5 = request.form.getlist('Civil_f_respondent_harassment_op5')
+
         Updated_Family_i = request.form.getlist('Family_i')
         Updated_Family_i_op1 = request.form.getlist('Family_i_op1')
         Updated_Family_i_op2 = request.form.getlist('Family_i_op2')
@@ -2812,25 +2973,89 @@ def oslas_cms():
         col_oslas_criteria.update_one({"QN": "18"}, {'$set': {"Civil_c_respondent_neighbour_op5": Updated_Civil_c_respondent_neighbour_op5[0]}})
         col_oslas_criteria.update_one({"QN": "18"}, {'$set': {"Civil_c_respondent_neighbour_op6": Updated_Civil_c_respondent_neighbour_op6[0]}})
 
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_i": Updated_Family_i[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_i_op1": Updated_Family_i_op1[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_i_op2": Updated_Family_i_op2[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_i_op3": Updated_Family_i_op3[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_i_op4": Updated_Family_i_op4[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_ii": Updated_Family_ii[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_ii_prompt": Updated_Family_ii_prompt[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_ii_op1": Updated_Family_ii_op1[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_ii_op2": Updated_Family_ii_op2[0]}})
-        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Family_ii_op3": Updated_Family_ii_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment": Updated_Civil_c_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op1": Updated_Civil_c_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op2": Updated_Civil_c_claimant_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op3": Updated_Civil_c_claimant_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op4": Updated_Civil_c_claimant_harassment_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op5": Updated_Civil_c_claimant_harassment_op5[0]}})
+        col_oslas_criteria.update_one({"QN": "19"}, {'$set': {"Civil_c_claimant_harassment_op6": Updated_Civil_c_claimant_harassment_op6[0]}})
 
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal": Updated_Criminal[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op1": Updated_Criminal_op1[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op2": Updated_Criminal_op2[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op3": Updated_Criminal_op3[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op4": Updated_Criminal_op4[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op5": Updated_Criminal_op5[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op6": Updated_Criminal_op6[0]}})
-        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Criminal_op7": Updated_Criminal_op7[0]}})
+        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Civil_d_claimant_harassment": Updated_Civil_d_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Civil_d_claimant_harassment_op1": Updated_Civil_d_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Civil_d_claimant_harassment_op2": Updated_Civil_d_claimant_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Civil_d_claimant_harassment_op3": Updated_Civil_d_claimant_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "20"}, {'$set': {"Civil_d_claimant_harassment_op4": Updated_Civil_d_claimant_harassment_op4[0]}})
+
+        col_oslas_criteria.update_one({"QN": "21"}, {'$set': {"Civil_e_claimant_harassment": Updated_Civil_e_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "21"}, {'$set': {"Civil_e_claimant_harassment_op1": Updated_Civil_e_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "21"}, {'$set': {"Civil_e_claimant_harassment_op2": Updated_Civil_e_claimant_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "21"}, {'$set': {"Civil_e_claimant_harassment_op3": Updated_Civil_e_claimant_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "21"}, {'$set': {"Civil_e_claimant_harassment_op4": Updated_Civil_e_claimant_harassment_op4[0]}})
+
+        col_oslas_criteria.update_one({"QN": "22"}, {'$set': {"Civil_f_claimant_harassment": Updated_Civil_f_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "22"}, {'$set': {"Civil_f_claimant_harassment_op1": Updated_Civil_f_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "22"}, {'$set': {"Civil_f_claimant_harassment_op2": Updated_Civil_f_claimant_harassment_op2[0]}})
+
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment": Updated_Civil_g_i_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment_op1": Updated_Civil_g_i_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment_op2": Updated_Civil_g_i_claimant_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment_op3": Updated_Civil_g_i_claimant_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment_op4": Updated_Civil_g_i_claimant_harassment_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "23"}, {'$set': {"Civil_g_i_claimant_harassment_op5": Updated_Civil_g_i_claimant_harassment_op5[0]}})
+
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment": Updated_Civil_g_ii_claimant_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment_op1": Updated_Civil_g_ii_claimant_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment_op2": Updated_Civil_g_ii_claimant_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment_op3": Updated_Civil_g_ii_claimant_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment_op4": Updated_Civil_g_ii_claimant_harassment_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "24"}, {'$set': {"Civil_g_ii_claimant_harassment_op5": Updated_Civil_g_ii_claimant_harassment_op5[0]}})
+
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment": Updated_Civil_c_respondent_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment_op1": Updated_Civil_c_respondent_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment_op2": Updated_Civil_c_respondent_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment_op3": Updated_Civil_c_respondent_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment_op4": Updated_Civil_c_respondent_harassment_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "25"}, {'$set': {"Civil_c_respondent_harassment_op5": Updated_Civil_c_respondent_harassment_op5[0]}})
+
+        col_oslas_criteria.update_one({"QN": "26"}, {'$set': {"Civil_d_respondent_harassment": Updated_Civil_d_respondent_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "26"}, {'$set': {"Civil_d_respondent_harassment_op1": Updated_Civil_d_respondent_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "26"}, {'$set': {"Civil_d_respondent_harassment_op2": Updated_Civil_d_respondent_harassment_op2[0]}})
+
+        col_oslas_criteria.update_one({"QN": "27"}, {'$set': {"Civil_e_i_respondent_harassment": Updated_Civil_e_i_respondent_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "27"}, {'$set': {"Civil_e_i_respondent_harassment_op1": Updated_Civil_e_i_respondent_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "27"}, {'$set': {"Civil_e_i_respondent_harassment_op2": Updated_Civil_e_i_respondent_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "27"}, {'$set': {"Civil_e_i_respondent_harassment_op3": Updated_Civil_e_i_respondent_harassment_op3[0]}})
+
+        col_oslas_criteria.update_one({"QN": "28"}, {'$set': {"Civil_e_ii_respondent_harassment": Updated_Civil_e_ii_respondent_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "28"}, {'$set': {"Civil_e_ii_respondent_harassment_op1": Updated_Civil_e_ii_respondent_harassment_op1[0]}})
+
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment": Updated_Civil_f_respondent_harassment[0]}})
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment_op1": Updated_Civil_f_respondent_harassment_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment_op2": Updated_Civil_f_respondent_harassment_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment_op3": Updated_Civil_f_respondent_harassment_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment_op4": Updated_Civil_f_respondent_harassment_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "29"}, {'$set': {"Civil_f_respondent_harassment_op5": Updated_Civil_f_respondent_harassment_op5[0]}})
+
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_i": Updated_Family_i[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_i_op1": Updated_Family_i_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_i_op2": Updated_Family_i_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_i_op3": Updated_Family_i_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_i_op4": Updated_Family_i_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_ii": Updated_Family_ii[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_ii_prompt": Updated_Family_ii_prompt[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_ii_op1": Updated_Family_ii_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_ii_op2": Updated_Family_ii_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "30"}, {'$set': {"Family_ii_op3": Updated_Family_ii_op3[0]}})
+
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal": Updated_Criminal[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op1": Updated_Criminal_op1[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op2": Updated_Criminal_op2[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op3": Updated_Criminal_op3[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op4": Updated_Criminal_op4[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op5": Updated_Criminal_op5[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op6": Updated_Criminal_op6[0]}})
+        col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op7": Updated_Criminal_op7[0]}})
 
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"QN": "1"}))[0]
@@ -2980,8 +3205,94 @@ def oslas_cms():
     Civil_c_respondent_neighbour_op5 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op5"]
     Civil_c_respondent_neighbour_op6 = OCCivil_c_respondent_neighbour["Civil_c_respondent_neighbour_op6"]
 
+    # OSLAS Criteria Civil(c) claimant harassment database
+    OCCivil_c_claimant_harassment = list(col_oslas_criteria.find({"QN": "19"}))[0]
+    Civil_c_claimant_harassment = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment"]
+    Civil_c_claimant_harassment_op1 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op1"]
+    Civil_c_claimant_harassment_op2 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op2"] 
+    Civil_c_claimant_harassment_op3 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op3"] 
+    Civil_c_claimant_harassment_op4 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op4"] 
+    Civil_c_claimant_harassment_op5 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op5"] 
+    Civil_c_claimant_harassment_op6 = OCCivil_c_claimant_harassment["Civil_c_claimant_harassment_op6"] 
+
+    # OSLAS Criteria Civil(d) claimant harassment database
+    OCCivil_d_claimant_harassment = list(col_oslas_criteria.find({"QN": "20"}))[0]
+    Civil_d_claimant_harassment = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment"]
+    Civil_d_claimant_harassment_op1 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op1"]
+    Civil_d_claimant_harassment_op2 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op2"]
+    Civil_d_claimant_harassment_op3 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op3"]
+    Civil_d_claimant_harassment_op4 = OCCivil_d_claimant_harassment["Civil_d_claimant_harassment_op4"]
+
+    # OSLAS Criteria Civil(e) claimant harassment database
+    OCCivil_e_claimant_harassment = list(col_oslas_criteria.find({"QN": "21"}))[0]
+    Civil_e_claimant_harassment = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment"]
+    Civil_e_claimant_harassment_op1 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op1"]
+    Civil_e_claimant_harassment_op2 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op2"]
+    Civil_e_claimant_harassment_op3 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op3"]
+    Civil_e_claimant_harassment_op4 = OCCivil_e_claimant_harassment["Civil_e_claimant_harassment_op4"]
+
+    # OSLAS Criteria Civil(f) claimant harassment database
+    OCCivil_f_claimant_harassment = list(col_oslas_criteria.find({"QN": "22"}))[0]
+    Civil_f_claimant_harassment = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment"]
+    Civil_f_claimant_harassment_op1 = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment_op1"]
+    Civil_f_claimant_harassment_op2 = OCCivil_f_claimant_harassment["Civil_f_claimant_harassment_op2"]
+
+    # OSLAS Criteria Civil(g)(i) claimant harassment database
+    OCCivil_g_i_claimant_harassment = list(col_oslas_criteria.find({"QN": "23"}))[0]
+    Civil_g_i_claimant_harassment = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment"]
+    Civil_g_i_claimant_harassment_op1 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op1"]
+    Civil_g_i_claimant_harassment_op2 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op2"]
+    Civil_g_i_claimant_harassment_op3 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op3"]
+    Civil_g_i_claimant_harassment_op4 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op4"]
+    Civil_g_i_claimant_harassment_op5 = OCCivil_g_i_claimant_harassment["Civil_g_i_claimant_harassment_op5"]
+
+    # OSLAS Criteria Civil(g)(ii) claimant harassment database
+    OCCivil_g_ii_claimant_harassment = list(col_oslas_criteria.find({"QN": "24"}))[0]
+    Civil_g_ii_claimant_harassment = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment"]
+    Civil_g_ii_claimant_harassment_op1 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op1"]
+    Civil_g_ii_claimant_harassment_op2 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op2"]
+    Civil_g_ii_claimant_harassment_op3 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op3"]
+    Civil_g_ii_claimant_harassment_op4 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op4"]
+    Civil_g_ii_claimant_harassment_op5 = OCCivil_g_ii_claimant_harassment["Civil_g_ii_claimant_harassment_op5"]
+
+    # OSLAS Criteria Civil(c) respondent harassment database
+    OCCivil_c_respondent_harassment = list(col_oslas_criteria.find({"QN": "25"}))[0]
+    Civil_c_respondent_harassment = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment"]
+    Civil_c_respondent_harassment_op1 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op1"]
+    Civil_c_respondent_harassment_op2 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op2"]
+    Civil_c_respondent_harassment_op3 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op3"]
+    Civil_c_respondent_harassment_op4 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op4"]
+    Civil_c_respondent_harassment_op5 = OCCivil_c_respondent_harassment["Civil_c_respondent_harassment_op5"]
+
+    # OSLAS Criteria Civil(d) respondent harassment database
+    OCCivil_d_respondent_harassment = list(col_oslas_criteria.find({"QN": "26"}))[0]
+    Civil_d_respondent_harassment = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment"]
+    Civil_d_respondent_harassment_op1 = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment_op1"]
+    Civil_d_respondent_harassment_op2 = OCCivil_d_respondent_harassment["Civil_d_respondent_harassment_op2"]
+
+    # OSLAS Criteria Civil(e)(i) respondent harassment database
+    OCCivil_e_i_respondent_harassment = list(col_oslas_criteria.find({"QN": "27"}))[0]
+    Civil_e_i_respondent_harassment = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment"]
+    Civil_e_i_respondent_harassment_op1 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op1"]
+    Civil_e_i_respondent_harassment_op2 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op2"]
+    Civil_e_i_respondent_harassment_op3 = OCCivil_e_i_respondent_harassment["Civil_e_i_respondent_harassment_op3"]
+
+    # OSLAS Criteria Civil(e)(ii) respondent harassment database
+    OCCivil_e_ii_respondent_harassment = list(col_oslas_criteria.find({"QN": "28"}))[0]
+    Civil_e_ii_respondent_harassment = OCCivil_e_ii_respondent_harassment["Civil_e_ii_respondent_harassment"]
+    Civil_e_ii_respondent_harassment_op1 = OCCivil_e_ii_respondent_harassment["Civil_e_ii_respondent_harassment_op1"]
+
+    # OSLAS Criteria Civil(f) respondent harassment database
+    OCCivil_f_respondent_harassment = list(col_oslas_criteria.find({"QN": "29"}))[0]
+    Civil_f_respondent_harassment = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment"]
+    Civil_f_respondent_harassment_op1 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op1"]
+    Civil_f_respondent_harassment_op2 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op2"]
+    Civil_f_respondent_harassment_op3 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op3"]
+    Civil_f_respondent_harassment_op4 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op4"]
+    Civil_f_respondent_harassment_op5 = OCCivil_f_respondent_harassment["Civil_f_respondent_harassment_op5"]
+
     # OSLAS Criteria Family database
-    OCFamily = list(col_oslas_criteria.find({"QN": "19"}))[0]
+    OCFamily = list(col_oslas_criteria.find({"QN": "30"}))[0]
     Family_i = OCFamily["Family_i"]
     Family_i_op1 = OCFamily["Family_i_op1"]
     Family_i_op2 = OCFamily["Family_i_op2"]
@@ -2994,7 +3305,7 @@ def oslas_cms():
     Family_ii_op3 = OCFamily["Family_ii_op3"]
 
     # OSLAS Criteria Criminal database
-    OCCriminal = list(col_oslas_criteria.find({"QN": "20"}))[0]
+    OCCriminal = list(col_oslas_criteria.find({"QN": "31"}))[0]
     Criminal = OCCriminal["Criminal"]
     Criminal_op1 = OCCriminal["Criminal_op1"]
     Criminal_op2 = OCCriminal["Criminal_op2"]
@@ -3022,6 +3333,17 @@ def oslas_cms():
     Civil_c_claimant_neighbour = Civil_c_claimant_neighbour, Civil_c_claimant_neighbour_op1 = Civil_c_claimant_neighbour_op1, Civil_c_claimant_neighbour_op2 = Civil_c_claimant_neighbour_op2, Civil_c_claimant_neighbour_op3 = Civil_c_claimant_neighbour_op3, Civil_c_claimant_neighbour_op4 = Civil_c_claimant_neighbour_op4, Civil_c_claimant_neighbour_op5 = Civil_c_claimant_neighbour_op5, Civil_c_claimant_neighbour_op6 = Civil_c_claimant_neighbour_op6,
     Civil_d_claimant_neighbour = Civil_d_claimant_neighbour, Civil_d_claimant_neighbour_op1 = Civil_d_claimant_neighbour_op1, Civil_d_claimant_neighbour_op2 = Civil_d_claimant_neighbour_op2, Civil_d_claimant_neighbour_op3 = Civil_d_claimant_neighbour_op3, Civil_d_claimant_neighbour_op4 = Civil_d_claimant_neighbour_op4, Civil_d_claimant_neighbour_op5 = Civil_d_claimant_neighbour_op5, Civil_d_claimant_neighbour_op6 = Civil_d_claimant_neighbour_op6,
     Civil_c_respondent_neighbour = Civil_c_respondent_neighbour, Civil_c_respondent_neighbour_op1 = Civil_c_respondent_neighbour_op1, Civil_c_respondent_neighbour_op2 = Civil_c_respondent_neighbour_op2, Civil_c_respondent_neighbour_op3 = Civil_c_respondent_neighbour_op3, Civil_c_respondent_neighbour_op4 = Civil_c_respondent_neighbour_op4, Civil_c_respondent_neighbour_op5 = Civil_c_respondent_neighbour_op5, Civil_c_respondent_neighbour_op6 = Civil_c_respondent_neighbour_op6,
+    Civil_c_claimant_harassment = Civil_c_claimant_harassment, Civil_c_claimant_harassment_op1 = Civil_c_claimant_harassment_op1, Civil_c_claimant_harassment_op2 = Civil_c_claimant_harassment_op2, Civil_c_claimant_harassment_op3 = Civil_c_claimant_harassment_op3, Civil_c_claimant_harassment_op4 = Civil_c_claimant_harassment_op4, Civil_c_claimant_harassment_op5 = Civil_c_claimant_harassment_op5, Civil_c_claimant_harassment_op6 = Civil_c_claimant_harassment_op6,
+    Civil_d_claimant_harassment = Civil_d_claimant_harassment, Civil_d_claimant_harassment_op1 = Civil_d_claimant_harassment_op1, Civil_d_claimant_harassment_op2 = Civil_d_claimant_harassment_op2, Civil_d_claimant_harassment_op3 = Civil_d_claimant_harassment_op3, Civil_d_claimant_harassment_op4 = Civil_d_claimant_harassment_op4,
+    Civil_e_claimant_harassment = Civil_e_claimant_harassment, Civil_e_claimant_harassment_op1 = Civil_e_claimant_harassment_op1, Civil_e_claimant_harassment_op2 = Civil_e_claimant_harassment_op2, Civil_e_claimant_harassment_op3 = Civil_e_claimant_harassment_op3, Civil_e_claimant_harassment_op4 = Civil_e_claimant_harassment_op4,
+    Civil_f_claimant_harassment = Civil_f_claimant_harassment, Civil_f_claimant_harassment_op1 = Civil_f_claimant_harassment_op1, Civil_f_claimant_harassment_op2 = Civil_f_claimant_harassment_op2,
+    Civil_g_i_claimant_harassment = Civil_g_i_claimant_harassment, Civil_g_i_claimant_harassment_op1 = Civil_g_i_claimant_harassment_op1, Civil_g_i_claimant_harassment_op2 = Civil_g_i_claimant_harassment_op2, Civil_g_i_claimant_harassment_op3 = Civil_g_i_claimant_harassment_op3, Civil_g_i_claimant_harassment_op4 = Civil_g_i_claimant_harassment_op4, Civil_g_i_claimant_harassment_op5 = Civil_g_i_claimant_harassment_op5,
+    Civil_g_ii_claimant_harassment = Civil_g_ii_claimant_harassment, Civil_g_ii_claimant_harassment_op1 = Civil_g_ii_claimant_harassment_op1, Civil_g_ii_claimant_harassment_op2 = Civil_g_ii_claimant_harassment_op2, Civil_g_ii_claimant_harassment_op3 = Civil_g_ii_claimant_harassment_op3, Civil_g_ii_claimant_harassment_op4 = Civil_g_ii_claimant_harassment_op4, Civil_g_ii_claimant_harassment_op5 = Civil_g_ii_claimant_harassment_op5,
+    Civil_c_respondent_harassment = Civil_c_respondent_harassment, Civil_c_respondent_harassment_op1 = Civil_c_respondent_harassment_op1, Civil_c_respondent_harassment_op2 = Civil_c_respondent_harassment_op2, Civil_c_respondent_harassment_op3 = Civil_c_respondent_harassment_op3, Civil_c_respondent_harassment_op4 = Civil_c_respondent_harassment_op4, Civil_c_respondent_harassment_op5 = Civil_c_respondent_harassment_op5,
+    Civil_d_respondent_harassment = Civil_d_respondent_harassment, Civil_d_respondent_harassment_op1 = Civil_d_respondent_harassment_op1, Civil_d_respondent_harassment_op2 = Civil_d_respondent_harassment_op2,
+    Civil_e_i_respondent_harassment = Civil_e_i_respondent_harassment, Civil_e_i_respondent_harassment_op1 = Civil_e_i_respondent_harassment_op1, Civil_e_i_respondent_harassment_op2 = Civil_e_i_respondent_harassment_op2, Civil_e_i_respondent_harassment_op3 = Civil_e_i_respondent_harassment_op3,
+    Civil_e_ii_respondent_harassment = Civil_e_ii_respondent_harassment, Civil_e_ii_respondent_harassment_op1 = Civil_e_ii_respondent_harassment_op1,
+    Civil_f_respondent_harassment = Civil_f_respondent_harassment, Civil_f_respondent_harassment_op1 = Civil_f_respondent_harassment_op1, Civil_f_respondent_harassment_op2 = Civil_f_respondent_harassment_op2, Civil_f_respondent_harassment_op3 = Civil_f_respondent_harassment_op3, Civil_f_respondent_harassment_op4 = Civil_f_respondent_harassment_op4, Civil_f_respondent_harassment_op5 = Civil_f_respondent_harassment_op5, 
     Family_i = Family_i, Family_i_op1 = Family_i_op1, Family_i_op2 = Family_i_op2, Family_i_op3 = Family_i_op3, Family_i_op4 = Family_i_op4, Family_ii = Family_ii, Family_ii_prompt = Family_ii_prompt, Family_ii_op1 = Family_ii_op1, Family_ii_op2 = Family_ii_op2, Family_ii_op3 = Family_ii_op3,
     Criminal = Criminal, Criminal_op1 = Criminal_op1, Criminal_op2 = Criminal_op2, Criminal_op3 = Criminal_op3, Criminal_op4 = Criminal_op4, Criminal_op5 = Criminal_op5, Criminal_op6 = Criminal_op6, Criminal_op7 = Criminal_op7)
     
