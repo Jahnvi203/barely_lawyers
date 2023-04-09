@@ -286,7 +286,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment -->
-    <div id="Civil_c_claimant_harassment" >
+    <div id="Civil_c_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_c_claimant_harassment}}</b></p>
         <div class="radioboxes">
@@ -305,7 +305,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment and 5c == File a claim -->
-    <div id="Civil_d_claimant_harassment" >
+    <div id="Civil_d_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_d_claimant_harassment}}</b></p>
         <div class="checkboxes">
@@ -320,7 +320,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment and 5c == File a claim and 5d == first 3 options are checked -->
-    <div id="Civil_e_claimant_harassment" >
+    <div id="Civil_e_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_e_claimant_harassment}}</b></p>
         <div class="radioboxes">
@@ -335,7 +335,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment and 5c == File a claim and 5d == first 3 options are checked and 5e == $20,000 monetary compensation or stop harassing behaviour-->
-    <div id="Civil_f_claimant_harassment" >
+    <div id="Civil_f_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_f_claimant_harassment}}</b></p>
         <div class="radioboxes">
@@ -346,7 +346,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment and 5c == File a claim and 5d == first 3 options are checked and 5e == $20,000 monetary compensation or stop harassing behaviour and 5f == A Final Order (without an interim order) -->
-    <div id="Civil_g_i_claimant_harassment" >
+    <div id="Civil_g_i_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_g_i_claimant_harassment}}</b></p>
         <div class="checkboxes">
@@ -363,7 +363,7 @@
     </div>
 
     <!-- This is for 5a == claimant and 5b == Harassment and 5c == File a claim and 5d == first 3 options are checked and 5e == $20,000 monetary compensation or stop harassing behaviour and 5f == A Final Order and an interim order -->
-    <div id="Civil_g_ii_claimant_harassment" >
+    <div id="Civil_g_ii_claimant_harassment" style="display: none;">
         <br><br>
         <p><b>{{Civil_g_ii_claimant_harassment}}</b></p>
         <div class="checkboxes">
@@ -376,6 +376,23 @@
             <label><input type="checkbox" name="Question5g_ii_claimant_harassment" value="{{Civil_g_ii_claimant_harassment_op4}}" onclick="check_Question5g_ii_claimant_harassment()"> <span>{{Civil_g_ii_claimant_harassment_op4}}</span></label>
             <br><br>
             <label><input type="checkbox" name="Question5g_ii_claimant_harassment" value="{{Civil_g_ii_claimant_harassment_op5}}" onclick="check_Question5g_ii_claimant_harassment()"> <span>{{Civil_g_ii_claimant_harassment_op5}}</span></label>
+        </div>
+    </div>
+
+    <!-- This is for 5a == respondent and 5b == Harassment  -->
+    <div id="Civil_c_respondent_harassment" style="display: none;">
+        <br><br>
+        <p><b>{{Civil_c_respondent_harassment}}</b></p>
+        <div class="radioboxes">
+            <label><input type="radio" name="Question5c_respondent_harassment" value="{{Civil_c_respondent_harassment_op1}}" onclick="check_Question5c_respondent_harassment()"> <span>{{Civil_c_respondent_harassment_op1}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_harassment" value="{{Civil_c_respondent_harassment_op2}}" onclick="check_Question5c_respondent_harassment()"> <span>{{Civil_c_respondent_harassment_op2}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_harassment" value="{{Civil_c_respondent_harassment_op3}}" onclick="check_Question5c_respondent_harassment()"> <span>{{Civil_c_respondent_harassment_op3}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_harassment" value="{{Civil_c_respondent_harassment_op4}}" onclick="check_Question5c_respondent_harassment()"> <span>{{Civil_c_respondent_harassment_op4}}</span></label>
+            <br><br>
+            <label><input type="radio" name="Question5c_respondent_harassment" value="{{Civil_c_respondent_harassment_op5}}" onclick="check_Question5c_respondent_harassment()"> <span>{{Civil_c_respondent_harassment_op5}}</span></label>
         </div>
     </div>
 
@@ -532,14 +549,23 @@
                 var respondent_employment = document.getElementById("respondent_employment");
                 respondent_employment.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
-
-                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
-                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
@@ -557,14 +583,23 @@
                 var respondent_employment = document.getElementById("respondent_employment");
                 respondent_employment.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
-
-                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
-                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
@@ -582,14 +617,23 @@
                 var respondent = document.getElementById("respondent");
                 respondent.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
-
-                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
-                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
@@ -607,51 +651,26 @@
                 var respondent = document.getElementById("respondent");
                 respondent.style.display = "none";
 
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
-
-                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
-                Civil_c_claimant_neighbour.style.display = "none";
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
-            }
-            else if (Question5b == "{{Civil_b_op8}}") {
-                var nonepage = document.getElementById("none");
-                nonepage.style.display = "block";
-
-                var claimant = document.getElementById("claimant");
-                claimant.style.display = "none";
-
-                var respondent = document.getElementById("respondent");
-                respondent.style.display = "none";
-
-                var claimant_employment = document.getElementById("claimant_employment");
-                claimant_employment.style.display = "none";
-
-                var respondent_employment = document.getElementById("respondent_employment");
-                respondent_employment.style.display = "none";
-
-                var claimant_d = document.getElementById("claimant_d");
-                claimant_d.style.display = "none";
-
-                var claimant_dpage = document.getElementById("claimant_dpage");
-                claimant_dpage.style.display = "none";
-
-                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
-                appeal_claimantpage.style.display = "none";
-
-                var set_claimantpage = document.getElementById("set_claimantpage");
-                set_claimantpage.style.display = "none";
-
-                var executepage = document.getElementById("executepage");
-                executepage.style.display = "none";
-
-                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
-                Civil_c_claimant_neighbour.style.display = "none";
             }
             else if (Question5a == "{{Civil_a_op1}}" && Question5b == "{{Civil_b_op6}}") {
                 var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
@@ -671,6 +690,12 @@
 
                 var respondent_employment = document.getElementById("respondent_employment");
                 respondent_employment.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
 
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
@@ -709,6 +734,12 @@
                 var respondent_employment = document.getElementById("respondent_employment");
                 respondent_employment.style.display = "none";
 
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
 
@@ -726,6 +757,120 @@
 
                 var nonepage = document.getElementById("none");
                 nonepage.style.display = "none";
+            }
+            else if (Question5a == "{{Civil_a_op1}}" && Question5b == "{{Civil_b_op7}}") {
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "block";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5a == "{{Civil_a_op2}}" && Question5b == "{{Civil_b_op7}}") {
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "block";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+            }
+            else if (Question5b == "{{Civil_b_op8}}") {
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "block";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_respondent_neighbour = document.getElementById("Civil_c_respondent_neighbour");
+                Civil_c_respondent_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
             }
         }
 
@@ -1783,7 +1928,6 @@
                 var none_of_the_above_neighbour_page = document.getElementById("none_of_the_above_neighbour_page");
                 none_of_the_above_neighbour_page.style.display = "none";
             }
-
         }
 
         function check_Question5c_respondent_neighbour() {
