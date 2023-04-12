@@ -469,7 +469,7 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     #OSLASform {
         font-size: 20px;
     }
-    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Civil_c_claimant_harassment, #Civil_d_claimant_harassment, #Civil_e_claimant_harassment, #Civil_f_claimant_harassment, #Civil_g_i_claimant_harassment, #Civil_g_ii_claimant_harassment, #Civil_c_respondent_harassment, #Civil_d_respondent_harassment, #Civil_e_i_respondent_harassment, #Civil_e_ii_respondent_harassment, #Civil_f_respondent_harassment, #Question5_criminal, #Question5i_family, #Question5ii_family {
+    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5_c, #Question5_f, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Civil_c_claimant_harassment, #Civil_d_claimant_harassment, #Civil_e_claimant_harassment, #Civil_f_claimant_harassment, #Civil_g_i_claimant_harassment, #Civil_g_ii_claimant_harassment, #Civil_c_respondent_harassment, #Civil_d_respondent_harassment, #Civil_e_i_respondent_harassment, #Civil_e_ii_respondent_harassment, #Civil_f_respondent_harassment, #Question5_criminal, #Question5i_family, #Question5ii_family {
         text-align: left;
         padding-left: 5px;
     }
@@ -512,7 +512,7 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
         transform: scale(1.5);
     }
 
-    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Civil_c_claimant_harassment, #Civil_d_claimant_harassment, #Civil_e_claimant_harassment, #Civil_f_claimant_harassment, #Civil_g_i_claimant_harassment, #Civil_g_ii_claimant_harassment, #Civil_c_respondent_harassment, #Civil_d_respondent_harassment, #Civil_e_i_respondent_harassment, #Civil_e_ii_respondent_harassment, #Civil_f_respondent_harassment, #Question5_criminal, #Question5i_family, #Question5ii_family {
+    #OCQ1, #OCQ2, #OCQ3, #OCQ4, #Question5, #Question5_c, #Question5_f, #Question5a_style, #Question5b_style, #claimant, #respondent, #claimant_employment, #respondent_employment, #claimant_d, #Civil_d_claimant_employment, #file_a_claim, #Civil_d_respondent_employment, #Civil_c_claimant_neighbour, #file_a_claim_neighbour, #Civil_c_respondent_neighbour, #resolve_the_dispute_online, #Civil_c_claimant_harassment, #Civil_d_claimant_harassment, #Civil_e_claimant_harassment, #Civil_f_claimant_harassment, #Civil_g_i_claimant_harassment, #Civil_g_ii_claimant_harassment, #Civil_c_respondent_harassment, #Civil_d_respondent_harassment, #Civil_e_i_respondent_harassment, #Civil_e_ii_respondent_harassment, #Civil_f_respondent_harassment, #Question5_criminal, #Question5i_family, #Question5ii_family {
         text-align: left;
         padding-left: 50px;
     }

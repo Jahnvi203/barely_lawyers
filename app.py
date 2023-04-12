@@ -1455,278 +1455,6 @@ def send(no, email_input):
 
 @app.route("/OSLAS_Criteria", methods=["POST", "GET"])
 def OSLAS_Criteria():
-    if request.method == "POST":
-        Question1 = request.form.getlist('Question1')
-        Question2 = request.form.getlist('Question2')
-        Question3 = request.form.getlist('Question3')
-        Question4 = request.form.getlist('Question4')
-        Question5a = request.form.getlist('Question5a')
-        Question5b = request.form.getlist('Question5b')
-
-        Question5c_claimant = request.form.getlist('Question5c_claimant')
-        Question5d_claimant = request.form.getlist('Question5d_claimant')
-
-        Question5c_claimant_employment = request.form.getlist('Question5c_claimant_employment')
-        Question5d_claimant_employment = request.form.getlist('Question5d_claimant_employment')
-        Question5e_claimant_employment = request.form.getlist('Question5e_claimant_employment')
-
-
-        Question5c_respondent = request.form.getlist('Question5c_respondent')
-        Question5c_respondent_employment = request.form.getlist('Question5c_respondent_employment')
-        Question5d_respondent_employment = request.form.getlist('Question5d_respondent_employment')
-
-        Question5c_claimant_neighbour = request.form.getlist('Question5c_claimant_neighbour')
-        Question5d_claimant_neighbour = request.form.getlist('Question5d_claimant_neighbour')
-
-        Question5c_respondent_neighbour = request.form.getlist('Question5c_respondent_neighbour')
-
-        QuestionResolve_the_dispute_online = request.form.getlist('QuestionResolve_the_dispute_online')
-
-        Criminal5 = request.form.getlist('Criminal5')
-
-        Family_Question5a = request.form.getlist('Family_Question5a')
-        Family_Question5b = request.form.getlist('Family_Question5b')
-
-        # When the answer for Question 1 is "Yes"
-        if Question1[0] == "Yes":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 2 is "Yes"
-        if Question1[0] == "No" and Question2[0] == "Yes":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 3 is "Yes"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "Yes":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Criminal"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Criminal":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "Please select all that applies": Criminal5,
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Family"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Family":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "i. Integrated Family Application Management System (iFAMS)": Family_Question5a,
-                "ii. Divorce application (simplified track)": Family_Question5b,
-                "Current Date": datetime.now()
-                })
-        
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant/Respondent" and Question 5b is "None of the above"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5b[0] == "None of the above":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property", and Question 5c is "Appeal/Set/Execute/None"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and (Question5b[0] == "Tenancy agreement for residential premises not exceeding 2 years" or Question5b[0] == "Contract for sale of good" or  Question5b[0] == "Contract for provision of services" or Question5b[0] == "Damage to property not arising from or in connection with the use of a motor vehicle, or caused by a neighbour") and (Question5c_claimant[0] == "Appeal against a Small Claims Order" or Question5c_claimant[0] == "Set aside a Small Claims Order made in my absence" or Question5c_claimant[0] == "Execute or Enforce a Small Claims Order" or Question5c_claimant[0] == "None of the above"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I want to": Question5c_claimant[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property", and Question 5c is "File a Claim"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and (Question5b[0] == "Tenancy agreement for residential premises not exceeding 2 years" or Question5b[0] == "Contract for sale of good" or  Question5b[0] == "Contract for provision of services" or Question5b[0] == "Damage to property not arising from or in connection with the use of a motor vehicle, or caused by a neighbour") and Question5c_claimant[0] == "File a Claim":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I want to": Question5c_claimant[0],
-                "My claim is": Question5d_claimant,
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "File a Claim"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Employment matters (i.e. Salary-related/ wrongful dismissal)" and Question5d_claimant_employment[0] == "File a Claim":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "My current situation": Question5c_claimant_employment,
-                "I wish to": Question5d_claimant_employment[0],
-                "I have...": Question5e_claimant_employment,
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "Resolve the dispute online"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Employment matters (i.e. Salary-related/ wrongful dismissal)" and Question5d_claimant_employment[0] == "Resolve the dispute online":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "My current situation": Question5c_claimant_employment,
-                "I wish to": Question5d_claimant_employment[0],
-                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "Appeal/Enforce/Set/None"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Employment matters (i.e. Salary-related/ wrongful dismissal)" and (Question5d_claimant_employment[0] == "Appeal against an Employment Claims Order" or Question5d_claimant_employment[0] == "Enforce an Employment Claims Order" or Question5d_claimant_employment[0] == "Set aside an Employment Claims Order made in my absence" or Question5d_claimant_employment[0] == "None of the above"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "My current situation": Question5c_claimant_employment,
-                "I wish to": Question5d_claimant_employment[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and (Question5b[0] == "Tenancy agreement for residential premises not exceeding 2 years" or Question5b[0] == "Contract for sale of good" or Question5b[0] == "Contract for provision of services" or Question5b[0] == "Damage to property not arising from or in connection with the use of a motor vehicle, or caused by a neighbour"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I want to": Question5c_respondent[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Employment", Question 5d is "Settle/Dispute/Counterclaim/Appeal/SetAside/None"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and Question5b[0] == "Employment matters (i.e. Salary-related/ wrongful dismissal)" and (Question5d_respondent_employment[0] == "Settle the claim" or Question5d_respondent_employment[0] == "Dispute the claim" or Question5d_respondent_employment[0] == "File a Counterclaim" or Question5d_respondent_employment[0] == "Appeal against an Employment Claims Order" or Question5d_respondent_employment[0] == "Set aside an Employment Claims Order made in my absence" or Question5d_respondent_employment[0] == "None of the above"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "My current situation": Question5c_respondent_employment[0],
-                "I wish to": Question5d_respondent_employment[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Employment", Question 5d is "Resolve the dispute online"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and Question5b[0] == "Employment matters (i.e. Salary-related/ wrongful dismissal)" and Question5d_respondent_employment[0] == "Resolve the dispute online":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "My current situation": Question5c_respondent_employment[0],
-                "I wish to": Question5d_respondent_employment[0],
-                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "Appeal/Enforce/SetAside/None"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Neighbour Disputes" and (Question5c_claimant_neighbour[0] == "Appeal against a Neighbour Dispute Claim Order" or Question5c_claimant_neighbour[0] == "Enforce an Neighbour Dispute Claim Order" or Question5c_claimant_neighbour[0] == "Set aside Neighbour Dispute Claim Order made in my absence" or Question5c_claimant_neighbour[0] == "None of the above"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I wish to": Question5c_claimant_neighbour[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "File a Claim"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Neighbour Disputes" and Question5c_claimant_neighbour[0] == "File a Claim":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I wish to": Question5c_claimant_neighbour[0],
-                "I have...": Question5d_claimant_neighbour,
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "Resolve the dispute online"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Claimant" and Question5b[0] == "Neighbour Disputes" and Question5c_claimant_neighbour[0] == "Resolve the dispute online":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I wish to": Question5c_claimant_neighbour[0],
-                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Neighbour", Question 5c is "Resolve the dispute online"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and Question5b[0] == "Neighbour Disputes" and Question5c_respondent_neighbour[0] == "Resolve the dispute(s) online":
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I wish to": Question5c_respondent_neighbour[0],
-                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
-                "Current Date": datetime.now()
-            })
-
-        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Neighbour", Question 5c is "Settle/Dispute/Appeal/SetAside/None"
-        if Question1[0] == "No" and Question2[0] == "No" and Question3[0] == "No" and Question4[0] == "Civil" and Question5a[0] == "Respondent" and Question5b[0] == "Neighbour Disputes" and (Question5c_respondent_neighbour[0] == "Settle the claim" or Question5c_respondent_neighbour[0] == "Dispute the claim" or Question5c_respondent_neighbour[0] == "Appeal against a Neighbour Dispute Claim" or Question5c_respondent_neighbour[0] == "Set aside a Neighbour Dispute Claim made in my absence" or Question5c_respondent_neighbour[0] == "None of the above"):
-            col_OC_Answers.insert_one({
-                "Are you enquiring as a representative of a company?": Question1[0],
-                "Are you currently represented by a lawyer?": Question2[0],
-                "Have you sought legal advice on this matter before?": Question3[0],
-                "What is the nature of your matter": Question4[0],
-                "I am the": Question5a[0],
-                "My claim arises from": Question5b[0],
-                "I wish to": Question5c_respondent_neighbour[0],
-                "Current Date": datetime.now()
-            })
-
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"QN": "1"}))[0]
     OCQ1 = OCQuestion1["OCQ1"]
@@ -1984,6 +1712,505 @@ def OSLAS_Criteria():
     Criminal_op5 = OCCriminal["Criminal_op5"]
     Criminal_op6 = OCCriminal["Criminal_op6"]
     Criminal_op7 = OCCriminal["Criminal_op7"]
+
+    if request.method == "POST":
+        Question1 = request.form.getlist('Question1')
+        Question2 = request.form.getlist('Question2')
+        Question3 = request.form.getlist('Question3')
+        Question4 = request.form.getlist('Question4')
+        Question5a = request.form.getlist('Question5a')
+        Question5b = request.form.getlist('Question5b')
+
+        Question5c_claimant = request.form.getlist('Question5c_claimant')
+        Question5d_claimant = request.form.getlist('Question5d_claimant')
+
+        Question5c_claimant_employment = request.form.getlist('Question5c_claimant_employment')
+        Question5d_claimant_employment = request.form.getlist('Question5d_claimant_employment')
+        Question5e_claimant_employment = request.form.getlist('Question5e_claimant_employment')
+
+
+        Question5c_respondent = request.form.getlist('Question5c_respondent')
+        Question5c_respondent_employment = request.form.getlist('Question5c_respondent_employment')
+        Question5d_respondent_employment = request.form.getlist('Question5d_respondent_employment')
+
+        Question5c_claimant_neighbour = request.form.getlist('Question5c_claimant_neighbour')
+        Question5d_claimant_neighbour = request.form.getlist('Question5d_claimant_neighbour')
+
+        Question5c_respondent_neighbour = request.form.getlist('Question5c_respondent_neighbour')
+
+        QuestionResolve_the_dispute_online = request.form.getlist('QuestionResolve_the_dispute_online')
+
+        Question5c_claimant_harassment = request.form.getlist('Question5c_claimant_harassment')
+        Question5d_claimant_harassment = request.form.getlist('Question5d_claimant_harassment')
+        Question5e_claimant_harassment = request.form.getlist('Question5e_claimant_harassment')
+        Question5f_claimant_harassment = request.form.getlist('Question5f_claimant_harassment')
+        Question5g_i_claimant_harassment = request.form.getlist('Question5g_i_claimant_harassment')
+        Question5g_ii_claimant_harassment = request.form.getlist('Question5g_ii_claimant_harassment')
+
+        Question5c_respondent_harassment = request.form.getlist('Question5c_respondent_harassment')
+        Question5d_respondent_harassment = request.form.getlist('Question5d_respondent_harassment')
+        Question5e_i_respondent_harassment = request.form.getlist('Question5e_i_respondent_harassment')
+        Question5e_ii_respondent_harassment = request.form.getlist('Question5e_ii_respondent_harassment')
+        Question5f_respondent_harassment = request.form.getlist('Question5f_respondent_harassment')
+
+        Criminal5 = request.form.getlist('Criminal5')
+
+        Family_Question5a = request.form.getlist('Family_Question5a')
+        Family_Question5b = request.form.getlist('Family_Question5b')
+
+        # When the answer for Question 1 is "Yes"
+        if Question1[0] == OCQ1op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 2 is "Yes"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 3 is "Yes"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Criminal"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op2:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "Please select all that applies": Criminal5,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Family"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op3:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "i. Integrated Family Application Management System (iFAMS)": Family_Question5a,
+                "ii. Divorce application (simplified track)": Family_Question5b,
+                "Current Date": datetime.now()
+                })
+        
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant/Respondent" and Question 5b is "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5b[0] == Civil_b_op8:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property", and Question 5c is "Appeal/Set/Execute/None"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and (Question5b[0] == Civil_b_op1 or Question5b[0] == Civil_b_op2 or  Question5b[0] == Civil_b_op3 or Question5b[0] ==  Civil_b_op4) and (Question5c_claimant[0] == Civil_c_claimant_op2 or Question5c_claimant[0] == Civil_c_claimant_op3 or Question5c_claimant[0] == Civil_c_claimant_op4 or Question5c_claimant[0] == Civil_c_claimant_op5):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I want to": Question5c_claimant[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property", and Question 5c is "File a Claim"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and (Question5b[0] == Civil_b_op1 or Question5b[0] == Civil_b_op2 or  Question5b[0] == Civil_b_op3 or Question5b[0] == Civil_b_op4) and Question5c_claimant[0] == Civil_c_claimant_op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I want to": Question5c_claimant[0],
+                "My claim is": Question5d_claimant,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "File a Claim"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op5 and Question5d_claimant_employment[0] == Civil_d_claimant_employment_op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_claimant_employment,
+                "I wish to": Question5d_claimant_employment[0],
+                "I have...": Question5e_claimant_employment,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "Resolve the dispute online"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op5 and Question5d_claimant_employment[0] == Civil_d_claimant_employment_op2:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_claimant_employment,
+                "I wish to": Question5d_claimant_employment[0],
+                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Employment", Question 5c is both selected, Question 5d is "Appeal/Enforce/Set/None"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op5 and (Question5d_claimant_employment[0] == Civil_d_claimant_employment_op3 or Question5d_claimant_employment[0] == Civil_d_claimant_employment_op4 or Question5d_claimant_employment[0] == Civil_d_claimant_employment_op5 or Question5d_claimant_employment[0] == Civil_d_claimant_employment_op6):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_claimant_employment,
+                "I wish to": Question5d_claimant_employment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Tenancy/Contract for Sale/Provision/Damage to Property"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and (Question5b[0] == Civil_b_op1 or Question5b[0] == Civil_b_op2 or Question5b[0] == Civil_b_op3 or Question5b[0] == Civil_b_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I want to": Question5c_respondent[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Employment", Question 5d is "Settle/Dispute/Counterclaim/Appeal/SetAside/None"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op5 and (Question5d_respondent_employment[0] == Civil_d_respondent_employment_op1 or Question5d_respondent_employment[0] == Civil_d_respondent_employment_op2 or Question5d_respondent_employment[0] == Civil_d_respondent_employment_op3 or Question5d_respondent_employment[0] == Civil_d_respondent_employment_op5 or Question5d_respondent_employment[0] == Civil_d_respondent_employment_op6 or Question5d_respondent_employment[0] == Civil_d_respondent_employment_op7):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_respondent_employment[0],
+                "I wish to": Question5d_respondent_employment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Employment", Question 5d is "Resolve the dispute online"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op5 and Question5d_respondent_employment[0] == Civil_d_respondent_employment_op4:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "My current situation": Question5c_respondent_employment[0],
+                "I wish to": Question5d_respondent_employment[0],
+                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "Appeal/Enforce/SetAside/None"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op6 and (Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op3 or Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op4 or Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op5 or Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op6):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_neighbour[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "File a Claim"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op6 and Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_neighbour[0],
+                "I have...": Question5d_claimant_neighbour,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Neighbour", Question 5c is "Resolve the dispute online"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op6 and Question5c_claimant_neighbour[0] == Civil_c_claimant_neighbour_op2:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_neighbour[0],
+                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Neighbour", Question 5c is "Resolve the dispute online"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op6 and Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op3:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_neighbour[0],
+                "I would like to resolve the dispute filed through the Community Justice and Tribunals System (CJTS), without going to court, via the followings:": QuestionResolve_the_dispute_online[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Neighbour", Question 5c is "Settle/Dispute/Appeal/SetAside/None"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op6 and (Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op1 or Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op2 or Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op4 or Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op5 or Question5c_respondent_neighbour[0] == Civil_c_respondent_neighbour_op6):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_neighbour[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "Appeal against a protection from harassment decision" or "Enforce a protection from harassment order" or "Set aside a protection from harassment order made in my absence" or "Vary, suspend or cancel a protection from harassment order" or "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and (Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op2 or Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op3 or Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op4 or Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op5 or Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op6):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0], 
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op4:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Punished through a jail term or a fine, or both" or "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op1 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Punished through a jail term or a fine, or both" or "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op1 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Ordered to pay up to $20 000 in monetary compensation." or "Ordered to stop harassing behaviour, undergo psychiatric treatment, stop spreading false statement of fact or comply with other related civil law remedies." and Question 5f is "A Final Order (without an interim order)" and Question 5gi is "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op2 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op3) and Question5f_claimant_harassment[0] == Civil_f_claimant_harassment_op1 and Question5g_i_claimant_harassment[0] == Civil_g_i_claimant_harassment_op5:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "I am seeking for": Question5f_claimant_harassment[0],
+                "I have": Question5g_i_claimant_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Ordered to pay up to $20 000 in monetary compensation." or "Ordered to stop harassing behaviour, undergo psychiatric treatment, stop spreading false statement of fact or comply with other related civil law remedies." and Question 5f is "A Final Order (without an interim order)" 
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op2 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op3) and Question5f_claimant_harassment[0] == Civil_f_claimant_harassment_op1 and (Question5g_i_claimant_harassment[0] == Civil_g_i_claimant_harassment_op1 or Question5g_i_claimant_harassment[0] == Civil_g_i_claimant_harassment_op2 or Question5g_i_claimant_harassment[0] == Civil_g_i_claimant_harassment_op3 or Question5g_i_claimant_harassment[0] == Civil_g_i_claimant_harassment_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "I am seeking for": Question5f_claimant_harassment[0],
+                "I have": Question5g_i_claimant_harassment,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Ordered to pay up to $20 000 in monetary compensation." or "Ordered to stop harassing behaviour, undergo psychiatric treatment, stop spreading false statement of fact or comply with other related civil law remedies." and Question 5f is "A Final Order and an interim order" and Question 5gii is "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op2 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op3) and Question5f_claimant_harassment[0] == Civil_f_claimant_harassment_op2 and Question5g_ii_claimant_harassment[0] == Civil_g_ii_claimant_harassment_op5:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "I am seeking for": Question5f_claimant_harassment[0],
+                "I have": Question5g_ii_claimant_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Claimant", Question 5b is "Harassment", Question 5c is "File a Claim" and Question 5d is "Against up to 5 respondents"/"By only 1 claimant (myself)"/"Filed within 2 years of the event which creates the cause of action" and Question 5e is "Ordered to pay up to $20 000 in monetary compensation." or "Ordered to stop harassing behaviour, undergo psychiatric treatment, stop spreading false statement of fact or comply with other related civil law remedies." and Question 5f is "A Final Order and an interim order" 
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op1 and Question5b[0] == Civil_b_op7 and Question5c_claimant_harassment[0] == Civil_c_claimant_harassment_op1 and (Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op1 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op2 or Question5d_claimant_harassment[0] == Civil_d_claimant_harassment_op3) and (Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op2 or Question5e_claimant_harassment[0] == Civil_e_claimant_harassment_op3) and Question5f_claimant_harassment[0] == Civil_f_claimant_harassment_op2 and (Question5g_ii_claimant_harassment[0] == Civil_g_ii_claimant_harassment_op1 or Question5g_ii_claimant_harassment[0] == Civil_g_ii_claimant_harassment_op2 or Question5g_ii_claimant_harassment[0] == Civil_g_ii_claimant_harassment_op3 or Question5g_ii_claimant_harassment[0] == Civil_g_ii_claimant_harassment_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_claimant_harassment[0],
+                "My claim is": Question5d_claimant_harassment,
+                "I want the harasser to be": Question5e_claimant_harassment[0],
+                "I am seeking for": Question5f_claimant_harassment[0],
+                "I have": Question5g_ii_claimant_harassment,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Harassment", Question 5c is "Appeal against a protection from harassment decision" or "Set aside a protection from harassment order made in my absence" or "Vary, suspend or cancel a protection from harassment order" or "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op7 and (Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op2 or Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op3 or Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op4 or Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op5):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Harassment", Question 5c is "Respond to a Claim", Question 5d is "Notice of Case Management Conference" and 5e is "Settle the claim" or "Dispute the claim: file a response"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op7 and Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op1 and Question5d_respondent_harassment[0] == Civil_d_respondent_harassment_op1 and (Question5e_i_respondent_harassment[0] == Civil_e_i_respondent_harassment_op1 or Question5e_i_respondent_harassment[0] == Civil_e_i_respondent_harassment_op2):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_harassment[0],
+                "I have received a/an": Question5d_respondent_harassment[0],
+                "I am seeking to": Question5e_i_respondent_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Harassment", Question 5c is "Respond to a Claim", Question 5d is "Notice of Case Management Conference" and 5e is "File a counterclaim" and 5f is "None of the above"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op7 and Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op1 and Question5d_respondent_harassment[0] == Civil_d_respondent_harassment_op1 and Question5e_i_respondent_harassment[0] == Civil_e_i_respondent_harassment_op3 and Question5f_respondent_harassment[0] == Civil_f_respondent_harassment_op5:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_harassment[0],
+                "I have received a/an": Question5d_respondent_harassment[0],
+                "I am seeking to": Question5e_i_respondent_harassment[0],
+                "I have": Question5f_respondent_harassment[0],
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Harassment", Question 5c is "Respond to a Claim", Question 5d is "Notice of Case Management Conference" and 5e is "File a counterclaim" and 5f is "Completed the pre-filing assessment on the Community Justice and Tribunals System (CJTS)"/"Filed my claim on the Community Justice and Tribunals System (CJTS)"/"Attended the hearing"/"Served the documents on the respondents"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op7 and Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op1 and Question5d_respondent_harassment[0] == Civil_d_respondent_harassment_op1 and Question5e_i_respondent_harassment[0] == Civil_e_i_respondent_harassment_op3 and (Question5f_respondent_harassment[0] == Civil_f_respondent_harassment_op1 or Question5f_respondent_harassment[0] == Civil_f_respondent_harassment_op2 or Question5f_respondent_harassment[0] == Civil_f_respondent_harassment_op3 or Question5f_respondent_harassment[0] == Civil_f_respondent_harassment_op4):
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_harassment[0],
+                "I have received a/an": Question5d_respondent_harassment[0],
+                "I am seeking to": Question5e_i_respondent_harassment[0],
+                "I have": Question5f_respondent_harassment,
+                "Current Date": datetime.now()
+            })
+
+        # When the answer for Question 1, 2, 3 is "No", Question 4 is "Civil", Question 5a is "Respondent", Question 5b is "Harassment", Question 5c is "Respond to a Claim", Question 5d is "Originating Application" and 5e is "Dispute the claim"
+        if Question1[0] == OCQ1op2 and Question2[0] == OCQ2op2 and Question3[0] == OCQ3op2 and Question4[0] == OCQ4op1 and Question5a[0] == Civil_a_op2 and Question5b[0] == Civil_b_op7 and Question5c_respondent_harassment[0] == Civil_c_respondent_harassment_op1 and Question5d_respondent_harassment[0] == Civil_d_respondent_harassment_op2 and Question5e_ii_respondent_harassment[0] == Civil_e_ii_respondent_harassment_op1:
+            col_OC_Answers.insert_one({
+                "Are you enquiring as a representative of a company?": Question1[0],
+                "Are you currently represented by a lawyer?": Question2[0],
+                "Have you sought legal advice on this matter before?": Question3[0],
+                "What is the nature of your matter": Question4[0],
+                "I am the": Question5a[0],
+                "My claim arises from": Question5b[0],
+                "I wish to": Question5c_respondent_harassment[0],
+                "I have received a/an": Question5d_respondent_harassment[0],
+                "I am seeking to": Question5e_ii_respondent_harassment[0],
+                "Current Date": datetime.now()
+            })
 
     return render_template('OSLAS_criteria.html', OCQ1 = OCQ1, OCQ1op1 = OCQ1op1, OCQ1op2 = OCQ1op2,
     OCQ2 = OCQ2, OCQ2op1 = OCQ2op1, OCQ2op2 = OCQ2op2, 
