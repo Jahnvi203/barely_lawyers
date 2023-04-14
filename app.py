@@ -1455,6 +1455,10 @@ def send(no, email_input):
 
 @app.route("/OSLAS_Criteria", methods=["POST", "GET"])
 def OSLAS_Criteria():
+    # OSLAS Introduction message database
+    OCIntro = list(col_oslas_criteria.find({"QN": "32"}))[0]
+    Introduction_message = OCIntro["Introduction_message"]
+
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"QN": "1"}))[0]
     OCQ1 = OCQuestion1["OCQ1"]
@@ -2217,6 +2221,7 @@ def OSLAS_Criteria():
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
     OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
     OCQ5 = OCQ5,
+    Introduction_message = Introduction_message,
     Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2,
     Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
     Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,
@@ -3088,6 +3093,8 @@ def oslas_cms():
         Updated_Criminal_op6 = request.form.getlist('Criminal_op6')
         Updated_Criminal_op7 = request.form.getlist('Criminal_op7')
 
+        Updated_Introduction_message = request.form.getlist('Introduction_message')
+
         col_oslas_criteria.update_one({"QN": "1"}, {'$set': {"OCQ1": Updated_Question1[0]}})
         col_oslas_criteria.update_one({"QN": "1"}, {'$set': {"OCQ1op1": Updated_OCQ1op1[0]}})
         col_oslas_criteria.update_one({"QN": "1"}, {'$set': {"OCQ1op2": Updated_OCQ1op2[0]}})
@@ -3283,6 +3290,12 @@ def oslas_cms():
         col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op5": Updated_Criminal_op5[0]}})
         col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op6": Updated_Criminal_op6[0]}})
         col_oslas_criteria.update_one({"QN": "31"}, {'$set': {"Criminal_op7": Updated_Criminal_op7[0]}})
+
+        col_oslas_criteria.update_one({"QN": "32"}, {'$set': {"Introduction_message": Updated_Introduction_message[0]}})
+
+    # OSLAS Introduction message database
+    OCIntro = list(col_oslas_criteria.find({"QN": "32"}))[0]
+    Introduction_message = OCIntro["Introduction_message"]
 
     # OSLAS Criteria Question 1 database
     OCQuestion1 = list(col_oslas_criteria.find({"QN": "1"}))[0]
@@ -3547,6 +3560,7 @@ def oslas_cms():
     OCQ3 = OCQ3, OCQ3op1 = OCQ3op1, OCQ3op2 = OCQ3op2, 
     OCQ4 = OCQ4, OCQ4op1 = OCQ4op1, OCQ4op2 = OCQ4op2, OCQ4op3 = OCQ4op3,
     OCQ5 = OCQ5,
+    Introduction_message = Introduction_message,
     Civil_a = Civil_a, Civil_a_op1 = Civil_a_op1, Civil_a_op2 = Civil_a_op2,
     Civil_b = Civil_b, Civil_b_op1 = Civil_b_op1, Civil_b_op2 = Civil_b_op2, Civil_b_op3 = Civil_b_op3, Civil_b_op4 = Civil_b_op4, Civil_b_op5 = Civil_b_op5, Civil_b_op6 = Civil_b_op6, Civil_b_op7 = Civil_b_op7, Civil_b_op8 = Civil_b_op8,
     Civil_c_respondent = Civil_c_respondent, Civil_c_respondent_op1 = Civil_c_respondent_op1, Civil_c_respondent_op2 = Civil_c_respondent_op2, Civil_c_respondent_op3 = Civil_c_respondent_op3, Civil_c_respondent_op4 = Civil_c_respondent_op4, Civil_c_respondent_op5 = Civil_c_respondent_op5, Civil_c_respondent_op6 = Civil_c_respondent_op6,

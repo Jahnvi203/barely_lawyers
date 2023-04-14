@@ -35,7 +35,7 @@
                 <h2 id="intro_heading"><u>Initial Questionnaire</u></h2>
                 <br>
 
-                <h4 id="help">Help us better understand your case</h4>
+                <h4 id="help">{{Introduction_message}}</h4>
                 <br>
 
                 <form name="oslas" method="post" target="frame">
@@ -111,7 +111,7 @@
                     </div>
                     <br>
                     <div id="submit-btn" style="display: none;">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" onclick="confirmation()">Submit</button>
                     </div>
                 </form>
             </div>
@@ -119,6 +119,10 @@
         <!-- This iframe is so that we can submit the form but not refresh the page -->
         <iframe style="display: none;" name="frame"></iframe>
         <script>
+
+            function confirmation() {
+                alert("We hope you find the information provided useful. Please feel free to submit the form again should you require further information on the respective court process / procedure.");
+            }
 
             function checkyes() {
                 ans1 = oslas.Question1.value
@@ -424,6 +428,9 @@
 
                 var claimant_d = document.getElementById("claimant_d");
                 claimant_d.style.display = "none";
+
+                var claiment_d_2_page = document.getElementById("claiment_d_2_page");
+                claiment_d_2_page.style.display = "none";
 
                 var claimant_dpage = document.getElementById("claimant_dpage");
                 claimant_dpage.style.display = "none";
@@ -784,7 +791,6 @@
 
                 var nonepage = document.getElementById("nonepage");
                 nonepage.style.display = "none";
-
             }
         </script>
     </body>

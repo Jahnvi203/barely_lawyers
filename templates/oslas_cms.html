@@ -160,6 +160,25 @@
                             <h4>Questions</h4>
                             <div class="accordion cms" id="oslas_accordion">
                                 <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Introduction_message">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="false" aria-controls="collapse0">
+                                            {{Introduction_message}}
+                                        </button>
+                                    </p>
+                                    <div id="collapse0" class="accordion-collapse collapse" aria-labelledby="Introduction_message" data-bs-parent="#oslas_accordion">
+                                        <div class="accordion-body">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Introduction Message</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Introduction_message" type="text" required value="{{Introduction_message}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="OCQ1">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                                             {{OCQ1}}
@@ -321,7 +340,7 @@
                         </div>
                         <br>
                         <div class="civil">
-                            <h4>Civil</h4>
+                            <h4>Tenancy agreement/Contract for sale of good/Contract for provision of services/Damage to property</h4>
                             <div class="accordion cms" id="civil_accordion">
                                 <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Civil_a">
@@ -547,12 +566,57 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_d_claimant">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                                            {{Civil_d_claimant}} (Claimant)
+                                        </button>
+                                    </p>
+                                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant" data-bs-parent="#civil_accordion">
+                                        <div class="accordion-body">                                           
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant" type="text" required value="{{Civil_d_claimant}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_op1" type="text" required value="{{Civil_d_claimant_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_op2" type="text" required value="{{Civil_d_claimant_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_op3" type="text" required value="{{Civil_d_claimant_op3}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="employment">
+                            <h4>Employment</h4>
+                            <div class="accordion cms" id="employment_accordion">
+                                <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Civil_c_employment">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
                                             {{Civil_c_employment}} (Employment)
                                         </button>
                                     </p>
-                                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="Civil_c_employment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="Civil_c_employment" data-bs-parent="#employment_accordion">
                                         <div class="accordion-body">                                            
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -594,290 +658,12 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_c_claimant_neighbour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                                            {{Civil_c_claimant_neighbour}} (Claimant Neighbour)
-                                        </button>
-                                    </p>
-                                    <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="Civil_c_claimant_neighbour" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">                                            
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour" type="text" required value="{{Civil_c_claimant_neighbour}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op1" type="text" required value="{{Civil_c_claimant_neighbour_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op2" type="text" required value="{{Civil_c_claimant_neighbour_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op3" type="text" required value="{{Civil_c_claimant_neighbour_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op4" type="text" required value="{{Civil_c_claimant_neighbour_op4}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 5</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op5" type="text" required value="{{Civil_c_claimant_neighbour_op5}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 6</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op6" type="text" required value="{{Civil_c_claimant_neighbour_op6}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_c_respondent_neighbour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                                            {{Civil_c_respondent_neighbour}} (Respondent Neighbour)
-                                        </button>
-                                    </p>
-                                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="Civil_c_respondent_neighbour" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">                                            
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour" type="text" required value="{{Civil_c_respondent_neighbour}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op1" type="text" required value="{{Civil_c_respondent_neighbour_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op2" type="text" required value="{{Civil_c_respondent_neighbour_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op3" type="text" required value="{{Civil_c_respondent_neighbour_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op4" type="text" required value="{{Civil_c_respondent_neighbour_op4}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 5</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op5" type="text" required value="{{Civil_c_respondent_neighbour_op5}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 6</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op6" type="text" required value="{{Civil_c_respondent_neighbour_op6}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_c_claimant_harassment">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
-                                            {{Civil_c_claimant_harassment}} (Claimant Harassment)
-                                        </button>
-                                    </p>
-                                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="Civil_c_claimant_harassment" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment" type="text" required value="{{Civil_c_claimant_harassment}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op1" type="text" required value="{{Civil_c_claimant_harassment_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op2" type="text" required value="{{Civil_c_claimant_harassment_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op3" type="text" required value="{{Civil_c_claimant_harassment_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op4" type="text" required value="{{Civil_c_claimant_harassment_op4}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 5</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op5" type="text" required value="{{Civil_c_claimant_harassment_op5}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 6</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op6" type="text" required value="{{Civil_c_claimant_harassment_op6}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_c_respondent_harassment">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
-                                            {{Civil_c_respondent_harassment}} (Respondent Harassment)
-                                        </button>
-                                    </p>
-                                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="Civil_c_respondent_harassment" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment" type="text" required value="{{Civil_c_respondent_harassment}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op1" type="text" required value="{{Civil_c_respondent_harassment_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op2" type="text" required value="{{Civil_c_respondent_harassment_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op3" type="text" required value="{{Civil_c_respondent_harassment_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op4" type="text" required value="{{Civil_c_respondent_harassment_op4}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 5</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op5" type="text" required value="{{Civil_c_respondent_harassment_op5}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_d_claimant">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
-                                            {{Civil_d_claimant}} (Claimant)
-                                        </button>
-                                    </p>
-                                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">                                           
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant" type="text" required value="{{Civil_d_claimant}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_op1" type="text" required value="{{Civil_d_claimant_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_op2" type="text" required value="{{Civil_d_claimant_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_op3" type="text" required value="{{Civil_d_claimant_op3}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Civil_d_claimant_employment">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
                                             {{Civil_d_claimant_employment}} (Claimant Employment)
                                         </button>
                                     </p>
-                                    <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_employment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_employment" data-bs-parent="#employment_accordion">
                                         <div class="accordion-body">                                            
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -938,7 +724,7 @@
                                             {{Civil_d_respondent_employment}} (Respondent Employment)
                                         </button>
                                     </p>
-                                    <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="Civil_d_respondent_employment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="Civil_d_respondent_employment" data-bs-parent="#employment_accordion">
                                         <div class="accordion-body">                                            
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1001,153 +787,12 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_d_claimant_neighbour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
-                                            d. {{Civil_d_claimant_neighbour}} (Claimant Neighbour)
-                                        </button>
-                                    </p>
-                                    <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_neighbour" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">                                       
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour" type="text" required value="{{Civil_d_claimant_neighbour}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op1" type="text" required value="{{Civil_d_claimant_neighbour_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op2" type="text" required value="{{Civil_d_claimant_neighbour_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op3" type="text" required value="{{Civil_d_claimant_neighbour_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op4" type="text" required value="{{Civil_d_claimant_neighbour_op4}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 5</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op5" type="text" required value="{{Civil_d_claimant_neighbour_op5}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 6</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op6" type="text" required value="{{Civil_d_claimant_neighbour_op6}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_d_claimant_harassment">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
-                                            {{Civil_d_claimant_harassment}} (Claimant Harassment)
-                                        </button>
-                                    </p>
-                                    <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_harassment" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_harassment" type="text" required value="{{Civil_d_claimant_harassment}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op1" type="text" required value="{{Civil_d_claimant_harassment_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op2" type="text" required value="{{Civil_d_claimant_harassment_op2}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 3</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op3" type="text" required value="{{Civil_d_claimant_harassment_op3}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 4</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op4" type="text" required value="{{Civil_d_claimant_harassment_op4}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
-                                    <p class="accordion-header cms" id="Civil_d_respondent_harassment">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
-                                            {{Civil_d_respondent_harassment}} (Respondent Harassment)
-                                        </button>
-                                    </p>
-                                    <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="Civil_d_respondent_harassment" data-bs-parent="#civil_accordion">
-                                        <div class="accordion-body">
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Question</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_respondent_harassment" type="text" required value="{{Civil_d_respondent_harassment}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 1</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_respondent_harassment_op1" type="text" required value="{{Civil_d_respondent_harassment_op1}}">
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <label class="edit-question-label"><strong>Option 2</strong></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <input class="edit-question-input" name="Civil_d_respondent_harassment_op2" type="text" required value="{{Civil_d_respondent_harassment_op2}}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Civil_e_claimant_employment">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
                                             e. {{Civil_e_claimant_employment}} (Claimant Employment)
                                         </button>
                                     </p>
-                                    <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="Civil_e_claimant_employment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="Civil_e_claimant_employment" data-bs-parent="#employment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1195,13 +840,401 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                                
+                        <div class="Neighbour">
+                            <h4>Neighbour</h4>
+                            <div class="accordion cms" id="neighbour_accordion">
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_c_claimant_neighbour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                            {{Civil_c_claimant_neighbour}} (Claimant Neighbour)
+                                        </button>
+                                    </p>
+                                    <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="Civil_c_claimant_neighbour" data-bs-parent="#neighbour_accordion">
+                                        <div class="accordion-body">                                            
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour" type="text" required value="{{Civil_c_claimant_neighbour}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op1" type="text" required value="{{Civil_c_claimant_neighbour_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op2" type="text" required value="{{Civil_c_claimant_neighbour_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op3" type="text" required value="{{Civil_c_claimant_neighbour_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op4" type="text" required value="{{Civil_c_claimant_neighbour_op4}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 5</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op5" type="text" required value="{{Civil_c_claimant_neighbour_op5}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 6</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_neighbour_op6" type="text" required value="{{Civil_c_claimant_neighbour_op6}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_c_respondent_neighbour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                                            {{Civil_c_respondent_neighbour}} (Respondent Neighbour)
+                                        </button>
+                                    </p>
+                                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="Civil_c_respondent_neighbour" data-bs-parent="#neighbour_accordion">
+                                        <div class="accordion-body">                                            
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour" type="text" required value="{{Civil_c_respondent_neighbour}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op1" type="text" required value="{{Civil_c_respondent_neighbour_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op2" type="text" required value="{{Civil_c_respondent_neighbour_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op3" type="text" required value="{{Civil_c_respondent_neighbour_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op4" type="text" required value="{{Civil_c_respondent_neighbour_op4}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 5</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op5" type="text" required value="{{Civil_c_respondent_neighbour_op5}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 6</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_neighbour_op6" type="text" required value="{{Civil_c_respondent_neighbour_op6}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_d_claimant_neighbour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                                            d. {{Civil_d_claimant_neighbour}} (Claimant Neighbour)
+                                        </button>
+                                    </p>
+                                    <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_neighbour" data-bs-parent="#neighbour_accordion">
+                                        <div class="accordion-body">                                       
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour" type="text" required value="{{Civil_d_claimant_neighbour}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op1" type="text" required value="{{Civil_d_claimant_neighbour_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op2" type="text" required value="{{Civil_d_claimant_neighbour_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op3" type="text" required value="{{Civil_d_claimant_neighbour_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op4" type="text" required value="{{Civil_d_claimant_neighbour_op4}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 5</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op5" type="text" required value="{{Civil_d_claimant_neighbour_op5}}">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 6</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_neighbour_op6" type="text" required value="{{Civil_d_claimant_neighbour_op6}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="harassment">
+                            <h4>Harassment</h4>
+                            <div class="accordion cms" id="harassment_accordion">
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_c_claimant_harassment">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                                            {{Civil_c_claimant_harassment}} (Claimant Harassment)
+                                        </button>
+                                    </p>
+                                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="Civil_c_claimant_harassment" data-bs-parent="#harassment_accordion">
+                                        <div class="accordion-body">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment" type="text" required value="{{Civil_c_claimant_harassment}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op1" type="text" required value="{{Civil_c_claimant_harassment_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op2" type="text" required value="{{Civil_c_claimant_harassment_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op3" type="text" required value="{{Civil_c_claimant_harassment_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op4" type="text" required value="{{Civil_c_claimant_harassment_op4}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 5</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op5" type="text" required value="{{Civil_c_claimant_harassment_op5}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 6</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_claimant_harassment_op6" type="text" required value="{{Civil_c_claimant_harassment_op6}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_c_respondent_harassment">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                                            {{Civil_c_respondent_harassment}} (Respondent Harassment)
+                                        </button>
+                                    </p>
+                                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="Civil_c_respondent_harassment" data-bs-parent="#harassment_accordion">
+                                        <div class="accordion-body">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment" type="text" required value="{{Civil_c_respondent_harassment}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op1" type="text" required value="{{Civil_c_respondent_harassment_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op2" type="text" required value="{{Civil_c_respondent_harassment_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op3" type="text" required value="{{Civil_c_respondent_harassment_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op4" type="text" required value="{{Civil_c_respondent_harassment_op4}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 5</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_c_respondent_harassment_op5" type="text" required value="{{Civil_c_respondent_harassment_op5}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_d_claimant_harassment">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                                            {{Civil_d_claimant_harassment}} (Claimant Harassment)
+                                        </button>
+                                    </p>
+                                    <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="Civil_d_claimant_harassment" data-bs-parent="#harassment_accordion">
+                                        <div class="accordion-body">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_harassment" type="text" required value="{{Civil_d_claimant_harassment}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op1" type="text" required value="{{Civil_d_claimant_harassment_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op2" type="text" required value="{{Civil_d_claimant_harassment_op2}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 3</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op3" type="text" required value="{{Civil_d_claimant_harassment_op3}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 4</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_claimant_harassment_op4" type="text" required value="{{Civil_d_claimant_harassment_op4}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item cms">
+                                    <p class="accordion-header cms" id="Civil_d_respondent_harassment">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                                            {{Civil_d_respondent_harassment}} (Respondent Harassment)
+                                        </button>
+                                    </p>
+                                    <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="Civil_d_respondent_harassment" data-bs-parent="#harassment_accordion">
+                                        <div class="accordion-body">
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Question</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_respondent_harassment" type="text" required value="{{Civil_d_respondent_harassment}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 1</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_respondent_harassment_op1" type="text" required value="{{Civil_d_respondent_harassment_op1}}">
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <label class="edit-question-label"><strong>Option 2</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="edit-question-input" name="Civil_d_respondent_harassment_op2" type="text" required value="{{Civil_d_respondent_harassment_op2}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary edit-button">Edit</button>                                            
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Civil_e_claimant_harassment">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
                                             {{Civil_e_claimant_harassment}} (Claimant Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="Civil_e_claimant_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="Civil_e_claimant_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1248,7 +1281,7 @@
                                             i. {{Civil_e_i_respondent_harassment}} (Respondent Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse23" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse23" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1288,7 +1321,7 @@
                                             ii. {{Civil_e_ii_respondent_harassment}} (Respondent Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse24" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse24" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1314,7 +1347,7 @@
                                             {{Civil_f_claimant_harassment}} (Claimant Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse25" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse25" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1347,7 +1380,7 @@
                                             {{Civil_f_respondent_harassment}} (Respondent Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse26" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse26" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1401,7 +1434,7 @@
                                             i. {{Civil_g_i_claimant_harassment}} (Claimant Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse27" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse27" class="accordion-collapse collapse" aria-labelledby="Civil_e_i_respondent_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1455,7 +1488,7 @@
                                             ii. {{Civil_g_ii_claimant_harassment}} (Claimant Harassment)
                                         </button>
                                     </p>
-                                    <div id="collapse28" class="accordion-collapse collapse" aria-labelledby="Civil_g_ii_claimant_harassment" data-bs-parent="#civil_accordion">
+                                    <div id="collapse28" class="accordion-collapse collapse" aria-labelledby="Civil_g_ii_claimant_harassment" data-bs-parent="#harassment_accordion">
                                         <div class="accordion-body">
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>
@@ -1503,13 +1536,19 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="online">
+                            <h4>Resolve the dispute online</h4>
+                            <div class="accordion cms" id="online_accordion">
                                 <div class="accordion-item cms">
                                     <p class="accordion-header cms" id="Resolve_the_dispute_online">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse29" aria-expanded="false" aria-controls="collapse29">
                                             {{Resolve_the_dispute_online}}
                                         </button>
                                     </p>
-                                    <div id="collapse29" class="accordion-collapse collapse" aria-labelledby="Resolve_the_dispute_online" data-bs-parent="#civil_accordion">
+                                    <div id="collapse29" class="accordion-collapse collapse" aria-labelledby="Resolve_the_dispute_online" data-bs-parent="#online_accordion">
                                         <div class="accordion-body">                                            
                                             <div class="col-sm-2">
                                                 <label class="edit-question-label"><strong>Question</strong></label>

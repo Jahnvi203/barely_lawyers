@@ -498,7 +498,7 @@ input[name=signup_name], input[name=signup_email], input[name=signup_pwd], input
     color: red;
 }
 
-#collapse1, #collapse2, #collapse3, #collapse4, #collapse5, #collapse6, #collapse7, #collapse8, #collapse9, #collapse10, #collapse11, #collapse12, #collapse13, #collapse14, #collapse15, #collapse16, #collapse17, #collapse18, #collapse19, #collapse20, #collapse21, #collapse22, #collapse23, #collapse24, #collapse25, #collapse26, #collapse27, #collapse28, #collapse29, #collapse30, #collapse31 {
+#collapse0, #collapse1, #collapse2, #collapse3, #collapse4, #collapse5, #collapse6, #collapse7, #collapse8, #collapse9, #collapse10, #collapse11, #collapse12, #collapse13, #collapse14, #collapse15, #collapse16, #collapse17, #collapse18, #collapse19, #collapse20, #collapse21, #collapse22, #collapse23, #collapse24, #collapse25, #collapse26, #collapse27, #collapse28, #collapse29, #collapse30, #collapse31 {
     text-align: left;
     padding-left: 50px;
 }
