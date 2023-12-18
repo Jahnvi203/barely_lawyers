@@ -1,10 +1,5 @@
-About the Documentation
+Barely Lawyers - Justice is Managed
 =======================
-
-Purpose
--------
-
-The purpose of this documentation is to help Community Justice Centre (CJC) understand the web app developed by 26\_CL\_BA\_Barely Lawyers\_Justice is Managed as part of IS483 IS/SMT Project Experience at Singapore Management University in collaboration with CJC.
 
 Product Definition
 ------------------
