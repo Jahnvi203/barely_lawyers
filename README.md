@@ -112,13 +112,18 @@ Product 3
 
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/502b1498-e027-4c9c-8c2a-48034742679c">
 
+
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/dcd4c5be-ce4d-482a-b15e-592316be3961">
+
 
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/6b65ef11-1b31-4f0e-b40b-94e52695dee0">
 
+
 <img width="466" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/8d24da41-b4c6-4d99-835c-7134f5aa6b72">
 
+
 <img width="467" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/f6017b87-4429-417b-b397-cc2eeba9dd71">
+
 
 <img width="467" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/c9aa08d8-d665-465e-99d9-ebd573944f9f">
 
