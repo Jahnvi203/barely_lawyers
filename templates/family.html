@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+</head>
+<body>
+    <p id="Question5_f"><b>{{OCQ5}}</b></p>
+    <div id="Question5i_family" class="checkboxes">
+        <p><b>{{Family_i}}</b></p>
+        <label><input type="checkbox" id="q5a" name="Family_Question5a" value="{{Family_i_op1}}" onclick="checkiFAMS()"> <span>{{Family_i_op1}}</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q5b" name="Family_Question5a" value="{{Family_i_op2}}" onclick="checkiFAMS()"> <span>{{Family_i_op2}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Personal Protection Order"><i class="bi bi-info-circle-fill tooltip-icon"></i></a>
+        </label>
+        <br><br>
+        <label><input type="checkbox" id="q5c" name="Family_Question5a" value="{{Family_i_op3}}" onclick="checkiFAMS()"> <span>{{Family_i_op3}}</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q5d" name="Family_Question5a" value="{{Family_i_op4}}" onclick="checkiFAMS()"> <span>{{Family_i_op4}}</span>
+            <a href="#!" data-bs-toggle="tooltip" data-bs-html="true" title="Vulnerable Adults Act Application"><i class="bi bi-info-circle-fill tooltip-icon"></i></a>
+        </label>
+    </div>
+
+    <br>
+
+    <div id="iFAMS" style="display: none;">
+        {% include "iFAMS.html" %}
+        <br>
+    </div>
+    
+    <div id="Question5ii_family" class="checkboxes">
+        <p><b>{{Family_ii}}</b></p>
+        <p><b>{{Family_ii_prompt}}</b></p>
+        <label><input type="checkbox" id="q6a" name="Family_Question5b" value="{{Family_ii_op1}}" onclick="checksimplified()"> <span>{{Family_ii_op1}}</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q6b" name="Family_Question5b" value="{{Family_ii_op2}}" onclick="checksimplified()"> <span>{{Family_ii_op2}}</span></label>
+        <br><br>
+        <label><input type="checkbox" id="q6c" name="Family_Question5b" value="{{Family_ii_op3}}" nclick="checksimplified()"> <span>{{Family_ii_op3}}</span></label>
+    </div>
+
+    <br>
+
+    <div id="simplified" style="display: none;">
+        {% include "simplified.html" %}
+    </div>
+
+    <div id="nonepages" style="display: none;">
+        {% include "none.html" %}
+    </div>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        function checkiFAMS() {
+            var q5a = document.getElementById("q5a");
+            var q5b = document.getElementById("q5b");
+            var q5c = document.getElementById("q5c");
+            var q5d = document.getElementById("q5d");
+            var iFAMS = document.getElementById("iFAMS");
+            if (q5a.checked || q5b.checked || q5c.checked || q5d.checked == true) {
+                iFAMS.style.display = "block";
+            } else {
+                iFAMS.style.display = "none";
+            }
+        }
+
+        function checksimplified() {
+            var op1 = $("#q6a").is(":checked");
+            console.log(op1)
+            var op2 = $("#q6b").is(":checked");
+            console.log(op2)
+            var op3 = $("#q6c").is(":checked");
+            console.log(op3)
+
+            if (op1 == true && op2 == true && op3 == false) {
+                var simplified = document.getElementById("simplified");
+                simplified.style.display = "block";
+
+                var nonepage = document.getElementById("nonepages");
+                nonepage.style.display = "none";
+            }
+            else if (op1 == false && op2 == false && op3 == true) {
+                var nonepage = document.getElementById("nonepages");
+                nonepage.style.display = "block";
+
+                var simplified = document.getElementById("simplified");
+                simplified.style.display = "none";
+            }
+            else {
+                var simplified = document.getElementById("simplified");
+                simplified.style.display = "none";
+
+                var nonepage = document.getElementById("nonepages");
+                nonepage.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- var q6a = document.getElementById("q6a");
+            var q6b = document.getElementById("q6b");
+            var q6c = document.getElementById("q6c");
+            var simplified = document.getElementById("simplified");
+            var nonepage = document.getElementById("nonepages");
+            if ((q6a.checked && q6b.checked == true) && q6c.checked == false) {
+                simplified.style.display = "block";
+            } 
+            else if ((q6a.checked && q6b.checked == false) && q6c.checked == true) {
+                nonepage.style.display = "block";
+            }
+            else {
+                simplified.style.display = "none";
+                nonepage.style.display = "none";
+            } -->

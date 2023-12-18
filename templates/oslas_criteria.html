@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename = 'css/style.css') }}"  rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <title>OSLAS Criteria</title>
+    </head>
+    <body>
+        <!-- Menu Navigation Bar -->
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.linkpicture.com/q/cjc_logo_1.png" class="d-inline-block align-top" id="cjc-logo">
+                <img src="https://www.linkpicture.com/q/menu_icon_1.png" id="menu-icon">
+                <span id="menu-text">MENU</span>
+                <div class="contact">
+                    <span>
+                        <img class="header_icons" src="https://www.linkpicture.com/q/phone_12.png"></img>
+                        +65 6557 4100
+                        <br>
+                        <img class="header_icons" src="https://www.linkpicture.com/q/email_28.png"></img>
+                        help@cjc.org.sg
+                    </span>
+                </div>
+            </a>
+        </nav>
+        <div class="row">
+            <div class="col-2" id="sidebar">
+                <h5 id="our-services">Our Services</h5>
+                <div class="accordion" id="sidebar_accordion">
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="h1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="false" aria-controls="c1">
+                                Family Matters
+                            </button>
+                        </p>
+                        <div id="c1" class="accordion-collapse collapse" aria-labelledby="h1" data-bs-parent="#sidebar_accordion">
+                            <div class="accordion-body">
+                                <p>&emsp;<a href="{{ url_for('maintenance', prev_qn_no = '0', back = '0') }}">Maintenance</a></p>
+                                <p>&emsp;<a href="{{ url_for('divorce', prev_qn_no = '0', back = '0') }}">Divorce</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="h2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+                                Criminal Matters
+                            </button>
+                        </p>
+                        <div id="c2" class="accordion-collapse collapse" aria-labelledby="h2" data-bs-parent="#sidebar_accordion">
+                            <div class="accordion-body">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="h3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+                                Civil Matters
+                            </button>
+                        </p>
+                        <div id="c3" class="accordion-collapse collapse" aria-labelledby="h3" data-bs-parent="#sidebar_accordion">
+                            <div class="accordion-body">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="h4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="false" aria-controls="c4">
+                                Information
+                            </button>
+                        </p>
+                        <div id="c4" class="accordion-collapse collapse" aria-labelledby="h4" data-bs-parent="#sidebar_accordion">
+                            <div class="accordion-body">
+                                <p>&emsp;<a href="{{ url_for('oslas_criteria') }}">OSLAS Eligibility</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10" id="content">
+                <div class="intro">
+                    <h2 id="intro_heading"><u>Initial Questionnaire</u></h2>
+                    <br>
+
+                    <h4 id="help">{{Introduction_message}}</h4>
+                    <br>
+
+                    <form name="oslas" method="post" target="frame">
+                    <div id="OSLASform" class="form-container">
+                        <!-- For Question 4 -->
+                        <div id="OCQ4" style="display: none;">
+                            <br>
+                            <p><b>{{OCQ4}}</b></p>
+                            <input type="radio" id="civil" name="Question4" value="{{OCQ4op1}}" onclick="check()"> {{OCQ4op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="criminal" name="Question4" value="{{OCQ4op2}}" onclick="check()"> {{OCQ4op2}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="family" name="Question4" value="{{OCQ4op3}}" onclick="check()"> {{OCQ4op3}}
+                        </div>
+
+                        <div id="civilpage" style="display: none;">
+                            <br>
+                            {% include "civil.html" %}
+                        </div>
+
+                        <div id="criminalpage" style="display: none;">
+                            {% include "criminal.html" %}
+                        </div>
+
+                        <div id="familypage" style="display: none;">
+                            {% include "family.html" %}
+                        </div>
+
+                        <br>
+                        <!-- For Question 1 -->
+                        <div id="OCQ1">
+                            <p><b>{{OCQ1}}</b></p>
+                            <input type="radio" id="OCQ1op1" name="Question1" value="{{OCQ1op1}}" onclick="checkyes()"> {{OCQ1op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="OCQ1op2" name="Question1" value="{{OCQ1op2}}" onclick="checkno()"> {{OCQ1op2}}
+                        </div>
+                        <br>
+                        <div id="companypage" style="display: none;">
+                            {% include "company.html" %}
+                        </div>
+
+                        <!-- For Question 2 -->
+                        <div id="OCQ2" style="display: none;">
+                            <p><b>{{OCQ2}}</b></p>
+                            <input type="radio" id="OCQ2op1" name="Question2" value="{{OCQ2op1}}" onclick="checkyes()"> {{OCQ2op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="OCQ2op2" name="Question2" value="{{OCQ2op2}}" onclick="checkno()"> {{OCQ2op2}}
+                        </div>
+                        <br>
+                        <div id="representedpage" style="display: none;">
+                            {% include "represented.html" %}
+                        </div>
+
+                        <!-- For Question 3 -->
+                        <div id="OCQ3" style="display: none;">
+                            <p><b>{{OCQ3}}</b></p>
+                            <input type="radio" id="OCQ3op1" name="Question3" value="{{OCQ3op1}}" onclick="checkyes()"> {{OCQ3op1}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="OCQ3op2" name="Question3" value="{{OCQ3op2}}" onclick="checkno()"> {{OCQ3op2}}
+                        </div>
+                        <br>
+                        <div id="soughtpage" style="display: none;">
+                            {% include "sought.html" %}
+                        </div>
+                        <br>
+                    </div>
+                        <br>
+                        <div id="prev-btn" style="display: none;">
+                            <button type="button" class="btn btn-primary" onclick="prev()">Previous</button>
+                        </div>
+                        <div id="next-btn" style="display: none;">
+                            <button type="button" class="btn btn-primary" onclick="next()">Next</button>
+                        </div>
+                        <br>
+                        <div id="submit-btn" style="display: none;">
+                            <button type="submit" class="btn btn-primary" onclick="confirmation()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- This iframe is so that we can submit the form but not refresh the page -->
+        <iframe style="display: none;" name="frame"></iframe>
+        <script>
+
+            function confirmation() {
+                alert("We hope you find the information provided useful. Please feel free to submit the form again should you require further information on the respective court process / procedure.");
+            }
+
+            function checkyes() {
+                ans1 = oslas.Question1.value
+                ans2 = oslas.Question2.value
+                ans3 = oslas.Question3.value
+
+                // If answer for Question 1 is "Yes"
+                if (ans1 == "{{OCQ1op1}}") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "block";
+
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "none";
+
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var OCQ2 = document.getElementById("OCQ2");
+                    OCQ2.style.display = "none";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "none";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+
+                    document.getElementById("OCQ2op1").checked = false;
+                    document.getElementById("OCQ2op2").checked = false;
+                    document.getElementById("OCQ3op1").checked = false;
+                    document.getElementById("OCQ3op2").checked = false;
+                }
+
+                // If answer for Question 2 is "Yes"
+                if (ans2 == "{{OCQ2op1}}") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "block";
+
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "none";
+
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "none";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+
+                    document.getElementById("OCQ3op1").checked = false;
+                    document.getElementById("OCQ3op2").checked = false;
+                }
+
+                // If answer for Question 3 is "Yes"
+                if (ans3 == "{{OCQ3op1}}") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "block";
+
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "none";
+
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "none";
+
+                    var OCQ4 = document.getElementById("OCQ4");
+                    OCQ4.style.display = "none";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "block";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "none";
+                }
+            }
+
+            function checkno() {
+                ans1 = oslas.Question1.value
+                ans2 = oslas.Question2.value
+                ans3 = oslas.Question3.value
+
+                // If answer for Question 1 is "No"
+                if (ans1 == "{{OCQ1op2}}") {
+                    var companypage = document.getElementById("companypage");
+                    companypage.style.display = "none";
+
+                    var OCQ2 = document.getElementById("OCQ2");
+                    OCQ2.style.display = "block";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "none";
+                }
+
+                // If answer for Question 2 is "No"
+                if (ans2 == "{{OCQ2op2}}") {
+                    var representedpage = document.getElementById("representedpage");
+                    representedpage.style.display = "none";
+
+                    var OCQ3 = document.getElementById("OCQ3");
+                    OCQ3.style.display = "block";
+
+                    var submit = document.getElementById("submit-btn");
+                    submit.style.display = "none";
+                }
+
+                // If answer for Question 3 is "No"
+                if (ans3 == "{{OCQ3op2}}") {
+                    var soughtpage = document.getElementById("soughtpage");
+                    soughtpage.style.display = "none";
+
+                    var next = document.getElementById("next-btn");
+                    next.style.display = "block";
+                }
+            }
+
+            function check() {
+                ans = oslas.Question4.value
+                console.log(ans)
+
+                // If answer for Question 4 is "Civil"
+                if (ans == "{{OCQ4op1}}") {
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "block";
+
+                    var Question5a_style = document.getElementById("Question5a_style");
+                    Question5a_style.style.display = "block";
+
+                    var Question5b_style = document.getElementById("Question5b_style");
+                    Question5b_style.style.display = "block";
+
+                    var Question5 = document.getElementById("Question5");
+                    Question5.style.display = "block";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+                }
+
+                // If answer for Question 4 is "Criminal"
+                else if (ans == "{{OCQ4op2}}") {
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "block";
+
+                    var Question5_c = document.getElementById("Question5_c");
+                    Question5_c.style.display = "block";
+
+                    var Question5_criminal = document.getElementById("Question5_criminal");
+                    Question5_criminal.style.display = "block";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "none";
+
+                }
+
+                // If answer for Question 4 is "Family"
+                else if (ans == "{{OCQ4op3}}") {
+                    var familypage = document.getElementById("familypage");
+                    familypage.style.display = "block";
+
+                    var Question5_f = document.getElementById("Question5_f");
+                    Question5_f.style.display = "block";
+
+                    var Question5i_family = document.getElementById("Question5i_family");
+                    Question5i_family.style.display = "block";
+
+                    var Question5ii_family = document.getElementById("Question5ii_family");
+                    Question5ii_family.style.display = "block";
+
+                    var civilpage = document.getElementById("civilpage");
+                    civilpage.style.display = "none";
+
+                    var criminalpage = document.getElementById("criminalpage");
+                    criminalpage.style.display = "none";
+                }
+            }
+
+            function next() {
+                var OCQ1 = document.getElementById("OCQ1");
+                OCQ1.style.display = "none";
+
+                var OCQ2 = document.getElementById("OCQ2");
+                OCQ2.style.display = "none";
+
+                var OCQ3 = document.getElementById("OCQ3");
+                OCQ3.style.display = "none";
+
+                var OCQ4 = document.getElementById("OCQ4");
+                OCQ4.style.display = "block";
+
+                var prev = document.getElementById("prev-btn");
+                prev.style.display = "block";
+
+                var next = document.getElementById("next-btn");
+                next.style.display = "none";
+
+                var submit = document.getElementById("submit-btn");
+                submit.style.display = "block";
+            }
+
+            function prev() {
+                var OCQ1 = document.getElementById("OCQ1");
+                OCQ1.style.display = "block";
+
+                var OCQ2 = document.getElementById("OCQ2");
+                OCQ2.style.display = "block";
+
+                var OCQ3 = document.getElementById("OCQ3");
+                OCQ3.style.display = "block";
+
+                var OCQ4 = document.getElementById("OCQ4");
+                OCQ4.style.display = "none";
+
+                var prev = document.getElementById("prev-btn");
+                prev.style.display = "none";
+
+                var next = document.getElementById("next-btn");
+                next.style.display = "block";
+
+                var submit = document.getElementById("submit-btn");
+                submit.style.display = "none";
+
+                var claimant = document.getElementById("claimant");
+                claimant.style.display = "none";
+
+                var respondent = document.getElementById("respondent");
+                respondent.style.display = "none";
+
+                var Question5 = document.getElementById("Question5");
+                Question5.style.display = "none";
+
+                var Question5_c = document.getElementById("Question5_c");
+                Question5_c.style.display = "none";
+
+                var Question5_f = document.getElementById("Question5_f");
+                Question5_f.style.display = "none";
+
+                var Question5a_style = document.getElementById("Question5a_style");
+                Question5a_style.style.display = "none";
+
+                var Question5b_style = document.getElementById("Question5b_style");
+                Question5b_style.style.display = "none";
+
+                var Question5_criminal = document.getElementById("Question5_criminal");
+                Question5_criminal.style.display = "none";
+
+                var Question5i_family = document.getElementById("Question5i_family");
+                Question5i_family.style.display = "none";
+
+                var Question5ii_family = document.getElementById("Question5ii_family");
+                Question5ii_family.style.display = "none";
+
+                var claimant_employment = document.getElementById("claimant_employment");
+                claimant_employment.style.display = "none";
+
+                var respondent_employment = document.getElementById("respondent_employment");
+                respondent_employment.style.display = "none";
+
+                var claimant_d = document.getElementById("claimant_d");
+                claimant_d.style.display = "none";
+
+                var claiment_d_2_page = document.getElementById("claiment_d_2_page");
+                claiment_d_2_page.style.display = "none";
+
+                var claimant_dpage = document.getElementById("claimant_dpage");
+                claimant_dpage.style.display = "none";
+
+                var none_employment = document.getElementById("none_employment");
+                none_employment.style.display = "none";
+
+                var appeal_against_neighbour_page = document.getElementById("appeal_against_neighbour_page");
+                appeal_against_neighbour_page.style.display = "none";
+
+                var enforce_neighbour_page = document.getElementById("enforce_neighbour_page");
+                enforce_neighbour_page.style.display = "none";
+
+                var set_aside_neighbour_page = document.getElementById("set_aside_neighbour_page");
+                set_aside_neighbour_page.style.display = "none";
+
+                var none_of_the_above_page = document.getElementById("none_of_the_above_page");
+                none_of_the_above_page.style.display = "none";
+
+                var none_of_the_above_neighbour_page = document.getElementById("none_of_the_above_neighbour_page");
+                none_of_the_above_neighbour_page.style.display = "none";
+
+                var Question5d_claimant_neighbour_page = document.getElementById("Question5d_claimant_neighbour_page");
+                Question5d_claimant_neighbour_page.style.display = "none";
+
+                var settle_the_claim_neighbour_page = document.getElementById("settle_the_claim_neighbour_page");
+                settle_the_claim_neighbour_page.style.display = "none";
+
+                var dispute_the_claim_neighbour_page = document.getElementById("dispute_the_claim_neighbour_page");
+                dispute_the_claim_neighbour_page.style.display = "none";
+
+                var eNegotiation_page = document.getElementById("eNegotiation_page");
+                eNegotiation_page.style.display = "none";
+
+                var eMediation_page = document.getElementById("eMediation_page");
+                eMediation_page.style.display = "none";
+
+                var none_resolve_page = document.getElementById("none_resolve_page");
+                none_resolve_page.style.display = "none";
+
+                var none = document.getElementById("none");
+                none.style.display = "none";
+
+                var appeal_claimant_harassment_page = document.getElementById("appeal_claimant_harassment_page");
+                appeal_claimant_harassment_page.style.display = "none";
+
+                var enforce_claimant_harassment_page = document.getElementById("enforce_claimant_harassment_page");
+                enforce_claimant_harassment_page.style.display = "none";
+
+                var set_aside_claimant_harassment_page = document.getElementById("set_aside_claimant_harassment_page");
+                set_aside_claimant_harassment_page.style.display = "none";
+
+                var vary_claimant_harassment_page = document.getElementById("vary_claimant_harassment_page");
+                vary_claimant_harassment_page.style.display = "none";
+
+                var punished_page = document.getElementById("punished_page");
+                punished_page.style.display = "none";
+
+                var ordered_to_pay_page = document.getElementById("ordered_to_pay_page");
+                ordered_to_pay_page.style.display = "none";
+
+                var final_order_page = document.getElementById("final_order_page");
+                final_order_page.style.display = "none";
+
+                var none_of_the_above_without_interim_page = document.getElementById("none_of_the_above_without_interim_page");
+                none_of_the_above_without_interim_page.style.display = "none";
+
+                var none_of_the_above_with_interim_page = document.getElementById("none_of_the_above_with_interim_page");
+                none_of_the_above_with_interim_page.style.display = "none";
+
+                var settle_the_claim_respondent_harassment_page = document.getElementById("settle_the_claim_respondent_harassment_page");
+                settle_the_claim_respondent_harassment_page.style.display = "none";
+
+                var dispute_the_claim_respondent_harassment_page = document.getElementById("dispute_the_claim_respondent_harassment_page");
+                dispute_the_claim_respondent_harassment_page.style.display = "none";
+
+                var dispute_the_claim_respondent_harassment_2_page = document.getElementById("dispute_the_claim_respondent_harassment_2_page");
+                dispute_the_claim_respondent_harassment_2_page.style.display = "none";
+
+                var file_a_counterclaim_respondent_harassment_page = document.getElementById("file_a_counterclaim_respondent_harassment_page");
+                file_a_counterclaim_respondent_harassment_page.style.display = "none";
+
+                var admitpage = document.getElementById("admitpage");
+                admitpage.style.display = "none";
+
+                var counterclaimpage = document.getElementById("counterclaimpage");
+                counterclaimpage.style.display = "none";
+
+                var disputepage = document.getElementById("disputepage");
+                disputepage.style.display = "none";
+
+                var appealpage = document.getElementById("appealpage");
+                appealpage.style.display = "none";
+
+                var set_asidepage = document.getElementById("set_asidepage");
+                set_asidepage.style.display = "none";
+
+                var appeal_claimantpage = document.getElementById("appeal_claimantpage");
+                appeal_claimantpage.style.display = "none";
+
+                var set_claimantpage = document.getElementById("set_claimantpage");
+                set_claimantpage.style.display = "none";
+
+                var executepage = document.getElementById("executepage");
+                executepage.style.display = "none";
+
+                var dispute_is_unresolved_page = document.getElementById("dispute_is_unresolved_page");
+                dispute_is_unresolved_page.style.display = "none";
+
+                var Civil_d_claimant_employment = document.getElementById("Civil_d_claimant_employment");
+                Civil_d_claimant_employment.style.display = "none";
+
+                var Civil_d_respondent_employment = document.getElementById("Civil_d_respondent_employment");
+                Civil_d_respondent_employment.style.display = "none";
+
+                var file_a_claim = document.getElementById("file_a_claim");
+                file_a_claim.style.display = "none";
+
+                var resolve_the_dispute_online = document.getElementById("resolve_the_dispute_online");
+                resolve_the_dispute_online.style.display = "none";
+
+                var appeal_against_page = document.getElementById("appeal_against_page");
+                appeal_against_page.style.display = "none";
+
+                var enforce_employment_page = document.getElementById("enforce_employment_page");
+                enforce_employment_page.style.display = "none";
+
+                var set_aside_employment_page = document.getElementById("set_aside_employment_page");
+                set_aside_employment_page.style.display = "none";
+
+                var settle_the_claim_page = document.getElementById("settle_the_claim_page");
+                settle_the_claim_page.style.display = "none";
+
+                var dispute_the_claim_page = document.getElementById("dispute_the_claim_page");
+                dispute_the_claim_page.style.display = "none";
+
+                var file_a_counterclaim_page = document.getElementById("file_a_counterclaim_page");
+                file_a_counterclaim_page.style.display = "none";
+
+                var file_a_claim_neighbour = document.getElementById("file_a_claim_neighbour");
+                file_a_claim_neighbour.style.display = "none";
+
+                var Civil_c_claimant_neighbour = document.getElementById("Civil_c_claimant_neighbour");
+                Civil_c_claimant_neighbour.style.display = "none";
+
+                var Civil_c_claimant_harassment = document.getElementById("Civil_c_claimant_harassment");
+                Civil_c_claimant_harassment.style.display = "none";
+
+                var Civil_d_claimant_harassment = document.getElementById("Civil_d_claimant_harassment");
+                Civil_d_claimant_harassment.style.display = "none";
+
+                var Civil_e_claimant_harassment = document.getElementById("Civil_e_claimant_harassment");
+                Civil_e_claimant_harassment.style.display = "none";
+
+                var Civil_f_claimant_harassment = document.getElementById("Civil_f_claimant_harassment");
+                Civil_f_claimant_harassment.style.display = "none";
+
+                Civil_g_i_claimant_harassment = document.getElementById("Civil_g_i_claimant_harassment");
+                Civil_g_i_claimant_harassment.style.display = "none";
+
+                Civil_g_ii_claimant_harassment = document.getElementById("Civil_g_ii_claimant_harassment");
+                Civil_g_ii_claimant_harassment.style.display = "none";
+
+                Civil_c_respondent_harassment = document.getElementById("Civil_c_respondent_harassment");
+                Civil_c_respondent_harassment.style.display = "none";
+
+                Civil_d_respondent_harassment = document.getElementById("Civil_d_respondent_harassment");
+                Civil_d_respondent_harassment.style.display = "none";
+
+                Civil_e_i_respondent_harassment = document.getElementById("Civil_e_i_respondent_harassment");
+                Civil_e_i_respondent_harassment.style.display = "none";
+
+                Civil_e_ii_respondent_harassment = document.getElementById("Civil_e_ii_respondent_harassment");
+                Civil_e_ii_respondent_harassment.style.display = "none";
+
+                Civil_f_respondent_harassment = document.getElementById("Civil_f_respondent_harassment");
+                Civil_f_respondent_harassment.style.display = "none";
+
+                var nonepage = document.getElementById("none");
+                nonepage.style.display = "none";
+
+                var civilpage = document.getElementById("civilpage");
+                civilpage.style.display = "none";
+
+                var criminalpage = document.getElementById("criminalpage");
+                criminalpage.style.display = "none";
+
+                var familypage = document.getElementById("familypage");
+                familypage.style.display = "none";
+
+                document.getElementById("civil").checked = false;
+                document.getElementById("criminal").checked = false;
+                document.getElementById("family").checked = false;
+
+                document.getElementById("Civil_a_op1").checked = false;
+                document.getElementById("Civil_a_op2").checked = false;
+
+                document.getElementById("Civil_b_op1").checked = false;
+                document.getElementById("Civil_b_op2").checked = false;
+                document.getElementById("Civil_b_op3").checked = false;
+                document.getElementById("Civil_b_op4").checked = false;
+                document.getElementById("Civil_b_op5").checked = false;
+                document.getElementById("Civil_b_op6").checked = false;
+                document.getElementById("Civil_b_op7").checked = false;
+                document.getElementById("Civil_b_op8").checked = false;
+
+                document.getElementById("Civil_c_claimant_op1").checked = false;
+                document.getElementById("Civil_c_claimant_op2").checked = false;
+                document.getElementById("Civil_c_claimant_op3").checked = false;
+                document.getElementById("Civil_c_claimant_op4").checked = false;
+                document.getElementById("Civil_c_claimant_op5").checked = false;
+
+                document.getElementById("Civil_c_respondent_op1").checked = false;
+                document.getElementById("Civil_c_respondent_op2").checked = false;
+                document.getElementById("Civil_c_respondent_op3").checked = false;
+                document.getElementById("Civil_c_respondent_op4").checked = false;
+                document.getElementById("Civil_c_respondent_op5").checked = false;
+                document.getElementById("Civil_c_respondent_op6").checked = false;
+
+                document.getElementById("Civil_c_claimant_employment_op1").checked = false;
+                document.getElementById("Civil_c_claimant_employment_op2").checked = false;
+                document.getElementById("Civil_c_employment_none").checked = false;
+
+                document.getElementById("Civil_c_respondent_employment_op1").checked = false;
+                document.getElementById("Civil_c_employment_none1").checked = false;
+
+                document.getElementById("Civil_d_claimant_op1").checked = false;
+                document.getElementById("Civil_d_claimant_op2").checked = false;
+                document.getElementById("Civil_d_claimant_op3").checked = false;
+
+                document.getElementById("Civil_d_claimant_employment_op1").checked = false;
+                document.getElementById("Civil_d_claimant_employment_op2").checked = false;
+                document.getElementById("Civil_d_claimant_employment_op3").checked = false;
+                document.getElementById("Civil_d_claimant_employment_op4").checked = false;
+                document.getElementById("Civil_d_claimant_employment_op5").checked = false;
+                document.getElementById("Civil_d_claimant_employment_op6").checked = false;
+
+                document.getElementById("Civil_e_claimant_employment_op1").checked = false;
+                document.getElementById("Civil_e_claimant_employment_op2").checked = false;
+                document.getElementById("Civil_e_claimant_employment_op3").checked = false;
+                document.getElementById("Civil_e_claimant_employment_op4").checked = false;
+                document.getElementById("Civil_e_claimant_employment_op5").checked = false;
+
+                document.getElementById("Civil_d_respondent_employment_op1").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op2").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op3").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op4").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op5").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op6").checked = false;
+                document.getElementById("Civil_d_respondent_employment_op7").checked = false;
+
+                document.getElementById("Civil_c_claimant_neighbour_op1").checked = false;
+                document.getElementById("Civil_c_claimant_neighbour_op2").checked = false;
+                document.getElementById("Civil_c_claimant_neighbour_op3").checked = false;
+                document.getElementById("Civil_c_claimant_neighbour_op4").checked = false;
+                document.getElementById("Civil_c_claimant_neighbour_op5").checked = false;
+                document.getElementById("Civil_c_claimant_neighbour_op6").checked = false;
+
+                document.getElementById("Civil_d_claimant_neighbour_op1").checked = false;
+                document.getElementById("Civil_d_claimant_neighbour_op2").checked = false;
+                document.getElementById("Civil_d_claimant_neighbour_op3").checked = false;
+                document.getElementById("Civil_d_claimant_neighbour_op4").checked = false;
+                document.getElementById("Civil_d_claimant_neighbour_op5").checked = false;
+                document.getElementById("Civil_d_claimant_neighbour_op6").checked = false;
+
+                document.getElementById("Civil_c_respondent_neighbour_op1").checked = false;
+                document.getElementById("Civil_c_respondent_neighbour_op2").checked = false;
+                document.getElementById("Civil_c_respondent_neighbour_op3").checked = false;
+                document.getElementById("Civil_c_respondent_neighbour_op4").checked = false;
+                document.getElementById("Civil_c_respondent_neighbour_op5").checked = false;
+                document.getElementById("Civil_c_respondent_neighbour_op6").checked = false;
+
+                document.getElementById("Resolve_the_dispute_online_op1").checked = false;
+                document.getElementById("Resolve_the_dispute_online_op2").checked = false;
+                document.getElementById("Resolve_the_dispute_online_op3").checked = false;
+
+                document.getElementById("Civil_c_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_c_claimant_harassment_op2").checked = false;
+                document.getElementById("Civil_c_claimant_harassment_op3").checked = false;
+                document.getElementById("Civil_c_claimant_harassment_op4").checked = false;
+                document.getElementById("Civil_c_claimant_harassment_op5").checked = false;
+                document.getElementById("Civil_c_claimant_harassment_op6").checked = false;
+
+                document.getElementById("Civil_d_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_d_claimant_harassment_op2").checked = false;
+                document.getElementById("Civil_d_claimant_harassment_op3").checked = false;
+                document.getElementById("Civil_d_claimant_harassment_op4").checked = false;
+
+                document.getElementById("Civil_e_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_e_claimant_harassment_op2").checked = false;
+                document.getElementById("Civil_e_claimant_harassment_op3").checked = false;
+                document.getElementById("Civil_e_claimant_harassment_op4").checked = false;
+
+                document.getElementById("Civil_f_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_f_claimant_harassment_op2").checked = false;
+
+                document.getElementById("Civil_g_i_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_g_i_claimant_harassment_op2").checked = false;
+                document.getElementById("Civil_g_i_claimant_harassment_op3").checked = false;
+                document.getElementById("Civil_g_i_claimant_harassment_op4").checked = false;
+                document.getElementById("Civil_g_i_claimant_harassment_op5").checked = false;
+
+                document.getElementById("Civil_g_ii_claimant_harassment_op1").checked = false;
+                document.getElementById("Civil_g_ii_claimant_harassment_op2").checked = false;
+                document.getElementById("Civil_g_ii_claimant_harassment_op3").checked = false;
+                document.getElementById("Civil_g_ii_claimant_harassment_op4").checked = false;
+                document.getElementById("Civil_g_ii_claimant_harassment_op5").checked = false;
+
+                document.getElementById("Civil_c_respondent_harassment_op1").checked = false;
+                document.getElementById("Civil_c_respondent_harassment_op2").checked = false;
+                document.getElementById("Civil_c_respondent_harassment_op3").checked = false;
+                document.getElementById("Civil_c_respondent_harassment_op4").checked = false;
+                document.getElementById("Civil_c_respondent_harassment_op5").checked = false;
+
+                document.getElementById("Civil_d_respondent_harassment_op1").checked = false;
+                document.getElementById("Civil_d_respondent_harassment_op2").checked = false;
+
+                document.getElementById("Civil_e_i_respondent_harassment_op1").checked = false;
+                document.getElementById("Civil_e_i_respondent_harassment_op2").checked = false;
+                document.getElementById("Civil_e_i_respondent_harassment_op3").checked = false;
+
+                document.getElementById("Civil_e_ii_respondent_harassment_op1").checked = false;
+
+                document.getElementById("Civil_f_respondent_harassment_op1").checked = false;
+                document.getElementById("Civil_f_respondent_harassment_op2").checked = false;
+                document.getElementById("Civil_f_respondent_harassment_op3").checked = false;
+                document.getElementById("Civil_f_respondent_harassment_op4").checked = false;
+                document.getElementById("Civil_f_respondent_harassment_op5").checked = false;
+
+                document.getElementById("q5a").checked = false;
+                document.getElementById("q5b").checked = false;
+                document.getElementById("q5c").checked = false;
+                document.getElementById("q5d").checked = false;
+
+                document.getElementById("q6a").checked = false;
+                document.getElementById("q6b").checked = false;
+                document.getElementById("q6c").checked = false;
+
+                var simplified = document.getElementById("simplified");
+                simplified.style.display = "none";
+
+                var nonepages = document.getElementById("nonepages");
+                nonepages.style.display = "none";
+
+                var iFAMS = document.getElementById("iFAMS");
+                iFAMS.style.display = "none";
+
+                document.getElementById("sg").checked = false;
+                document.getElementById("chargedincourt").checked = false;
+                document.getElementById("Criminal_op3").checked = false;
+                document.getElementById("Criminal_op4").checked = false;
+                document.getElementById("Criminal_op5").checked = false;
+                document.getElementById("Criminal_op6").checked = false;
+                document.getElementById("nones").checked = false;
+
+                var sg_chargedmessage = document.getElementById("sg_chargedmessage");
+                sg_chargedmessage.style.display = "none";
+
+                var nonepage = document.getElementById("nonepage");
+                nonepage.style.display = "none";
+            }
+        </script>
+    </body>
+</html>

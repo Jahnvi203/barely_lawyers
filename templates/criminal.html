@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal</title>
+</head>
+<body>
+    <p id="Question5_c"><b>{{OCQ5}}</b></p>
+    <div id="Question5_criminal" class="checkboxes">
+        <p><b><i>{{Criminal}}</i></b></p>
+        <label><input type="checkbox" name="Criminal5" id="sg" value="{{Criminal_op1}}" onclick="checkcharged()"> <span>{{Criminal_op1}}</span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="chargedincourt" value="{{Criminal_op2}}" onclick="checkcharged()"> <span>{{Criminal_op2}}</span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="Criminal_op3" value="{{Criminal_op3}}"> <span>{{Criminal_op3}} <a href="https://pdo.mlaw.gov.sg/files/Public%20Defenders%20Act%202022.pdf" target="_blank">here</a></span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="Criminal_op4" value="{{Criminal_op4}}"> <span>{{Criminal_op4}}</span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="Criminal_op5" value="{{Criminal_op5}}"> <span>{{Criminal_op5}}</span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="Criminal_op6" value="{{Criminal_op6}}"> <span>{{Criminal_op6}}</span></label>
+        <br><br>
+        <label><input type="checkbox" name="Criminal5" id="nones" value="{{Criminal_op7}}" onclick="checknone()"> <span>{{Criminal_op7}}</span></label>
+    </div>
+
+    <br>
+
+    <div id="sg_charged" style="display: none;">
+        {% include "sg_charged.html" %}
+    </div>
+
+    <div id="charged" style="display: none;">
+        {% include "charged.html" %}
+    </div>
+
+    <div id="nonepage" style="display: none;">
+        {% include "none.html" %}
+    </div>
+
+    <script>
+        function checkcharged() {
+            var checkBox1 = document.getElementById("sg");
+            var checkBox2 = document.getElementById("chargedincourt");
+
+            var sg_charged = document.getElementById("sg_charged");
+            var charged = document.getElementById("charged");
+
+            if (checkBox1.checked && checkBox2.checked == true) {
+                sg_charged.style.display = "block";
+                charged.style.display = "none";
+            } else if (checkBox2.checked) {
+                charged.style.display = "block";
+                sg_charged.style.display = "none";
+            } else {
+                charged.style.display = "none";
+                sg_charged.style.display = "none";
+            }
+        }
+
+        function checknone() {
+            var checkBox = document.getElementById("nones");
+            var nonepage = document.getElementById("nonepage");
+            if (checkBox.checked == true) {
+                nonepage.style.display = "block";
+            } else {
+                nonepage.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
