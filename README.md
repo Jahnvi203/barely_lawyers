@@ -111,8 +111,7 @@ Product 3
 ---------
 
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/502b1498-e027-4c9c-8c2a-48034742679c">
-
-
+<br>
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/dcd4c5be-ce4d-482a-b15e-592316be3961">
 
 
