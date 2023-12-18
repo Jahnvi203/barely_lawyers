@@ -1,4 +1,4 @@
-Justice is Managed
+About the Documentation
 =======================
 
 Purpose
