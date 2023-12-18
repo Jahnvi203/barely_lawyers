@@ -80,13 +80,7 @@ Before going into the functions, it is important that you have access to the Adm
 1.  PIA Maintenance Dashboard
 2.  PIA Divorce Dashboard
 
-These dashboards are hosted with MongoDB, therefore, to access them you must have an account with MongoDB. If you do not, you can create an account at [https://account.mongodb.com/account/register](https://account.mongodb.com/account/register).
-
-You should have received an invite from MongoDB to be a Dashboard Author for these 2 dashboards separately.
-
-Please click on each invite and login using your MongoDB account to view and edit each dashboard.
-
-If you have any issues doing so, please contact Jahnvi.
+These dashboards are hosted with MongoDB.
 
 A description of each function is given below:
 
