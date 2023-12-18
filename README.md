@@ -52,12 +52,14 @@ Before going into the functions, it is important to note the following:
 1.  session
 
 <img width="840" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/7fa45821-d84d-427c-b91d-baaed16f0899">
+
 - The secret key which is mostly used for maintaining sessions is 1E44M1ixSeNGzO3T0dqIoXra7De5B46n
 - Currently, the sessions created are set as permanent, however, this is not recommended so in the future, SESSION_PERMANENT should be set to False or a a duration for the permanent session should be added
 
 2.  database connection
 
 <img width="831" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/0535f2bf-4339-47e1-8335-922039befd4a">
+
 - The URI at which the MongoDB database is connected is [mongodb+srv://Jahnvi203:Jahnvi203@cluster0.cn63w2k.mongodb.net/app?retryWrites=true&w=majority](https://www.mongodb.com/docs/atlas/driver-connection/)
 - The name of the MongoDB database is **app**
 - The different collections in the MongoDB database are in lines 38 to 48
