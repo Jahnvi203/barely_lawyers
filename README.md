@@ -111,10 +111,15 @@ Product 3
 ---------
 
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/502b1498-e027-4c9c-8c2a-48034742679c"><br />
+
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/dcd4c5be-ce4d-482a-b15e-592316be3961"><br />
+
 <img width="455" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/6b65ef11-1b31-4f0e-b40b-94e52695dee0"><br />
+
 <img width="466" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/8d24da41-b4c6-4d99-835c-7134f5aa6b72"><br />
+
 <img width="467" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/f6017b87-4429-417b-b397-cc2eeba9dd71"><br />
+
 <img width="467" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/c9aa08d8-d665-465e-99d9-ebd573944f9f">
 
 Product 4
@@ -123,4 +128,5 @@ Product 4
 A description of each function is given below:
 
 <img width="467" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/a1b2e8db-f625-4371-aa7b-548981e0b372"><br />
+
 <img width="466" alt="image" src="https://github.com/Jahnvi203/barely_lawyers/assets/85999744/131be0f5-4c8e-45ff-9062-e7eb221f24b0">
